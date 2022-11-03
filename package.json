@@ -1,0 +1,25 @@
+{
+  "name": "sam-smith-social-media",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/indx.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/canadiancode/Sam-Smith-Social-Media.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/canadiancode/Sam-Smith-Social-Media/issues"
+  },
+  "homepage": "https://github.com/canadiancode/Sam-Smith-Social-Media#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5",
+    "sass": "^1.55.0"
+  }
+}
