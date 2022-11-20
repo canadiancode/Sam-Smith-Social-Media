@@ -149,6 +149,21 @@ function closeMobileSection() {
   hamburgerButtonClose.style.transform = 'scale(0%) rotate(900deg)';
 }
 ;
+
+// The Hero Section
+var socialMediaIconObserver = new IntersectionObserver(function (entries) {
+  entries.forEach(function (entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('textShowing');
+    } else {
+      entry.target.classList.remove('textShowing');
+    }
+  });
+});
+var socialMediaIconEl = document.querySelectorAll('.SuperchargedText');
+socialMediaIconEl.forEach(function (el) {
+  return socialMediaIconObserver.observe(el);
+});
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -174,7 +189,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51697" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58016" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

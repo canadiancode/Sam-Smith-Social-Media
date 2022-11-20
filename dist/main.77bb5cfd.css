@@ -76,7 +76,7 @@ p, li, a {
   display: none;
   position: absolute;
   background-color: var(--red);
-  z-index: 2;
+  z-index: 4;
   top: 0;
   left: 0;
   bottom: 0;
@@ -261,6 +261,9 @@ p, li, a {
 .heroSection .heroSectionContent {
   text-align: center;
   padding: 2em;
+  z-index: 2;
+  position: relative;
+  justify-content: center;
 }
 .heroSection .heroSectionContent h1 {
   font-size: 3em;
@@ -268,14 +271,164 @@ p, li, a {
   line-height: 1.3em;
   font-family: "Rubik Microbe", cursive;
 }
-.heroSection .heroSectionContent h1 span {
+.heroSection .heroSectionContent h1 .SuperchargedText {
+  transition: 7s;
+  color: var(--black);
+}
+.heroSection .heroSectionContent h1 .textShowing {
   color: var(--red);
+  text-shadow: 1px 1px 5px var(--black);
 }
 .heroSection .heroSectionContent p {
   font-weight: bold;
   font-size: 1.3em;
   max-width: 600px;
   line-height: 1.5em;
+}
+.heroSection .heroSectionHueDiv {
+  position: absolute;
+  margin: 0 auto;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+}
+.heroSection .heroSectionHueDiv .heroSectionHue {
+  background: radial-gradient(circle, rgba(255, 10, 0, 0.6) 0%, rgba(255, 255, 255, 0.4360337885) 35%);
+  content: "";
+  animation: heroHueBackground 7s ease forwards;
+  height: 100%;
+  width: 100%;
+}
+@keyframes heroHueBackground {
+  0% {
+    width: 10%;
+    height: 10%;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+  }
+}
+.heroSection .backgroundContainer {
+  position: absolute;
+  display: flex;
+  flex-shrink: 0;
+  min-height: 100%;
+  min-width: 100%;
+}
+.heroSection .backgroundContainer .socialMediaIcon {
+  position: absolute;
+}
+.heroSection .backgroundContainer .FBsocialMediaIcon {
+  top: 33%;
+  right: 20%;
+  animation: FacebookIconFloat 3s infinite ease-in-out;
+  height: 3em;
+}
+.heroSection .backgroundContainer .IGsocialMediaIcon {
+  top: 60%;
+  right: 15%;
+  animation: InstagramIconFloat 2.5s infinite ease-in-out;
+  height: 4.2em;
+}
+.heroSection .backgroundContainer .SnapsocialMediaIcon {
+  transform: scaleX(-1);
+  top: 50%;
+  left: 8%;
+  animation: SnapchatIconFloat 2.8s infinite ease-in-out;
+  height: 5em;
+}
+.heroSection .backgroundContainer .TikToksocialMediaIcon {
+  top: 80%;
+  left: 35%;
+  animation: TikTokIconFloat infinite ease-in-out 2.3s;
+  height: 6em;
+}
+.heroSection .backgroundContainer .TwittersocialMediaIcon {
+  top: 10%;
+  right: 37%;
+  animation: TwitterIconFloat infinite ease-in-out 3.2s;
+  height: 2.5em;
+}
+.heroSection .backgroundContainer .YouTubesocialMediaIcon {
+  top: 22%;
+  left: 20%;
+  animation: YouTubeIconFloat infinite ease-in-out 2.7s;
+  height: 4em;
+}
+
+@keyframes FacebookIconFloat {
+  0% {
+    transform: translateY(0.5em) rotate(20deg);
+  }
+  50% {
+    transform: translateY(-0.5em) rotate(20deg);
+  }
+  100% {
+    transform: translateY(0.5em) rotate(20deg);
+  }
+}
+@keyframes InstagramIconFloat {
+  0% {
+    transform: translateY(0.5em) rotate(-12deg);
+  }
+  50% {
+    transform: translateY(-0.5em) rotate(-12deg);
+  }
+  100% {
+    transform: translateY(0.5em) rotate(-12deg);
+  }
+}
+@keyframes SnapchatIconFloat {
+  0% {
+    transform: translateY(0.5em) scaleX(-1) rotate(24deg);
+  }
+  50% {
+    transform: translateY(-0.5em) scaleX(-1) rotate(24deg);
+  }
+  100% {
+    transform: translateY(0.5em) scaleX(-1) rotate(24deg);
+  }
+}
+@keyframes TikTokIconFloat {
+  0% {
+    transform: translateY(0.5em) rotate(-8deg);
+  }
+  50% {
+    transform: translateY(-0.5em) rotate(-8deg);
+  }
+  100% {
+    transform: translateY(0.5em) rotate(-8deg);
+  }
+}
+@keyframes TwitterIconFloat {
+  0% {
+    transform: translateY(0.5em) rotate(5deg);
+  }
+  50% {
+    transform: translateY(-0.5em) rotate(5deg);
+  }
+  100% {
+    transform: translateY(0.5em) rotate(5deg);
+  }
+}
+@keyframes YouTubeIconFloat {
+  0% {
+    transform: translateY(0.5em) rotate(240deg);
+  }
+  50% {
+    transform: translateY(-0.5em) rotate(240deg);
+  }
+  100% {
+    transform: translateY(0.5em) rotate(240deg);
+  }
 }
 
 /*# sourceMappingURL=/main.77bb5cfd.css.map */

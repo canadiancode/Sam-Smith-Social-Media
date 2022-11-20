@@ -29,3 +29,16 @@ function closeMobileSection() {
     hamburgerButtonClose.style.transform = 'scale(0%) rotate(900deg)';
 };
 
+
+// The Hero Section
+const socialMediaIconObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('textShowing');
+        } else {
+            entry.target.classList.remove('textShowing');
+        }
+    });
+});
+const socialMediaIconEl = document.querySelectorAll('.SuperchargedText');
+socialMediaIconEl.forEach((el) => socialMediaIconObserver.observe(el));
