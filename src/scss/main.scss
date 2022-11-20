@@ -1,3 +1,200 @@
-h1 {
-    color: red;
+:root {
+    --red: #e63946;
+    --darkWhite: #f1faee;
+    --lightblue: #a8dadc;
+    --mildBlue: #457b9d;
+    --darkBlue: #1d3557;
+    --white: white;
+    --black: black;
+    --buttonBorderRadius: 20px;
+    --transitionDuration: 0.5s;
+}
+
+* {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// Header --Section
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-direction: row;
+    height: 9em;
+    padding: 2em;
+    max-width: 70em;
+    margin: 0 auto;
+    
+    // For the mobile pop-up window
+    // open pop-up for mobile
+    .hamburgerMenu {
+        height: 100%;
+        display: flex;
+        align-content: center;
+        align-items: center;
+        .hamburgerButtonOpen {
+            height: 1em;
+            font-size: 2em;
+            border: none;
+            background: none;
+            text-shadow: 1px 1px var(--red);
+            cursor: pointer;
+            transition-duration: var(--transitionDuration);
+            &:hover {
+                transform: scale(1.05);
+                color: var(--red);
+                text-shadow: 1px 1px var(--black);
+            }
+        }
+        @media screen and (min-width: 850px) {
+            display: block;
+        }
+        button {
+            height: 1em;
+            font-size: 2em;
+            border: none;
+            background: none;
+            text-shadow: 1px 1px var(--red);
+            cursor: pointer;
+            transition-duration: var(--transitionDuration);
+            &:hover {
+                transform: scale(1.05);
+                color: var(--red);
+                text-shadow: 1px 1px var(--black);
+            }
+        }
+    }
+    //close the pop-up for mobile 
+    .mobileSecton {
+        display: none;
+        position: absolute;
+        background-color: var(--red);
+        z-index: 2;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        height: auto;
+        @media screen and (max-width: 850px) {
+            display: none;
+        }
+        .hamburgerMenu {
+            height: auto;
+            display: flex;
+            align-content: center;
+            align-items: center;
+            .hamburgerButtonOpen {
+                height: 1em;
+                font-size: 2em;
+                border: none;
+                background: none;
+                text-shadow: 1px 1px var(--red);
+                cursor: pointer;
+                transition-duration: var(--transitionDuration);
+                &:hover {
+                    transform: scale(1.05);
+                    color: var(--red);
+                    text-shadow: 1px 1px var(--black);
+                }
+            }
+            @media screen and (min-width: 850px) {
+                display: none;
+            }
+            button {
+                height: 1em;
+                font-size: 2em;
+                border: none;
+                background: none;
+                text-shadow: 1px 1px var(--red);
+                cursor: pointer;
+                transition-duration: var(--transitionDuration);
+                &:hover {
+                    transform: scale(1.05);
+                    color: var(--red);
+                    text-shadow: 1px 1px var(--black);
+                }
+            }
+        }
+    }
+
+    // for the desktop header
+    .leftSide {
+        display: flex;
+        flex-direction: row;
+        .logoContainer {
+            img {
+                height: 100%;
+            }
+        }
+        ul {
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+            align-content: center;
+            align-items: center;
+            @media screen and (max-width: 850px) {
+                display: none;
+            }
+            a {
+                text-decoration: none;
+                list-style: none;
+                align-content: center;
+                height: fit-content;
+                margin-left: 2em;
+                color: var(--darkBlue);
+                transition-duration: var(--transitionDuration);
+                &:hover {
+                    color: var(--red);
+                }
+                @media screen and (max-width: 900px) {
+                    & {
+                        margin-left: 1em;
+                    }
+                }
+            }
+        }
+    }
+    .rightSide {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .socialMediaDiv {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            @media screen and (max-width: 850px) {
+                display: none;
+            }
+            a {
+                margin-right: 1em;
+                padding: 0;
+                img {
+                    height: 2em;
+                    transition-duration: var(--transitionDuration);
+                    &:hover {
+                        filter: invert(31%) sepia(84%) saturate(4515%) hue-rotate(340deg) brightness(98%) contrast(83%);
+                    }
+                }
+            }
+        }
+        .CTAbutton {
+            button {
+                height: 3em;
+                width: 9em;
+                background-color: var(--red);
+                color: var(--darkWhite);
+                border: none;
+                border-radius: var(--buttonBorderRadius);
+                margin-bottom: 0.2em;
+                cursor: pointer;
+                transition-duration: var(--transitionDuration);
+                &:hover {
+                    transform: scale(1.01);
+                    box-shadow: 2px 5px 15px -3px var(--black);
+                }
+            }
+        }
+    }
 }

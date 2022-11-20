@@ -1,5 +1,201 @@
-h1 {
-  color: red;
+:root {
+  --red: #e63946;
+  --darkWhite: #f1faee;
+  --lightblue: #a8dadc;
+  --mildBlue: #457b9d;
+  --darkBlue: #1d3557;
+  --white: white;
+  --black: black;
+  --buttonBorderRadius: 20px;
+  --transitionDuration: 0.5s;
+}
+
+* {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex-direction: row;
+  height: 9em;
+  padding: 2em;
+  max-width: 70em;
+  margin: 0 auto;
+}
+.header .hamburgerMenu {
+  height: 100%;
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+.header .hamburgerMenu .hamburgerButtonOpen {
+  height: 1em;
+  font-size: 2em;
+  border: none;
+  background: none;
+  text-shadow: 1px 1px var(--red);
+  cursor: pointer;
+  transition-duration: var(--transitionDuration);
+}
+.header .hamburgerMenu .hamburgerButtonOpen:hover {
+  transform: scale(1.05);
+  color: var(--red);
+  text-shadow: 1px 1px var(--black);
+}
+@media screen and (min-width: 850px) {
+  .header .hamburgerMenu {
+    display: block;
+  }
+}
+.header .hamburgerMenu button {
+  height: 1em;
+  font-size: 2em;
+  border: none;
+  background: none;
+  text-shadow: 1px 1px var(--red);
+  cursor: pointer;
+  transition-duration: var(--transitionDuration);
+}
+.header .hamburgerMenu button:hover {
+  transform: scale(1.05);
+  color: var(--red);
+  text-shadow: 1px 1px var(--black);
+}
+.header .mobileSecton {
+  display: none;
+  position: absolute;
+  background-color: var(--red);
+  z-index: 2;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: auto;
+}
+@media screen and (max-width: 850px) {
+  .header .mobileSecton {
+    display: none;
+  }
+}
+.header .mobileSecton .hamburgerMenu {
+  height: auto;
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+.header .mobileSecton .hamburgerMenu .hamburgerButtonOpen {
+  height: 1em;
+  font-size: 2em;
+  border: none;
+  background: none;
+  text-shadow: 1px 1px var(--red);
+  cursor: pointer;
+  transition-duration: var(--transitionDuration);
+}
+.header .mobileSecton .hamburgerMenu .hamburgerButtonOpen:hover {
+  transform: scale(1.05);
+  color: var(--red);
+  text-shadow: 1px 1px var(--black);
+}
+@media screen and (min-width: 850px) {
+  .header .mobileSecton .hamburgerMenu {
+    display: none;
+  }
+}
+.header .mobileSecton .hamburgerMenu button {
+  height: 1em;
+  font-size: 2em;
+  border: none;
+  background: none;
+  text-shadow: 1px 1px var(--red);
+  cursor: pointer;
+  transition-duration: var(--transitionDuration);
+}
+.header .mobileSecton .hamburgerMenu button:hover {
+  transform: scale(1.05);
+  color: var(--red);
+  text-shadow: 1px 1px var(--black);
+}
+.header .leftSide {
+  display: flex;
+  flex-direction: row;
+}
+.header .leftSide .logoContainer img {
+  height: 100%;
+}
+.header .leftSide ul {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  align-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 850px) {
+  .header .leftSide ul {
+    display: none;
+  }
+}
+.header .leftSide ul a {
+  text-decoration: none;
+  list-style: none;
+  align-content: center;
+  height: fit-content;
+  margin-left: 2em;
+  color: var(--darkBlue);
+  transition-duration: var(--transitionDuration);
+}
+.header .leftSide ul a:hover {
+  color: var(--red);
+}
+@media screen and (max-width: 900px) {
+  .header .leftSide ul a {
+    margin-left: 1em;
+  }
+}
+.header .rightSide {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.header .rightSide .socialMediaDiv {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+@media screen and (max-width: 850px) {
+  .header .rightSide .socialMediaDiv {
+    display: none;
+  }
+}
+.header .rightSide .socialMediaDiv a {
+  margin-right: 1em;
+  padding: 0;
+}
+.header .rightSide .socialMediaDiv a img {
+  height: 2em;
+  transition-duration: var(--transitionDuration);
+}
+.header .rightSide .socialMediaDiv a img:hover {
+  filter: invert(31%) sepia(84%) saturate(4515%) hue-rotate(340deg) brightness(98%) contrast(83%);
+}
+.header .rightSide .CTAbutton button {
+  height: 3em;
+  width: 9em;
+  background-color: var(--red);
+  color: var(--darkWhite);
+  border: none;
+  border-radius: var(--buttonBorderRadius);
+  margin-bottom: 0.2em;
+  cursor: pointer;
+  transition-duration: var(--transitionDuration);
+}
+.header .rightSide .CTAbutton button:hover {
+  transform: scale(1.01);
+  box-shadow: 2px 5px 15px -3px var(--black);
 }
 
 /*# sourceMappingURL=/main.77bb5cfd.css.map */
