@@ -1,4 +1,4 @@
-// header --Section
+// The Header --Section
 // get variables for mobile header pop-up
 const hamburgerButtonOpen = document.querySelector('.hamburgerButtonOpen');
 const hamburgerButtonClose = document.querySelector('.hamburgerButtonClose');

@@ -17,6 +17,14 @@
   box-sizing: border-box;
 }
 
+h2, h3, h4, h5, button {
+  font-family: "Nunito Sans", sans-serif;
+}
+
+p, li, a {
+  font-family: "Kanit", sans-serif;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -34,8 +42,10 @@
   align-items: center;
 }
 .header .hamburgerMenu .hamburgerButtonOpen {
+  display: flex;
+  align-items: center;
   height: 1em;
-  font-size: 2em;
+  font-size: 4em;
   border: none;
   background: none;
   text-shadow: 1px 1px var(--red);
@@ -238,6 +248,34 @@
 .header .rightSide .CTAbutton button:hover {
   transform: scale(1.02) translate(-1px, -1px);
   box-shadow: 3px 5px 0px 0px var(--black);
+}
+
+.heroSection {
+  height: 34em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.heroSection .heroSectionContent {
+  text-align: center;
+  padding: 2em;
+}
+.heroSection .heroSectionContent h1 {
+  font-size: 3em;
+  margin-bottom: 1em;
+  line-height: 1.3em;
+  font-family: "Rubik Microbe", cursive;
+}
+.heroSection .heroSectionContent h1 span {
+  color: var(--red);
+}
+.heroSection .heroSectionContent p {
+  font-weight: bold;
+  font-size: 1.3em;
+  max-width: 600px;
+  line-height: 1.5em;
 }
 
 /*# sourceMappingURL=/main.77bb5cfd.css.map */

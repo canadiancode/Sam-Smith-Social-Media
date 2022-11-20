@@ -118,7 +118,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"script.js":[function(require,module,exports) {
-// header --Section
+// The Header --Section
 // get variables for mobile header pop-up
 var hamburgerButtonOpen = document.querySelector('.hamburgerButtonOpen');
 var hamburgerButtonClose = document.querySelector('.hamburgerButtonClose');

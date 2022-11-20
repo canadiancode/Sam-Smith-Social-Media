@@ -17,6 +17,14 @@
     box-sizing: border-box;
 }
 
+h2, h3, h4, h5, button {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+p, li, a  {
+    font-family: 'Kanit', sans-serif;
+}
+
 // Header --Section
 .header {
     display: flex;
@@ -29,15 +37,16 @@
     margin: 0 auto;
 
     // For the mobile pop-up window
-    // open pop-up for mobile
     .hamburgerMenu {
         height: 100%;
         display: flex;
         align-content: center;
         align-items: center;
         .hamburgerButtonOpen {
+            display: flex;
+            align-items: center; 
             height: 1em;
-            font-size: 2em;
+            font-size: 4em;
             border: none;
             background: none;
             text-shadow: 1px 1px var(--red);
@@ -63,7 +72,7 @@
             transition-duration: var(--transitionDuration);
         }
     }
-    //close the pop-up for mobile 
+    // the left-side panel for the mobile header 
     .mobileSecton {
         display: none;
         position: absolute;
@@ -239,4 +248,38 @@
             }
         }
     }
+}
+
+// The Hero --Section
+.heroSection {
+    height: 34em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+
+    // hero section text
+    .heroSectionContent {
+        text-align: center;
+        padding: 2em;
+        h1 {
+            font-size: 3em;
+            margin-bottom: 1em;
+            line-height: 1.3em;
+            font-family: 'Rubik Microbe', cursive;
+            span {
+                color: var(--red);
+            }
+        }
+        p {
+            font-weight: bold;
+            font-size: 1.3em;
+            max-width: 600px;
+            line-height: 1.5em;
+        }
+    }
+
+    // hero section background
+
 }
