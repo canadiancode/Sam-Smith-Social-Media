@@ -118,7 +118,37 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"script.js":[function(require,module,exports) {
+// header --Section
+// get variables for mobile header pop-up
+var hamburgerButtonOpen = document.querySelector('.hamburgerButtonOpen');
+var hamburgerButtonClose = document.querySelector('.hamburgerButtonClose');
+var mobileSecton = document.querySelector('.mobileSecton');
 
+// oepn the mobile header
+hamburgerButtonOpen.addEventListener('click', openMobileSection);
+function openMobileSection() {
+  mobileSecton.style.transform = 'translateX(0%)';
+  mobileSecton.style.clipPath = 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)';
+  hamburgerButtonOpen.style.transform = 'scale(0%) rotate(900deg)';
+  hamburgerButtonClose.style.transform = 'scale(1) rotate(0deg)';
+}
+;
+
+//close the mobile header
+hamburgerButtonClose.addEventListener('click', closeMobileSection);
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') {
+    closeMobileSection();
+  }
+  ;
+});
+function closeMobileSection() {
+  mobileSecton.style.transform = 'translateX(-120%)';
+  mobileSecton.style.clipPath = 'polygon(0 0, 9% 91%, 100% 100%, 0% 100%)';
+  hamburgerButtonOpen.style.transform = 'scale(1) rotate(0deg)';
+  hamburgerButtonClose.style.transform = 'scale(0%) rotate(900deg)';
+}
+;
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -144,7 +174,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62173" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51697" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

@@ -39,6 +39,7 @@
   border: none;
   background: none;
   text-shadow: 1px 1px var(--red);
+  z-index: 2;
   cursor: pointer;
   transition-duration: var(--transitionDuration);
 }
@@ -49,7 +50,7 @@
 }
 @media screen and (min-width: 850px) {
   .header .hamburgerMenu {
-    display: block;
+    display: none;
   }
 }
 .header .hamburgerMenu button {
@@ -61,11 +62,6 @@
   cursor: pointer;
   transition-duration: var(--transitionDuration);
 }
-.header .hamburgerMenu button:hover {
-  transform: scale(1.05);
-  color: var(--red);
-  text-shadow: 1px 1px var(--black);
-}
 .header .mobileSecton {
   display: none;
   position: absolute;
@@ -75,10 +71,16 @@
   left: 0;
   bottom: 0;
   height: auto;
+  width: 70%;
+  max-width: 300px;
+  box-shadow: inset -6px 0px 24px 10px var(--black);
 }
 @media screen and (max-width: 850px) {
   .header .mobileSecton {
-    display: none;
+    display: block;
+    transform: translateX(-120%);
+    transition: var(--transitionDuration) ease-in-out;
+    clip-path: polygon(0 0, 9% 91%, 100% 100%, 0% 100%);
   }
 }
 .header .mobileSecton .hamburgerMenu {
@@ -106,26 +108,65 @@
     display: none;
   }
 }
+.header .mobileSecton .hamburgerMenu .hamburgerButtonClose {
+  height: 3em;
+  margin-left: 1em;
+  transform: scale(0%) rotate(900deg);
+}
 .header .mobileSecton .hamburgerMenu button {
   height: 1em;
   font-size: 2em;
   border: none;
   background: none;
-  text-shadow: 1px 1px var(--red);
+  text-shadow: 1px 1px var(--white);
   cursor: pointer;
   transition-duration: var(--transitionDuration);
 }
-.header .mobileSecton .hamburgerMenu button:hover {
-  transform: scale(1.05);
-  color: var(--red);
-  text-shadow: 1px 1px var(--black);
+.header .mobileSecton .mobileitems a {
+  text-decoration: none;
+}
+.header .mobileSecton .mobileitems a li {
+  list-style: none;
+  margin-left: 2em;
+  margin-bottom: 1.5em;
+  color: var(--white);
+  text-shadow: 1px 1px 1px var(--black);
+  font-size: larger;
+}
+.header .mobileSecton .mobileSocial {
+  position: absolute;
+  bottom: 5%;
+}
+.header .mobileSecton .mobileSocial .mobileSocialIconContainer {
+  height: 100%;
+  position: relative;
+  padding-right: 1em;
+  padding-left: 2.5em;
+}
+.header .mobileSecton .mobileSocial .mobileSocialIconContainer a {
+  margin-right: 5px;
+}
+.header .mobileSecton .mobileSocial .mobileSocialIconContainer a .socialIcon {
+  height: 2.5em;
+}
+@keyframes rotateLogo {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
 }
 .header .leftSide {
   display: flex;
   flex-direction: row;
 }
+.header .leftSide .logoContainer {
+  height: 100%;
+}
 .header .leftSide .logoContainer img {
   height: 100%;
+  animation: rotateLogo 20s infinite linear;
 }
 .header .leftSide ul {
   display: flex;
@@ -192,10 +233,11 @@
   margin-bottom: 0.2em;
   cursor: pointer;
   transition-duration: var(--transitionDuration);
+  transform: scale(1) translate(0px, 0px);
 }
 .header .rightSide .CTAbutton button:hover {
-  transform: scale(1.01);
-  box-shadow: 2px 5px 15px -3px var(--black);
+  transform: scale(1.02) translate(-1px, -1px);
+  box-shadow: 3px 5px 0px 0px var(--black);
 }
 
 /*# sourceMappingURL=/main.77bb5cfd.css.map */

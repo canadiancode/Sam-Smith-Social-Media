@@ -27,7 +27,7 @@
     padding: 2em;
     max-width: 70em;
     margin: 0 auto;
-    
+
     // For the mobile pop-up window
     // open pop-up for mobile
     .hamburgerMenu {
@@ -41,6 +41,7 @@
             border: none;
             background: none;
             text-shadow: 1px 1px var(--red);
+            z-index: 2;
             cursor: pointer;
             transition-duration: var(--transitionDuration);
             &:hover {
@@ -50,7 +51,7 @@
             }
         }
         @media screen and (min-width: 850px) {
-            display: block;
+            display: none;
         }
         button {
             height: 1em;
@@ -60,11 +61,6 @@
             text-shadow: 1px 1px var(--red);
             cursor: pointer;
             transition-duration: var(--transitionDuration);
-            &:hover {
-                transform: scale(1.05);
-                color: var(--red);
-                text-shadow: 1px 1px var(--black);
-            }
         }
     }
     //close the pop-up for mobile 
@@ -77,8 +73,14 @@
         left: 0;
         bottom: 0;
         height: auto;
+        width: 70%;
+        max-width: 300px;
+        box-shadow: inset -6px 0px 24px 10px var(--black);
         @media screen and (max-width: 850px) {
-            display: none;
+            display: block;
+            transform: translateX(-120%);
+            transition: var(--transitionDuration) ease-in-out;
+            clip-path: polygon(0 0, 9% 91%, 100% 100%, 0% 100%);
         }
         .hamburgerMenu {
             height: auto;
@@ -102,30 +104,69 @@
             @media screen and (min-width: 850px) {
                 display: none;
             }
+            .hamburgerButtonClose {
+                height: 3em;
+                margin-left: 1em;
+                transform: scale(0%) rotate(900deg);
+            }
             button {
                 height: 1em;
                 font-size: 2em;
                 border: none;
                 background: none;
-                text-shadow: 1px 1px var(--red);
+                text-shadow: 1px 1px var(--white);
                 cursor: pointer;
                 transition-duration: var(--transitionDuration);
-                &:hover {
-                    transform: scale(1.05);
-                    color: var(--red);
-                    text-shadow: 1px 1px var(--black);
+            }
+        }
+        .mobileitems {
+            a {
+                text-decoration: none;
+                li {
+                    list-style: none;
+                    margin-left: 2em;
+                    margin-bottom: 1.5em;
+                    color: var(--white);
+                    text-shadow: 1px 1px 1px var(--black);
+                    font-size: larger;
+                }
+            }
+        }
+        .mobileSocial {
+            position: absolute;
+            bottom: 5%;
+            .mobileSocialIconContainer {
+                height: 100%;
+                position: relative;
+                padding-right: 1em;
+                padding-left: 2.5em;
+                a {
+                    margin-right: 5px;
+                    .socialIcon {
+                        height: 2.5em;
+                    }
                 }
             }
         }
     }
+    @keyframes rotateLogo {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(-360deg);
+        }
+    };
 
     // for the desktop header
     .leftSide {
         display: flex;
         flex-direction: row;
         .logoContainer {
+            height: 100%;
             img {
                 height: 100%;
+                animation: rotateLogo 20s infinite linear;
             }
         }
         ul {
@@ -190,9 +231,10 @@
                 margin-bottom: 0.2em;
                 cursor: pointer;
                 transition-duration: var(--transitionDuration);
+                transform: scale(1) translate(0px, 0px);
                 &:hover {
-                    transform: scale(1.01);
-                    box-shadow: 2px 5px 15px -3px var(--black);
+                    transform: scale(1.02) translate(-1px, -1px);
+                    box-shadow: 3px 5px 0px 0px var(--black);
                 }
             }
         }
