@@ -330,19 +330,8 @@ p, li, a  {
         min-width: 100%;
         .socialMediaIcon {
             position: absolute;
+            transition: var(--transitionDuration);
         }
-    
-        // Parallax section
-        .socialIconLayerOne {
-    
-        }
-        .socialIconLayerTwo {
-    
-        }
-        .socialIconLayerThree {
-    
-        }
-    
         .FBsocialMediaIcon {
             top: 33%;
             right: 20%;
@@ -448,4 +437,13 @@ p, li, a  {
     100% {
         transform: translateY(0.5em) rotate(240deg);
     }
+}
+
+.removeSocialIcons {
+    display: none;
+}
+
+// Services --Section
+.ourServicesSection {
+    height: 45em;
 }

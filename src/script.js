@@ -31,7 +31,7 @@ function closeMobileSection() {
 
 
 // The Hero Section
-const socialMediaIconObserver = new IntersectionObserver((entries) => {
+const heroSectionTextObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('textShowing');
@@ -40,5 +40,38 @@ const socialMediaIconObserver = new IntersectionObserver((entries) => {
         }
     });
 });
-const socialMediaIconEl = document.querySelectorAll('.SuperchargedText');
-socialMediaIconEl.forEach((el) => socialMediaIconObserver.observe(el));
+const heroSectionTextEl = document.querySelectorAll('.SuperchargedText');
+heroSectionTextEl.forEach((el) => heroSectionTextObserver.observe(el));
+
+// Icon Parallax code
+
+// Get all the elements to be parallaxed
+const parallaxElements = document.querySelectorAll('.socialMediaIcon')
+
+// The parallax function
+window.addEventListener('scroll', () => {
+  
+    let socialMediaIcons = document.querySelectorAll('.socialMediaIcon');
+        
+    socialMediaIcons.forEach((icon) => {
+
+      let rect = icon.getBoundingClientRect();
+      let progress = 80 *  rect.y / window.innerHeight;
+
+      console.log(progress);
+               
+      icon.style.top = `${progress}%`;
+
+    });
+});
+
+const heroSocialIconsObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+        } else {
+            entry.target.classList.add('removeSocialIcons');
+        }
+    });
+});
+const heroSocialIconEl = document.querySelectorAll('.socialMediaIcon');
+heroSocialIconEl.forEach((el) => heroSocialIconsObserver.observe(el));

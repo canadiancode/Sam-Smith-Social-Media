@@ -325,6 +325,7 @@ p, li, a {
 }
 .heroSection .backgroundContainer .socialMediaIcon {
   position: absolute;
+  transition: var(--transitionDuration);
 }
 .heroSection .backgroundContainer .FBsocialMediaIcon {
   top: 33%;
@@ -429,6 +430,13 @@ p, li, a {
   100% {
     transform: translateY(0.5em) rotate(240deg);
   }
+}
+.removeSocialIcons {
+  display: none;
+}
+
+.ourServicesSection {
+  height: 45em;
 }
 
 /*# sourceMappingURL=/main.77bb5cfd.css.map */

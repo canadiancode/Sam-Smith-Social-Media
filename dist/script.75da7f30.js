@@ -151,7 +151,7 @@ function closeMobileSection() {
 ;
 
 // The Hero Section
-var socialMediaIconObserver = new IntersectionObserver(function (entries) {
+var heroSectionTextObserver = new IntersectionObserver(function (entries) {
   entries.forEach(function (entry) {
     if (entry.isIntersecting) {
       entry.target.classList.add('textShowing');
@@ -160,9 +160,36 @@ var socialMediaIconObserver = new IntersectionObserver(function (entries) {
     }
   });
 });
-var socialMediaIconEl = document.querySelectorAll('.SuperchargedText');
-socialMediaIconEl.forEach(function (el) {
-  return socialMediaIconObserver.observe(el);
+var heroSectionTextEl = document.querySelectorAll('.SuperchargedText');
+heroSectionTextEl.forEach(function (el) {
+  return heroSectionTextObserver.observe(el);
+});
+
+// Icon Parallax code
+
+// Get all the elements to be parallaxed
+var parallaxElements = document.querySelectorAll('.socialMediaIcon');
+
+// The parallax function
+window.addEventListener('scroll', function () {
+  var socialMediaIcons = document.querySelectorAll('.socialMediaIcon');
+  socialMediaIcons.forEach(function (icon) {
+    var rect = icon.getBoundingClientRect();
+    var progress = 80 * rect.y / window.innerHeight;
+    console.log(progress);
+    icon.style.top = "".concat(progress, "%");
+  });
+});
+var heroSocialIconsObserver = new IntersectionObserver(function (entries) {
+  entries.forEach(function (entry) {
+    if (entry.isIntersecting) {} else {
+      entry.target.classList.add('removeSocialIcons');
+    }
+  });
+});
+var heroSocialIconEl = document.querySelectorAll('.socialMediaIcon');
+heroSocialIconEl.forEach(function (el) {
+  return heroSocialIconsObserver.observe(el);
 });
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -189,7 +216,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58016" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64274" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
