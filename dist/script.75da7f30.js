@@ -150,7 +150,7 @@ function closeMobileSection() {
 }
 ;
 
-// The Hero Section
+// The Hero --Section for the text color change 
 var heroSectionTextObserver = new IntersectionObserver(function (entries) {
   entries.forEach(function (entry) {
     if (entry.isIntersecting) {
@@ -166,7 +166,6 @@ heroSectionTextEl.forEach(function (el) {
 });
 
 // Icon Parallax code
-
 // Get all the elements to be parallaxed
 var parallaxElements = document.querySelectorAll('.socialMediaIcon');
 
@@ -176,10 +175,11 @@ window.addEventListener('scroll', function () {
   socialMediaIcons.forEach(function (icon) {
     var rect = icon.getBoundingClientRect();
     var progress = 80 * rect.y / window.innerHeight;
-    console.log(progress);
     icon.style.top = "".concat(progress, "%");
   });
 });
+
+// Removing the floatingsocial media icons after scrolling down the page
 var heroSocialIconsObserver = new IntersectionObserver(function (entries) {
   entries.forEach(function (entry) {
     if (entry.isIntersecting) {} else {
@@ -190,6 +190,38 @@ var heroSocialIconsObserver = new IntersectionObserver(function (entries) {
 var heroSocialIconEl = document.querySelectorAll('.socialMediaIcon');
 heroSocialIconEl.forEach(function (el) {
   return heroSocialIconsObserver.observe(el);
+});
+
+// animation for the services --Section
+
+// Animation for the icon moving left in the services section
+var servicesSectionRightIntersectionOberver = new IntersectionObserver(function (entries) {
+  entries.forEach(function (entry) {
+    if (entry.isIntersecting) {
+      setTimeout(function () {
+        entry.target.classList.add('rightServiceShowing');
+      }, "500");
+    }
+  });
+});
+var servicesSectionIconRightElement = document.querySelectorAll('.leftToRight');
+servicesSectionIconRightElement.forEach(function (el) {
+  return servicesSectionRightIntersectionOberver.observe(el);
+});
+
+// Animation for the icon moving right in the services section
+var servicesSectionLeftIntersectionObserver = new IntersectionObserver(function (entries) {
+  entries.forEach(function (entry) {
+    if (entry.isIntersecting) {
+      setTimeout(function () {
+        entry.target.classList.add('leftServicesShowing');
+      }, "500");
+    }
+  });
+});
+var servicesSectionIconLeftElement = document.querySelectorAll('.rightToLeft');
+servicesSectionIconLeftElement.forEach(function (el) {
+  return servicesSectionLeftIntersectionObserver.observe(el);
 });
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -216,7 +248,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64274" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60053" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

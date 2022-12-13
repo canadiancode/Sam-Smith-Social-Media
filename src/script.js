@@ -15,13 +15,11 @@ function openMobileSection() {
 
 //close the mobile header
 hamburgerButtonClose.addEventListener('click', closeMobileSection);
-
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
         closeMobileSection();
     };
 });
-
 function closeMobileSection() {
     mobileSecton.style.transform = 'translateX(-120%)';
     mobileSecton.style.clipPath = 'polygon(0 0, 9% 91%, 100% 100%, 0% 100%)';
@@ -30,7 +28,7 @@ function closeMobileSection() {
 };
 
 
-// The Hero Section
+// The Hero --Section for the text color change 
 const heroSectionTextObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -44,7 +42,6 @@ const heroSectionTextEl = document.querySelectorAll('.SuperchargedText');
 heroSectionTextEl.forEach((el) => heroSectionTextObserver.observe(el));
 
 // Icon Parallax code
-
 // Get all the elements to be parallaxed
 const parallaxElements = document.querySelectorAll('.socialMediaIcon')
 
@@ -58,13 +55,12 @@ window.addEventListener('scroll', () => {
       let rect = icon.getBoundingClientRect();
       let progress = 80 *  rect.y / window.innerHeight;
 
-      console.log(progress);
-               
       icon.style.top = `${progress}%`;
 
     });
 });
 
+// Removing the floatingsocial media icons after scrolling down the page
 const heroSocialIconsObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -75,3 +71,32 @@ const heroSocialIconsObserver = new IntersectionObserver((entries) => {
 });
 const heroSocialIconEl = document.querySelectorAll('.socialMediaIcon');
 heroSocialIconEl.forEach((el) => heroSocialIconsObserver.observe(el));
+
+// animation for the services --Section
+
+// Animation for the icon moving left in the services section
+const servicesSectionRightIntersectionOberver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            setTimeout(() => {
+                entry.target.classList.add('rightServiceShowing');
+            }, "500")
+        }
+    });
+});
+const servicesSectionIconRightElement = document.querySelectorAll('.leftToRight');
+servicesSectionIconRightElement.forEach((el) => servicesSectionRightIntersectionOberver.observe(el));
+
+// Animation for the icon moving right in the services section
+const servicesSectionLeftIntersectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            setTimeout(() => {
+                entry.target.classList.add('leftServicesShowing');
+            }, "500")
+        }
+    });
+});
+const servicesSectionIconLeftElement = document.querySelectorAll('.rightToLeft');
+servicesSectionIconLeftElement.forEach((el) => servicesSectionLeftIntersectionObserver.observe(el));
+

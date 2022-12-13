@@ -1,3 +1,76 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
 :root {
   --red: #e63946;
   --darkWhite: #f1faee;
@@ -45,7 +118,7 @@ p, li, a {
   display: flex;
   align-items: center;
   height: 1em;
-  font-size: 4em;
+  font-size: 4rem;
   border: none;
   background: none;
   text-shadow: 1px 1px var(--red);
@@ -65,107 +138,12 @@ p, li, a {
 }
 .header .hamburgerMenu button {
   height: 1em;
-  font-size: 2em;
+  font-size: 2rem;
   border: none;
   background: none;
   text-shadow: 1px 1px var(--red);
   cursor: pointer;
   transition-duration: var(--transitionDuration);
-}
-.header .mobileSecton {
-  display: none;
-  position: absolute;
-  background-color: var(--red);
-  z-index: 4;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  height: auto;
-  width: 70%;
-  max-width: 300px;
-  box-shadow: inset -6px 0px 24px 10px var(--black);
-}
-@media screen and (max-width: 850px) {
-  .header .mobileSecton {
-    display: block;
-    transform: translateX(-120%);
-    transition: var(--transitionDuration) ease-in-out;
-    clip-path: polygon(0 0, 9% 91%, 100% 100%, 0% 100%);
-  }
-}
-.header .mobileSecton .hamburgerMenu {
-  height: auto;
-  display: flex;
-  align-content: center;
-  align-items: center;
-}
-.header .mobileSecton .hamburgerMenu .hamburgerButtonOpen {
-  height: 1em;
-  font-size: 2em;
-  border: none;
-  background: none;
-  text-shadow: 1px 1px var(--red);
-  cursor: pointer;
-  transition-duration: var(--transitionDuration);
-}
-.header .mobileSecton .hamburgerMenu .hamburgerButtonOpen:hover {
-  transform: scale(1.05);
-  color: var(--red);
-  text-shadow: 1px 1px var(--black);
-}
-@media screen and (min-width: 850px) {
-  .header .mobileSecton .hamburgerMenu {
-    display: none;
-  }
-}
-.header .mobileSecton .hamburgerMenu .hamburgerButtonClose {
-  height: 3em;
-  margin-left: 1em;
-  transform: scale(0%) rotate(900deg);
-}
-.header .mobileSecton .hamburgerMenu button {
-  height: 1em;
-  font-size: 2em;
-  border: none;
-  background: none;
-  text-shadow: 1px 1px var(--white);
-  cursor: pointer;
-  transition-duration: var(--transitionDuration);
-}
-.header .mobileSecton .mobileitems a {
-  text-decoration: none;
-}
-.header .mobileSecton .mobileitems a li {
-  list-style: none;
-  margin-left: 2em;
-  margin-bottom: 1.5em;
-  color: var(--white);
-  text-shadow: 1px 1px 1px var(--black);
-  font-size: larger;
-}
-.header .mobileSecton .mobileSocial {
-  position: absolute;
-  bottom: 5%;
-}
-.header .mobileSecton .mobileSocial .mobileSocialIconContainer {
-  height: 100%;
-  position: relative;
-  padding-right: 1em;
-  padding-left: 2.5em;
-}
-.header .mobileSecton .mobileSocial .mobileSocialIconContainer a {
-  margin-right: 5px;
-}
-.header .mobileSecton .mobileSocial .mobileSocialIconContainer a .socialIcon {
-  height: 2.5em;
-}
-@keyframes rotateLogo {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(-360deg);
-  }
 }
 .header .leftSide {
   display: flex;
@@ -234,6 +212,7 @@ p, li, a {
   filter: invert(31%) sepia(84%) saturate(4515%) hue-rotate(340deg) brightness(98%) contrast(83%);
 }
 .header .rightSide .CTAbutton button {
+  margin-top: 2.2em;
   height: 3em;
   width: 9em;
   background-color: var(--red);
@@ -244,12 +223,110 @@ p, li, a {
   cursor: pointer;
   transition-duration: var(--transitionDuration);
   transform: scale(1) translate(0px, 0px);
+  margin: 0;
 }
 .header .rightSide .CTAbutton button:hover {
   transform: scale(1.02) translate(-1px, -1px);
   box-shadow: 3px 5px 0px 0px var(--black);
 }
 
+.mobileSecton {
+  display: none;
+  position: absolute;
+  background-color: var(--red);
+  z-index: 4;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 70%;
+  max-width: 300px;
+  box-shadow: inset -6px 0px 24px 10px var(--black);
+}
+@media screen and (max-width: 850px) {
+  .mobileSecton {
+    display: block;
+    transform: translateX(-120%);
+    transition: var(--transitionDuration) ease-in-out;
+    clip-path: polygon(0 0, 9% 91%, 100% 100%, 0% 100%);
+  }
+}
+.mobileSecton .hamburgerMenu {
+  height: auto;
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+.mobileSecton .hamburgerMenu .hamburgerButtonOpen {
+  height: 1em;
+  font-size: 2rem;
+  border: none;
+  background: none;
+  text-shadow: 1px 1px var(--red);
+  cursor: pointer;
+  transition-duration: var(--transitionDuration);
+}
+.mobileSecton .hamburgerMenu .hamburgerButtonOpen:hover {
+  transform: scale(1.05);
+  color: var(--red);
+  text-shadow: 1px 1px var(--black);
+}
+@media screen and (min-width: 850px) {
+  .mobileSecton .hamburgerMenu {
+    display: none;
+  }
+}
+.mobileSecton .hamburgerMenu .hamburgerButtonClose {
+  height: 3em;
+  margin-left: 1em;
+  transform: scale(0%) rotate(900deg);
+}
+.mobileSecton .hamburgerMenu button {
+  height: 1em;
+  font-size: 2em;
+  border: none;
+  background: none;
+  text-shadow: 1px 1px var(--white);
+  cursor: pointer;
+  transition-duration: var(--transitionDuration);
+}
+.mobileSecton .mobileitems a {
+  text-decoration: none;
+}
+.mobileSecton .mobileitems a li {
+  list-style: none;
+  margin-left: 2em;
+  margin-bottom: 1.5em;
+  color: var(--white);
+  text-shadow: 1px 1px 1px var(--black);
+  font-size: larger;
+}
+.mobileSecton .mobileSocial {
+  position: absolute;
+  bottom: 5%;
+}
+.mobileSecton .mobileSocial .mobileSocialIconContainer {
+  height: 100%;
+  position: relative;
+  padding-right: 1em;
+  padding-left: 1.5em;
+  display: flex;
+  gap: 1em;
+}
+.mobileSecton .mobileSocial .mobileSocialIconContainer a {
+  margin-right: 5px;
+}
+.mobileSecton .mobileSocial .mobileSocialIconContainer a .socialIcon {
+  height: 2.5em;
+}
+
+@keyframes rotateLogo {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
 .heroSection {
   height: 34em;
   display: flex;
@@ -266,7 +343,7 @@ p, li, a {
   justify-content: center;
 }
 .heroSection .heroSectionContent h1 {
-  font-size: 3em;
+  font-size: 3rem;
   margin-bottom: 1em;
   line-height: 1.3em;
   font-family: "Rubik Microbe", cursive;
@@ -281,9 +358,26 @@ p, li, a {
 }
 .heroSection .heroSectionContent p {
   font-weight: bold;
-  font-size: 1.3em;
+  font-size: 1.3rem;
   max-width: 600px;
   line-height: 1.5em;
+}
+.heroSection .heroSectionContent .heroCTAbutton {
+  margin-top: 2.2em;
+  height: 3em;
+  width: 9em;
+  background-color: var(--red);
+  color: var(--darkWhite);
+  border: none;
+  border-radius: var(--buttonBorderRadius);
+  margin-bottom: 0.2em;
+  cursor: pointer;
+  transition-duration: var(--transitionDuration);
+  transform: scale(1) translate(0px, 0px);
+}
+.heroSection .heroSectionContent .heroCTAbutton:hover {
+  transform: scale(1.02) translate(-1px, -1px);
+  box-shadow: 3px 5px 0px 0px var(--black);
 }
 .heroSection .heroSectionHueDiv {
   position: absolute;
@@ -436,7 +530,114 @@ p, li, a {
 }
 
 .ourServicesSection {
-  height: 45em;
+  max-width: 70em;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+.ourServicesSection .ourServicesContentDiv {
+  padding: 0em 3em;
+  width: 50%;
+  max-width: 37em;
+  height: 100%;
+}
+.ourServicesSection .ourServicesContentDiv h3 {
+  margin-bottom: 1em;
+  font-size: 2rem;
+  font-weight: bolder;
+}
+.ourServicesSection .ourServicesContentDiv p {
+  font-weight: bold;
+  font-size: 1.3rem;
+  line-height: 1.5em;
+}
+.ourServicesSection .ourServicesContentDiv button {
+  margin-top: 2.2em;
+  height: 3em;
+  width: 9em;
+  background-color: var(--red);
+  color: var(--darkWhite);
+  border: none;
+  border-radius: var(--buttonBorderRadius);
+  margin-bottom: 0.2em;
+  cursor: pointer;
+  transition-duration: var(--transitionDuration);
+  transform: scale(1) translate(0px, 0px);
+}
+.ourServicesSection .ourServicesContentDiv button:hover {
+  transform: scale(1.02) translate(-1px, -1px);
+  box-shadow: 3px 5px 0px 0px var(--black);
+}
+.ourServicesSection .ourServicesAnimationDiv {
+  width: 50%;
+}
+.ourServicesSection .ourServicesAnimationDiv .ourServicesAnimation {
+  transition: var(--transitionDuration);
+}
+.ourServicesSection .ourServicesAnimationDiv .ourServicesAnimation .serviceSteps {
+  display: flex;
+  align-items: center;
+  transition-duration: 1s;
+}
+.ourServicesSection .ourServicesAnimationDiv .ourServicesAnimation .serviceSteps .servicesStepTitle {
+  font-weight: bolder;
+  color: var(--red);
+  text-shadow: 1px 1px 1px var(--black);
+}
+.ourServicesSection .ourServicesAnimationDiv .ourServicesAnimation .serviceSteps .serviceStepIcon {
+  padding: 1em;
+}
+.ourServicesSection .ourServicesAnimationDiv .ourServicesAnimation .leftToRight {
+  flex-direction: row-reverse;
+}
+.ourServicesSection .ourServicesAnimationDiv .ourServicesAnimation .leftToRight img {
+  transform: translateX(-100%);
+  transition: var(--transitionDuration);
+}
+.ourServicesSection .ourServicesAnimationDiv .ourServicesAnimation .leftToRight p {
+  clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+  transition-duration: var(--transitionDuration);
+}
+.ourServicesSection .ourServicesAnimationDiv .ourServicesAnimation .rightServiceShowing {
+  flex-direction: row-reverse;
+}
+.ourServicesSection .ourServicesAnimationDiv .ourServicesAnimation .rightServiceShowing img {
+  transform: translateX(0%);
+}
+.ourServicesSection .ourServicesAnimationDiv .ourServicesAnimation .rightServiceShowing p {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+.ourServicesSection .ourServicesAnimationDiv .ourServicesAnimation .rightToLeft {
+  flex-direction: row;
+}
+.ourServicesSection .ourServicesAnimationDiv .ourServicesAnimation .rightToLeft img {
+  transform: translateX(100%);
+  transition: var(--transitionDuration);
+}
+.ourServicesSection .ourServicesAnimationDiv .ourServicesAnimation .rightToLeft p {
+  clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+  transition-duration: var(--transitionDuration);
+}
+.ourServicesSection .ourServicesAnimationDiv .ourServicesAnimation .leftServicesShowing {
+  flex-direction: row;
+}
+.ourServicesSection .ourServicesAnimationDiv .ourServicesAnimation .leftServicesShowing img {
+  transform: translateX(0%);
+}
+.ourServicesSection .ourServicesAnimationDiv .ourServicesAnimation .leftServicesShowing p {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+@media screen and (max-width: 900px) {
+  .ourServicesSection {
+    flex-direction: column;
+  }
+  .ourServicesSection .ourServicesContentDiv {
+    width: 100%;
+  }
+  .ourServicesSection .ourServicesAnimationDiv {
+    width: 80%;
+    margin-top: 2.5em;
+  }
 }
 
 /*# sourceMappingURL=/main.77bb5cfd.css.map */

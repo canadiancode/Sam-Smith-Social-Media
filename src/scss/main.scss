@@ -1,3 +1,81 @@
+// CSS reset
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+// Start of the custom CSS code below
+
 :root {
     --red: #e63946;
     --darkWhite: #f1faee;
@@ -8,6 +86,30 @@
     --black: black;
     --buttonBorderRadius: 20px;
     --transitionDuration: 0.5s;
+}
+
+@mixin buttonStyle {
+    margin-top: 2.2em;
+    height: 3em;
+    width: 9em;
+    background-color: var(--red);
+    color: var(--darkWhite);
+    border: none;
+    border-radius: var(--buttonBorderRadius);
+    margin-bottom: 0.2em;
+    cursor: pointer;
+    transition-duration: var(--transitionDuration);
+    transform: scale(1) translate(0px, 0px);
+    &:hover {
+        transform: scale(1.02) translate(-1px, -1px);
+        box-shadow: 3px 5px 0px 0px var(--black);
+    }
+}
+
+@mixin paragraphStyle {
+    font-weight: bold;
+    font-size: 1.3rem;
+    line-height: 1.5em;
 }
 
 * {
@@ -46,7 +148,7 @@ p, li, a  {
             display: flex;
             align-items: center; 
             height: 1em;
-            font-size: 4em;
+            font-size: 4rem;
             border: none;
             background: none;
             text-shadow: 1px 1px var(--red);
@@ -64,7 +166,7 @@ p, li, a  {
         }
         button {
             height: 1em;
-            font-size: 2em;
+            font-size: 2rem;
             border: none;
             background: none;
             text-shadow: 1px 1px var(--red);
@@ -72,100 +174,6 @@ p, li, a  {
             transition-duration: var(--transitionDuration);
         }
     }
-    // the left-side panel for the mobile header 
-    .mobileSecton {
-        display: none;
-        position: absolute;
-        background-color: var(--red);
-        z-index: 4;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        height: auto;
-        width: 70%;
-        max-width: 300px;
-        box-shadow: inset -6px 0px 24px 10px var(--black);
-        @media screen and (max-width: 850px) {
-            display: block;
-            transform: translateX(-120%);
-            transition: var(--transitionDuration) ease-in-out;
-            clip-path: polygon(0 0, 9% 91%, 100% 100%, 0% 100%);
-        }
-        .hamburgerMenu {
-            height: auto;
-            display: flex;
-            align-content: center;
-            align-items: center;
-            .hamburgerButtonOpen {
-                height: 1em;
-                font-size: 2em;
-                border: none;
-                background: none;
-                text-shadow: 1px 1px var(--red);
-                cursor: pointer;
-                transition-duration: var(--transitionDuration);
-                &:hover {
-                    transform: scale(1.05);
-                    color: var(--red);
-                    text-shadow: 1px 1px var(--black);
-                }
-            }
-            @media screen and (min-width: 850px) {
-                display: none;
-            }
-            .hamburgerButtonClose {
-                height: 3em;
-                margin-left: 1em;
-                transform: scale(0%) rotate(900deg);
-            }
-            button {
-                height: 1em;
-                font-size: 2em;
-                border: none;
-                background: none;
-                text-shadow: 1px 1px var(--white);
-                cursor: pointer;
-                transition-duration: var(--transitionDuration);
-            }
-        }
-        .mobileitems {
-            a {
-                text-decoration: none;
-                li {
-                    list-style: none;
-                    margin-left: 2em;
-                    margin-bottom: 1.5em;
-                    color: var(--white);
-                    text-shadow: 1px 1px 1px var(--black);
-                    font-size: larger;
-                }
-            }
-        }
-        .mobileSocial {
-            position: absolute;
-            bottom: 5%;
-            .mobileSocialIconContainer {
-                height: 100%;
-                position: relative;
-                padding-right: 1em;
-                padding-left: 2.5em;
-                a {
-                    margin-right: 5px;
-                    .socialIcon {
-                        height: 2.5em;
-                    }
-                }
-            }
-        }
-    }
-    @keyframes rotateLogo {
-        0% {
-            transform: rotate(0deg);
-        }
-        100% {
-            transform: rotate(-360deg);
-        }
-    };
 
     // for the desktop header
     .leftSide {
@@ -231,24 +239,107 @@ p, li, a  {
         }
         .CTAbutton {
             button {
-                height: 3em;
-                width: 9em;
-                background-color: var(--red);
-                color: var(--darkWhite);
-                border: none;
-                border-radius: var(--buttonBorderRadius);
-                margin-bottom: 0.2em;
-                cursor: pointer;
-                transition-duration: var(--transitionDuration);
-                transform: scale(1) translate(0px, 0px);
-                &:hover {
-                    transform: scale(1.02) translate(-1px, -1px);
-                    box-shadow: 3px 5px 0px 0px var(--black);
+                @include buttonStyle;
+                margin: 0;
+            }
+        }
+    }
+}
+// the left-side panel for the mobile header 
+.mobileSecton {
+    display: none;
+    position: absolute;
+    background-color: var(--red);
+    z-index: 4;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 70%;
+    max-width: 300px;
+    box-shadow: inset -6px 0px 24px 10px var(--black);
+    @media screen and (max-width: 850px) {
+        display: block;
+        transform: translateX(-120%);
+        transition: var(--transitionDuration) ease-in-out;
+        clip-path: polygon(0 0, 9% 91%, 100% 100%, 0% 100%);
+    }
+    .hamburgerMenu {
+        height: auto;
+        display: flex;
+        align-content: center;
+        align-items: center;
+        .hamburgerButtonOpen {
+            height: 1em;
+            font-size: 2rem;
+            border: none;
+            background: none;
+            text-shadow: 1px 1px var(--red);
+            cursor: pointer;
+            transition-duration: var(--transitionDuration);
+            &:hover {
+                transform: scale(1.05);
+                color: var(--red);
+                text-shadow: 1px 1px var(--black);
+            }
+        }
+        @media screen and (min-width: 850px) {
+            display: none;
+        }
+        .hamburgerButtonClose {
+            height: 3em;
+            margin-left: 1em;
+            transform: scale(0%) rotate(900deg);
+        }
+        button {
+            height: 1em;
+            font-size: 2em;
+            border: none;
+            background: none;
+            text-shadow: 1px 1px var(--white);
+            cursor: pointer;
+            transition-duration: var(--transitionDuration);
+        }
+    }
+    .mobileitems {
+        a {
+            text-decoration: none;
+            li {
+                list-style: none;
+                margin-left: 2em;
+                margin-bottom: 1.5em;
+                color: var(--white);
+                text-shadow: 1px 1px 1px var(--black);
+                font-size: larger;
+            }
+        }
+    }
+    .mobileSocial {
+        position: absolute;
+        bottom: 5%;
+        .mobileSocialIconContainer {
+            height: 100%;
+            position: relative;
+            padding-right: 1em;
+            padding-left: 1.5em;
+            display: flex;
+            gap: 1em;
+            a {
+                margin-right: 5px;
+                .socialIcon {
+                    height: 2.5em;
                 }
             }
         }
     }
 }
+@keyframes rotateLogo {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+};
 
 // The Hero --Section
 .heroSection {
@@ -267,7 +358,7 @@ p, li, a  {
         position: relative;
         justify-content: center;
         h1 {
-            font-size: 3em;
+            font-size: 3rem;
             margin-bottom: 1em;
             line-height: 1.3em;
             font-family: 'Rubik Microbe', cursive;
@@ -282,9 +373,12 @@ p, li, a  {
         }
         p {
             font-weight: bold;
-            font-size: 1.3em;
+            font-size: 1.3rem;
             max-width: 600px;
             line-height: 1.5em;
+        }
+        .heroCTAbutton {
+            @include buttonStyle;
         }
     }
 
@@ -438,12 +532,102 @@ p, li, a  {
         transform: translateY(0.5em) rotate(240deg);
     }
 }
-
 .removeSocialIcons {
     display: none;
 }
 
 // Services --Section
 .ourServicesSection {
-    height: 45em;
+    max-width: 70em;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    .ourServicesContentDiv {
+        padding: 0em 3em;
+        width: 50%;
+        max-width: 37em;
+        height: 100%;
+        h3 {
+            margin-bottom: 1em;
+            font-size: 2rem;
+            font-weight: bolder;
+        }
+        p {
+            @include paragraphStyle;
+        }
+        button {
+            @include buttonStyle;
+        }
+    }
+    .ourServicesAnimationDiv {
+        width: 50%;
+        .ourServicesAnimation {
+            transition: var(--transitionDuration);
+            .serviceSteps {
+                display: flex;
+                align-items: center;
+                transition-duration: 1s;
+                .servicesStepTitle {
+                    font-weight: bolder;
+                    color: var(--red);
+                    text-shadow: 1px 1px 1px var(--black);
+                }
+                .serviceStepIcon {
+                    padding: 1em;
+                }
+            }
+            .leftToRight {
+                flex-direction: row-reverse;
+                img {
+                    transform: translateX(-100%);
+                    transition: var(--transitionDuration);
+                }
+                p {
+                    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+                    transition-duration: var(--transitionDuration);
+                }
+            }
+            .rightServiceShowing {
+                flex-direction: row-reverse;
+                img {
+                    transform: translateX(-0%);
+                }
+                p {
+                    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+                }
+            }
+            .rightToLeft {
+                flex-direction: row;
+                img {
+                    transform: translateX(100%);
+                    transition: var(--transitionDuration);
+                }
+                p {
+                    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+                    transition-duration: var(--transitionDuration);
+                }
+            }
+            .leftServicesShowing {
+                flex-direction: row;
+                img {
+                    transform: translateX(0%);
+                }
+                p {
+                    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 900px) {
+        & {
+            flex-direction: column;
+        }
+        .ourServicesContentDiv {
+            width: 100%;
+        }
+        .ourServicesAnimationDiv {
+            width: 80%;
+            margin-top: 2.5em;
+        }
+    }
 }
