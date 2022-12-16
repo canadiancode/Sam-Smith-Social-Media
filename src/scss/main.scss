@@ -343,13 +343,13 @@ p, li, a  {
 
 // The Hero --Section
 .heroSection {
-    height: 34em;
+    min-height: 35em;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     overflow: hidden;
-
+    
     // hero section text
     .heroSectionContent {
         text-align: center;
@@ -381,7 +381,6 @@ p, li, a  {
             @include buttonStyle;
         }
     }
-
     .heroSectionHueDiv {
         position: absolute;
         margin: 0 auto;
@@ -446,7 +445,7 @@ p, li, a  {
             height: 5em;
         }
         .TikToksocialMediaIcon {
-            top: 80%;
+            top: 70%;
             left: 35%;
             animation: TikTokIconFloat infinite ease-in-out 2.3s;
             height: 6em;
@@ -557,77 +556,6 @@ p, li, a  {
         }
         button {
             @include buttonStyle;
-        }
-    }
-    .ourServicesAnimationDiv {
-        width: 50%;
-        .ourServicesAnimation {
-            transition: var(--transitionDuration);
-            .serviceSteps {
-                display: flex;
-                align-items: center;
-                transition-duration: 1s;
-                .servicesStepTitle {
-                    font-weight: bolder;
-                    color: var(--red);
-                    text-shadow: 1px 1px 1px var(--black);
-                }
-                .serviceStepIcon {
-                    padding: 1em;
-                }
-            }
-            .leftToRight {
-                flex-direction: row-reverse;
-                img {
-                    transform: translateX(-100%);
-                    transition: var(--transitionDuration);
-                }
-                p {
-                    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
-                    transition-duration: var(--transitionDuration);
-                }
-            }
-            .rightServiceShowing {
-                flex-direction: row-reverse;
-                img {
-                    transform: translateX(-0%);
-                }
-                p {
-                    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-                }
-            }
-            .rightToLeft {
-                flex-direction: row;
-                img {
-                    transform: translateX(100%);
-                    transition: var(--transitionDuration);
-                }
-                p {
-                    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-                    transition-duration: var(--transitionDuration);
-                }
-            }
-            .leftServicesShowing {
-                flex-direction: row;
-                img {
-                    transform: translateX(0%);
-                }
-                p {
-                    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-                }
-            }
-        }
-    }
-    @media screen and (max-width: 900px) {
-        & {
-            flex-direction: column;
-        }
-        .ourServicesContentDiv {
-            width: 100%;
-        }
-        .ourServicesAnimationDiv {
-            width: 80%;
-            margin-top: 2.5em;
         }
     }
 }

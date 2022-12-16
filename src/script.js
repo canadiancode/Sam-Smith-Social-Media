@@ -53,50 +53,12 @@ window.addEventListener('scroll', () => {
     socialMediaIcons.forEach((icon) => {
 
       let rect = icon.getBoundingClientRect();
-      let progress = 80 *  rect.y / window.innerHeight;
+      let progress = 20 /  rect.y
 
-      icon.style.top = `${progress}%`;
+    //   icon.style.marginTop = `${progress}rem`;
 
     });
 });
-
-// Removing the floatingsocial media icons after scrolling down the page
-const heroSocialIconsObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-        } else {
-            entry.target.classList.add('removeSocialIcons');
-        }
-    });
-});
-const heroSocialIconEl = document.querySelectorAll('.socialMediaIcon');
-heroSocialIconEl.forEach((el) => heroSocialIconsObserver.observe(el));
 
 // animation for the services --Section
-
-// Animation for the icon moving left in the services section
-const servicesSectionRightIntersectionOberver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            setTimeout(() => {
-                entry.target.classList.add('rightServiceShowing');
-            }, "500")
-        }
-    });
-});
-const servicesSectionIconRightElement = document.querySelectorAll('.leftToRight');
-servicesSectionIconRightElement.forEach((el) => servicesSectionRightIntersectionOberver.observe(el));
-
-// Animation for the icon moving right in the services section
-const servicesSectionLeftIntersectionObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            setTimeout(() => {
-                entry.target.classList.add('leftServicesShowing');
-            }, "500")
-        }
-    });
-});
-const servicesSectionIconLeftElement = document.querySelectorAll('.rightToLeft');
-servicesSectionIconLeftElement.forEach((el) => servicesSectionLeftIntersectionObserver.observe(el));
 

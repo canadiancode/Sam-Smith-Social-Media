@@ -328,7 +328,7 @@ p, li, a {
   }
 }
 .heroSection {
-  height: 34em;
+  min-height: 35em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -441,7 +441,7 @@ p, li, a {
   height: 5em;
 }
 .heroSection .backgroundContainer .TikToksocialMediaIcon {
-  top: 80%;
+  top: 70%;
   left: 35%;
   animation: TikTokIconFloat infinite ease-in-out 2.3s;
   height: 6em;
@@ -567,77 +567,6 @@ p, li, a {
 .ourServicesSection .ourServicesContentDiv button:hover {
   transform: scale(1.02) translate(-1px, -1px);
   box-shadow: 3px 5px 0px 0px var(--black);
-}
-.ourServicesSection .ourServicesAnimationDiv {
-  width: 50%;
-}
-.ourServicesSection .ourServicesAnimationDiv .ourServicesAnimation {
-  transition: var(--transitionDuration);
-}
-.ourServicesSection .ourServicesAnimationDiv .ourServicesAnimation .serviceSteps {
-  display: flex;
-  align-items: center;
-  transition-duration: 1s;
-}
-.ourServicesSection .ourServicesAnimationDiv .ourServicesAnimation .serviceSteps .servicesStepTitle {
-  font-weight: bolder;
-  color: var(--red);
-  text-shadow: 1px 1px 1px var(--black);
-}
-.ourServicesSection .ourServicesAnimationDiv .ourServicesAnimation .serviceSteps .serviceStepIcon {
-  padding: 1em;
-}
-.ourServicesSection .ourServicesAnimationDiv .ourServicesAnimation .leftToRight {
-  flex-direction: row-reverse;
-}
-.ourServicesSection .ourServicesAnimationDiv .ourServicesAnimation .leftToRight img {
-  transform: translateX(-100%);
-  transition: var(--transitionDuration);
-}
-.ourServicesSection .ourServicesAnimationDiv .ourServicesAnimation .leftToRight p {
-  clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
-  transition-duration: var(--transitionDuration);
-}
-.ourServicesSection .ourServicesAnimationDiv .ourServicesAnimation .rightServiceShowing {
-  flex-direction: row-reverse;
-}
-.ourServicesSection .ourServicesAnimationDiv .ourServicesAnimation .rightServiceShowing img {
-  transform: translateX(0%);
-}
-.ourServicesSection .ourServicesAnimationDiv .ourServicesAnimation .rightServiceShowing p {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-}
-.ourServicesSection .ourServicesAnimationDiv .ourServicesAnimation .rightToLeft {
-  flex-direction: row;
-}
-.ourServicesSection .ourServicesAnimationDiv .ourServicesAnimation .rightToLeft img {
-  transform: translateX(100%);
-  transition: var(--transitionDuration);
-}
-.ourServicesSection .ourServicesAnimationDiv .ourServicesAnimation .rightToLeft p {
-  clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-  transition-duration: var(--transitionDuration);
-}
-.ourServicesSection .ourServicesAnimationDiv .ourServicesAnimation .leftServicesShowing {
-  flex-direction: row;
-}
-.ourServicesSection .ourServicesAnimationDiv .ourServicesAnimation .leftServicesShowing img {
-  transform: translateX(0%);
-}
-.ourServicesSection .ourServicesAnimationDiv .ourServicesAnimation .leftServicesShowing p {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-}
-@media screen and (max-width: 900px) {
-  .ourServicesSection {
-    flex-direction: column;
-  }
-  .ourServicesSection .ourServicesContentDiv {
-    width: 100%;
-  }
-  .ourServicesSection .ourServicesAnimationDiv {
-    width: 80%;
-    margin-top: 2.5em;
-  }
 }
 
 /*# sourceMappingURL=/main.77bb5cfd.css.map */
