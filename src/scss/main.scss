@@ -255,6 +255,7 @@ p, li, a  {
     left: 0;
     bottom: 0;
     width: 70%;
+    height: 100%;
     max-width: 300px;
     box-shadow: inset -6px 0px 24px 10px var(--black);
     @media screen and (max-width: 850px) {
@@ -349,6 +350,7 @@ p, li, a  {
     align-items: center;
     position: relative;
     overflow: hidden;
+    margin-bottom: 4em;
     
     // hero section text
     .heroSectionContent {
@@ -357,8 +359,9 @@ p, li, a  {
         z-index: 2;
         position: relative;
         justify-content: center;
+        width: 100%;
         h1 {
-            font-size: 3rem;
+            font-size: 10vmin;
             margin-bottom: 1em;
             line-height: 1.3em;
             font-family: 'Rubik Microbe', cursive;
@@ -376,6 +379,7 @@ p, li, a  {
             font-size: 1.3rem;
             max-width: 600px;
             line-height: 1.5em;
+            margin: 0 auto;
         }
         .heroCTAbutton {
             @include buttonStyle;
@@ -400,6 +404,7 @@ p, li, a  {
             animation: heroHueBackground 7s ease forwards;
             height: 100%;
             width: 100%;
+            transform: translateY(-2em);
         }
     }
     @keyframes heroHueBackground {
@@ -424,43 +429,38 @@ p, li, a  {
         .socialMediaIcon {
             position: absolute;
             transition: var(--transitionDuration);
+            height: 6em;
         }
         .FBsocialMediaIcon {
             top: 33%;
             right: 20%;
             animation: FacebookIconFloat 3s infinite ease-in-out;
-            height: 3em;
         }
         .IGsocialMediaIcon {
             top: 60%;
             right: 15%;
             animation: InstagramIconFloat 2.5s infinite ease-in-out;
-            height: 4.2em;
         }
         .SnapsocialMediaIcon {
             transform: scaleX(-1);
             top: 50%;
             left: 8%;
             animation: SnapchatIconFloat 2.8s infinite ease-in-out;
-            height: 5em;
         }
         .TikToksocialMediaIcon {
-            top: 70%;
-            left: 35%;
+            top: 75%;
+            left: 17%;
             animation: TikTokIconFloat infinite ease-in-out 2.3s;
-            height: 6em;
         }
         .TwittersocialMediaIcon {
-            top: 10%;
+            top: 1%;
             right: 37%;
             animation: TwitterIconFloat infinite ease-in-out 3.2s;
-            height: 2.5em;
         }
         .YouTubesocialMediaIcon {
             top: 22%;
             left: 20%;
             animation: YouTubeIconFloat infinite ease-in-out 2.7s;
-            height: 4em;
         }
     }
 }
@@ -522,17 +522,14 @@ p, li, a  {
 }
 @keyframes YouTubeIconFloat {
     0% {
-        transform: translateY(0.5em) rotate(240deg);
+        transform: translateY(0.5em) rotate(-6deg);
     }
     50% {
-        transform: translateY(-0.5em) rotate(240deg);
+        transform: translateY(-0.5em) rotate(-6deg);
     }
     100% {
-        transform: translateY(0.5em) rotate(240deg);
+        transform: translateY(0.5em) rotate(-6deg);
     }
-}
-.removeSocialIcons {
-    display: none;
 }
 
 // Services --Section
@@ -541,9 +538,12 @@ p, li, a  {
     margin: 0 auto;
     display: flex;
     align-items: center;
+    margin-bottom: 4em;
+
+    // the text on the left side
     .ourServicesContentDiv {
         padding: 0em 3em;
-        width: 50%;
+        width: 60%;
         max-width: 37em;
         height: 100%;
         h3 {
@@ -556,6 +556,85 @@ p, li, a  {
         }
         button {
             @include buttonStyle;
+        }
+    }
+
+    // the text and images on the right side
+    .ourServicesAnimation {
+        overflow-x: hidden;
+        width: 100%;
+        .serviceSteps {
+            display: flex;
+            padding: 1em 3em;
+            margin: 0 auto;
+            img {
+                margin: 0 auto;
+                transition: var(--transitionDuration);
+                opacity: 0;
+                width: 40%;
+                max-width: 150px;
+            }
+            .rightToLeftImg {
+                transform:translateX(100%);
+            }
+            .leftToRightImg {
+                transform: translateX(-100%);
+            }
+            &:nth-child(odd) {
+                flex-direction: row-reverse;
+            }
+            &:nth-child(even) {
+                flex-direction: row;
+            }
+            .servicesSectonText {
+                align-self: center;
+                padding: 1em;
+                opacity: 0;
+                transition: var(--transitionDuration) ease-out;
+            }
+            .servicesStepTitle {
+                color: var(--red);
+                text-shadow: 1px 1px 1px black;
+                transition: var(--transitionDuration) ease-out;
+            }
+            .serviceStepIcon {
+                object-fit: contain;
+            }
+            @media screen and (max-width: 500px) {
+                & {
+                    padding: 1em 0.5em;
+                }
+            }
+        }
+        .showingServices {
+            &:nth-child(odd) {
+                flex-direction: row;
+            }
+            &:nth-child(even) {
+                flex-direction: row-reverse;
+            }
+            .servicesSectonText, 
+            .servicesStepTitle {
+                opacity: 1;
+            }
+            .serviceStepIcon {
+                transform: translateX(0%);
+                opacity: 1;
+            }
+        }
+    }
+
+    // mobile friendly
+    @media screen and (max-width: 900px) {
+        & {
+            flex-direction: column;
+            .ourServicesContentDiv {
+                padding: 0em 2em;
+                width: 100%;
+                button {
+                    margin-bottom: 5em;
+                }
+            }
         }
     }
 }

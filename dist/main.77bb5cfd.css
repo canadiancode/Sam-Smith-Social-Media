@@ -239,6 +239,7 @@ p, li, a {
   left: 0;
   bottom: 0;
   width: 70%;
+  height: 100%;
   max-width: 300px;
   box-shadow: inset -6px 0px 24px 10px var(--black);
 }
@@ -334,6 +335,7 @@ p, li, a {
   align-items: center;
   position: relative;
   overflow: hidden;
+  margin-bottom: 4em;
 }
 .heroSection .heroSectionContent {
   text-align: center;
@@ -341,9 +343,10 @@ p, li, a {
   z-index: 2;
   position: relative;
   justify-content: center;
+  width: 100%;
 }
 .heroSection .heroSectionContent h1 {
-  font-size: 3rem;
+  font-size: 10vmin;
   margin-bottom: 1em;
   line-height: 1.3em;
   font-family: "Rubik Microbe", cursive;
@@ -361,6 +364,7 @@ p, li, a {
   font-size: 1.3rem;
   max-width: 600px;
   line-height: 1.5em;
+  margin: 0 auto;
 }
 .heroSection .heroSectionContent .heroCTAbutton {
   margin-top: 2.2em;
@@ -399,6 +403,7 @@ p, li, a {
   animation: heroHueBackground 7s ease forwards;
   height: 100%;
   width: 100%;
+  transform: translateY(-2em);
 }
 @keyframes heroHueBackground {
   0% {
@@ -420,43 +425,38 @@ p, li, a {
 .heroSection .backgroundContainer .socialMediaIcon {
   position: absolute;
   transition: var(--transitionDuration);
+  height: 6em;
 }
 .heroSection .backgroundContainer .FBsocialMediaIcon {
   top: 33%;
   right: 20%;
   animation: FacebookIconFloat 3s infinite ease-in-out;
-  height: 3em;
 }
 .heroSection .backgroundContainer .IGsocialMediaIcon {
   top: 60%;
   right: 15%;
   animation: InstagramIconFloat 2.5s infinite ease-in-out;
-  height: 4.2em;
 }
 .heroSection .backgroundContainer .SnapsocialMediaIcon {
   transform: scaleX(-1);
   top: 50%;
   left: 8%;
   animation: SnapchatIconFloat 2.8s infinite ease-in-out;
-  height: 5em;
 }
 .heroSection .backgroundContainer .TikToksocialMediaIcon {
-  top: 70%;
-  left: 35%;
+  top: 75%;
+  left: 17%;
   animation: TikTokIconFloat infinite ease-in-out 2.3s;
-  height: 6em;
 }
 .heroSection .backgroundContainer .TwittersocialMediaIcon {
-  top: 10%;
+  top: 1%;
   right: 37%;
   animation: TwitterIconFloat infinite ease-in-out 3.2s;
-  height: 2.5em;
 }
 .heroSection .backgroundContainer .YouTubesocialMediaIcon {
   top: 22%;
   left: 20%;
   animation: YouTubeIconFloat infinite ease-in-out 2.7s;
-  height: 4em;
 }
 
 @keyframes FacebookIconFloat {
@@ -516,28 +516,25 @@ p, li, a {
 }
 @keyframes YouTubeIconFloat {
   0% {
-    transform: translateY(0.5em) rotate(240deg);
+    transform: translateY(0.5em) rotate(-6deg);
   }
   50% {
-    transform: translateY(-0.5em) rotate(240deg);
+    transform: translateY(-0.5em) rotate(-6deg);
   }
   100% {
-    transform: translateY(0.5em) rotate(240deg);
+    transform: translateY(0.5em) rotate(-6deg);
   }
 }
-.removeSocialIcons {
-  display: none;
-}
-
 .ourServicesSection {
   max-width: 70em;
   margin: 0 auto;
   display: flex;
   align-items: center;
+  margin-bottom: 4em;
 }
 .ourServicesSection .ourServicesContentDiv {
   padding: 0em 3em;
-  width: 50%;
+  width: 60%;
   max-width: 37em;
   height: 100%;
 }
@@ -567,6 +564,79 @@ p, li, a {
 .ourServicesSection .ourServicesContentDiv button:hover {
   transform: scale(1.02) translate(-1px, -1px);
   box-shadow: 3px 5px 0px 0px var(--black);
+}
+.ourServicesSection .ourServicesAnimation {
+  overflow-x: hidden;
+  width: 100%;
+}
+.ourServicesSection .ourServicesAnimation .serviceSteps {
+  display: flex;
+  padding: 1em 3em;
+  margin: 0 auto;
+}
+.ourServicesSection .ourServicesAnimation .serviceSteps img {
+  margin: 0 auto;
+  transition: var(--transitionDuration);
+  opacity: 0;
+  width: 40%;
+  max-width: 150px;
+}
+.ourServicesSection .ourServicesAnimation .serviceSteps .rightToLeftImg {
+  transform: translateX(100%);
+}
+.ourServicesSection .ourServicesAnimation .serviceSteps .leftToRightImg {
+  transform: translateX(-100%);
+}
+.ourServicesSection .ourServicesAnimation .serviceSteps:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+.ourServicesSection .ourServicesAnimation .serviceSteps:nth-child(even) {
+  flex-direction: row;
+}
+.ourServicesSection .ourServicesAnimation .serviceSteps .servicesSectonText {
+  align-self: center;
+  padding: 1em;
+  opacity: 0;
+  transition: var(--transitionDuration) ease-out;
+}
+.ourServicesSection .ourServicesAnimation .serviceSteps .servicesStepTitle {
+  color: var(--red);
+  text-shadow: 1px 1px 1px black;
+  transition: var(--transitionDuration) ease-out;
+}
+.ourServicesSection .ourServicesAnimation .serviceSteps .serviceStepIcon {
+  object-fit: contain;
+}
+@media screen and (max-width: 500px) {
+  .ourServicesSection .ourServicesAnimation .serviceSteps {
+    padding: 1em 0.5em;
+  }
+}
+.ourServicesSection .ourServicesAnimation .showingServices:nth-child(odd) {
+  flex-direction: row;
+}
+.ourServicesSection .ourServicesAnimation .showingServices:nth-child(even) {
+  flex-direction: row-reverse;
+}
+.ourServicesSection .ourServicesAnimation .showingServices .servicesSectonText,
+.ourServicesSection .ourServicesAnimation .showingServices .servicesStepTitle {
+  opacity: 1;
+}
+.ourServicesSection .ourServicesAnimation .showingServices .serviceStepIcon {
+  transform: translateX(0%);
+  opacity: 1;
+}
+@media screen and (max-width: 900px) {
+  .ourServicesSection {
+    flex-direction: column;
+  }
+  .ourServicesSection .ourServicesContentDiv {
+    padding: 0em 2em;
+    width: 100%;
+  }
+  .ourServicesSection .ourServicesContentDiv button {
+    margin-bottom: 5em;
+  }
 }
 
 /*# sourceMappingURL=/main.77bb5cfd.css.map */

@@ -117,81 +117,8 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"script.js":[function(require,module,exports) {
-// The Header --Section
-// get variables for mobile header pop-up
-var hamburgerButtonOpen = document.querySelector('.hamburgerButtonOpen');
-var hamburgerButtonClose = document.querySelector('.hamburgerButtonClose');
-var mobileSecton = document.querySelector('.mobileSecton');
-function stopScrolling() {
-  var siteBody = document.querySelector('body');
-  if (siteBody.style.overflow === "hidden") {
-    siteBody.style.overflow = "auto";
-  } else {
-    siteBody.style.overflow = "hidden";
-  }
-}
+})({"IconScript.js":[function(require,module,exports) {
 
-// oepn the mobile header
-hamburgerButtonOpen.addEventListener('click', openMobileSection);
-function openMobileSection() {
-  mobileSecton.style.transform = 'translateX(0%)';
-  mobileSecton.style.clipPath = 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)';
-  hamburgerButtonOpen.style.transform = 'scale(0%) rotate(900deg)';
-  hamburgerButtonClose.style.transform = 'scale(1) rotate(0deg)';
-  stopScrolling();
-}
-;
-
-//close the mobile header
-hamburgerButtonClose.addEventListener('click', closeMobileSection);
-document.addEventListener('keydown', function (e) {
-  if (e.key === 'Escape') {
-    closeMobileSection();
-  }
-  ;
-});
-function closeMobileSection() {
-  mobileSecton.style.transform = 'translateX(-120%)';
-  mobileSecton.style.clipPath = 'polygon(0 0, 9% 91%, 100% 100%, 0% 100%)';
-  hamburgerButtonOpen.style.transform = 'scale(1) rotate(0deg)';
-  hamburgerButtonClose.style.transform = 'scale(0%) rotate(900deg)';
-  stopScrolling();
-}
-;
-
-// The Hero --Section for the text color change 
-var heroSectionTextObserver = new IntersectionObserver(function (entries) {
-  entries.forEach(function (entry) {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('textShowing');
-    } else {
-      entry.target.classList.remove('textShowing');
-    }
-  });
-});
-var heroSectionTextEl = document.querySelectorAll('.SuperchargedText');
-heroSectionTextEl.forEach(function (el) {
-  return heroSectionTextObserver.observe(el);
-});
-
-// Services --Section
-
-var servicesSections = document.querySelectorAll('.serviceSteps');
-var servicesOption = {
-  rootMargin: "0px",
-  threshold: 1
-};
-var servicesObserver = new IntersectionObserver(function (entries, servicesObserver) {
-  entries.forEach(function (entry) {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('showingServices');
-    }
-  });
-}, servicesOption);
-servicesSections.forEach(function (section) {
-  servicesObserver.observe(section);
-});
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -361,5 +288,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","script.js"], null)
-//# sourceMappingURL=/script.75da7f30.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","IconScript.js"], null)
+//# sourceMappingURL=/IconScript.a5bddb54.js.map
