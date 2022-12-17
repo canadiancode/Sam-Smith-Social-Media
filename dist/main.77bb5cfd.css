@@ -403,7 +403,7 @@ p, li, a {
   animation: heroHueBackground 7s ease forwards;
   height: 100%;
   width: 100%;
-  transform: translateY(-2em);
+  transform: translateY(-1em);
 }
 @keyframes heroHueBackground {
   0% {
@@ -633,6 +633,12 @@ p, li, a {
   .ourServicesSection .ourServicesContentDiv {
     padding: 0em 2em;
     width: 100%;
+  }
+  .ourServicesSection .ourServicesContentDiv h3 {
+    font-size: 1.5rem;
+  }
+  .ourServicesSection .ourServicesContentDiv p {
+    font-size: 1.1rem;
   }
   .ourServicesSection .ourServicesContentDiv button {
     margin-bottom: 5em;
