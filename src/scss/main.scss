@@ -380,6 +380,7 @@ p, li, a  {
             max-width: 600px;
             line-height: 1.5em;
             margin: 0 auto;
+            text-shadow: 1px 1px 1px white;
         }
         .heroCTAbutton {
             @include buttonStyle;
@@ -417,51 +418,131 @@ p, li, a  {
             height: 100%;
         }
     }
-
-
-    // hero section background
-    .backgroundContainer {
-        position: absolute;
-        display: flex;
-        flex-shrink: 0;
+}
+// hero section background
+.backgroundContainer {
+    position: absolute;
+    display: flex;
+    flex-shrink: 0;
+    height: 100vh;
+    min-width: 100%;
+    @media screen and (max-width: 1000px) {
+        & {
+            height: 50vh;
+        }
+    }
+    .socialMediaIconContainer {
         min-height: 100%;
         min-width: 100%;
+        position: absolute;
+        z-index: 2;
         .socialMediaIcon {
             position: absolute;
             transition: var(--transitionDuration);
             height: 6em;
+            z-index: 2;
         }
-        .FBsocialMediaIcon {
-            top: 33%;
+    }
+    .socialIconContainer {
+        min-height: 100%;
+        min-width: 100%;
+        position: absolute;
+        .emojiIcon {
+            position: absolute;
+            transition: var(--transitionDuration);
+            height: 6em;
+        }
+        .fire {
+            top: 20%;
             right: 20%;
-            animation: FacebookIconFloat 3s infinite ease-in-out;
+            transform: rotate(9deg);
+        }
+        .party {
+            top: 57%;
+            left: 6%;
+            transform: rotate(27deg);
+        }
+        .grinning {
+            top: 28%;
+            left: 15%;
+        }
+        .lovingHearts {
+            top: 5%;
+            left: 10%;
+            transform: rotate(-5deg);
+        }
+        .explodingFace {
+            top: 60%;
+            right: 9%;
+            transform: rotate(12deg);
+        }
+        .lovingEyes {
+            top: 3%;
+            right: 5%;
+        }
+        @media screen and (max-width: 1000px) {
+            .emojiIcon {
+                display: none;
+            }
+        }
+    }
+    .FBsocialMediaIcon {
+        top: 28%;
+        right: 20%;
+        animation: FacebookIconFloat 3s infinite ease-in-out;
+    }
+    .IGsocialMediaIcon {
+        top: 60%;
+        right: 25%;
+        animation: InstagramIconFloat 2.5s infinite ease-in-out;
+    }
+    .SnapsocialMediaIcon {
+        transform: scaleX(-1);
+        top: 45%;
+        left: 12%;
+        animation: SnapchatIconFloat 2.8s infinite ease-in-out;
+    }
+    .TikToksocialMediaIcon {
+        top: 65%;
+        left: 27%;
+        animation: TikTokIconFloat infinite ease-in-out 2.3s;
+    }
+    .TwittersocialMediaIcon {
+        top: 1%;
+        right: 37%;
+        animation: TwitterIconFloat infinite ease-in-out 3.2s;
+    }
+    .YouTubesocialMediaIcon {
+        top: 18%;
+        left: 20%;
+        animation: YouTubeIconFloat infinite ease-in-out 2.7s;
+    }
+    @media screen and (max-width: 1000px) {
+        .FBsocialMediaIcon {
+            top: 40%;
+            right: 5%;
         }
         .IGsocialMediaIcon {
-            top: 60%;
-            right: 15%;
-            animation: InstagramIconFloat 2.5s infinite ease-in-out;
+            top: 85%;
+            right: 5%;
         }
         .SnapsocialMediaIcon {
             transform: scaleX(-1);
-            top: 50%;
-            left: 8%;
-            animation: SnapchatIconFloat 2.8s infinite ease-in-out;
+            top: 40%;
+            left: 5%;
         }
         .TikToksocialMediaIcon {
-            top: 75%;
-            left: 17%;
-            animation: TikTokIconFloat infinite ease-in-out 2.3s;
+            top: 85%;
+            left: 5%;
         }
         .TwittersocialMediaIcon {
-            top: 1%;
-            right: 37%;
-            animation: TwitterIconFloat infinite ease-in-out 3.2s;
+            top: 2%;
+            right: 5%;
         }
         .YouTubesocialMediaIcon {
-            top: 22%;
-            left: 20%;
-            animation: YouTubeIconFloat infinite ease-in-out 2.7s;
-        }
+            left: 5%;
+            top: 2%
+        } 
     }
 }
 // Floating animation for the social icons
@@ -478,13 +559,13 @@ p, li, a  {
 }
 @keyframes InstagramIconFloat {
     0% {
-        transform: translateY(0.5em) rotate(-12deg);
+        transform: translateY(0.5em) rotate(5deg);
     }
     50% {
-        transform: translateY(-0.5em) rotate(-12deg);
+        transform: translateY(-0.5em) rotate(5deg);
     }
     100% {
-        transform: translateY(0.5em) rotate(-12deg);
+        transform: translateY(0.5em) rotate(5deg);
     }
 }
 @keyframes SnapchatIconFloat {
@@ -567,6 +648,7 @@ p, li, a  {
             display: flex;
             padding: 1em 3em;
             margin: 0 auto;
+            max-width: 700px;
             img {
                 margin: 0 auto;
                 transition: var(--transitionDuration);

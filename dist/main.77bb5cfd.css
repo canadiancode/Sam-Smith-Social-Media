@@ -365,6 +365,7 @@ p, li, a {
   max-width: 600px;
   line-height: 1.5em;
   margin: 0 auto;
+  text-shadow: 1px 1px 1px white;
 }
 .heroSection .heroSectionContent .heroCTAbutton {
   margin-top: 2.2em;
@@ -415,48 +416,131 @@ p, li, a {
     height: 100%;
   }
 }
-.heroSection .backgroundContainer {
+
+.backgroundContainer {
   position: absolute;
   display: flex;
   flex-shrink: 0;
-  min-height: 100%;
+  height: 100vh;
   min-width: 100%;
 }
-.heroSection .backgroundContainer .socialMediaIcon {
+@media screen and (max-width: 1000px) {
+  .backgroundContainer {
+    height: 50vh;
+  }
+}
+.backgroundContainer .socialMediaIconContainer {
+  min-height: 100%;
+  min-width: 100%;
+  position: absolute;
+  z-index: 2;
+}
+.backgroundContainer .socialMediaIconContainer .socialMediaIcon {
+  position: absolute;
+  transition: var(--transitionDuration);
+  height: 6em;
+  z-index: 2;
+}
+.backgroundContainer .socialIconContainer {
+  min-height: 100%;
+  min-width: 100%;
+  position: absolute;
+}
+.backgroundContainer .socialIconContainer .emojiIcon {
   position: absolute;
   transition: var(--transitionDuration);
   height: 6em;
 }
-.heroSection .backgroundContainer .FBsocialMediaIcon {
-  top: 33%;
+.backgroundContainer .socialIconContainer .fire {
+  top: 20%;
+  right: 20%;
+  transform: rotate(9deg);
+}
+.backgroundContainer .socialIconContainer .party {
+  top: 57%;
+  left: 6%;
+  transform: rotate(27deg);
+}
+.backgroundContainer .socialIconContainer .grinning {
+  top: 28%;
+  left: 15%;
+}
+.backgroundContainer .socialIconContainer .lovingHearts {
+  top: 5%;
+  left: 10%;
+  transform: rotate(-5deg);
+}
+.backgroundContainer .socialIconContainer .explodingFace {
+  top: 60%;
+  right: 9%;
+  transform: rotate(12deg);
+}
+.backgroundContainer .socialIconContainer .lovingEyes {
+  top: 3%;
+  right: 5%;
+}
+@media screen and (max-width: 1000px) {
+  .backgroundContainer .socialIconContainer .emojiIcon {
+    display: none;
+  }
+}
+.backgroundContainer .FBsocialMediaIcon {
+  top: 28%;
   right: 20%;
   animation: FacebookIconFloat 3s infinite ease-in-out;
 }
-.heroSection .backgroundContainer .IGsocialMediaIcon {
+.backgroundContainer .IGsocialMediaIcon {
   top: 60%;
-  right: 15%;
+  right: 25%;
   animation: InstagramIconFloat 2.5s infinite ease-in-out;
 }
-.heroSection .backgroundContainer .SnapsocialMediaIcon {
+.backgroundContainer .SnapsocialMediaIcon {
   transform: scaleX(-1);
-  top: 50%;
-  left: 8%;
+  top: 45%;
+  left: 12%;
   animation: SnapchatIconFloat 2.8s infinite ease-in-out;
 }
-.heroSection .backgroundContainer .TikToksocialMediaIcon {
-  top: 75%;
-  left: 17%;
+.backgroundContainer .TikToksocialMediaIcon {
+  top: 65%;
+  left: 27%;
   animation: TikTokIconFloat infinite ease-in-out 2.3s;
 }
-.heroSection .backgroundContainer .TwittersocialMediaIcon {
+.backgroundContainer .TwittersocialMediaIcon {
   top: 1%;
   right: 37%;
   animation: TwitterIconFloat infinite ease-in-out 3.2s;
 }
-.heroSection .backgroundContainer .YouTubesocialMediaIcon {
-  top: 22%;
+.backgroundContainer .YouTubesocialMediaIcon {
+  top: 18%;
   left: 20%;
   animation: YouTubeIconFloat infinite ease-in-out 2.7s;
+}
+@media screen and (max-width: 1000px) {
+  .backgroundContainer .FBsocialMediaIcon {
+    top: 40%;
+    right: 5%;
+  }
+  .backgroundContainer .IGsocialMediaIcon {
+    top: 85%;
+    right: 5%;
+  }
+  .backgroundContainer .SnapsocialMediaIcon {
+    transform: scaleX(-1);
+    top: 40%;
+    left: 5%;
+  }
+  .backgroundContainer .TikToksocialMediaIcon {
+    top: 85%;
+    left: 5%;
+  }
+  .backgroundContainer .TwittersocialMediaIcon {
+    top: 2%;
+    right: 5%;
+  }
+  .backgroundContainer .YouTubesocialMediaIcon {
+    left: 5%;
+    top: 2%;
+  }
 }
 
 @keyframes FacebookIconFloat {
@@ -472,13 +556,13 @@ p, li, a {
 }
 @keyframes InstagramIconFloat {
   0% {
-    transform: translateY(0.5em) rotate(-12deg);
+    transform: translateY(0.5em) rotate(5deg);
   }
   50% {
-    transform: translateY(-0.5em) rotate(-12deg);
+    transform: translateY(-0.5em) rotate(5deg);
   }
   100% {
-    transform: translateY(0.5em) rotate(-12deg);
+    transform: translateY(0.5em) rotate(5deg);
   }
 }
 @keyframes SnapchatIconFloat {
@@ -573,6 +657,7 @@ p, li, a {
   display: flex;
   padding: 1em 3em;
   margin: 0 auto;
+  max-width: 700px;
 }
 .ourServicesSection .ourServicesAnimation .serviceSteps img {
   margin: 0 auto;

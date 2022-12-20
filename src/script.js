@@ -71,3 +71,27 @@ const servicesObserver = new IntersectionObserver(function(entries, servicesObse
 servicesSections.forEach(section => {
     servicesObserver.observe(section);
 });
+
+
+// hero social media icon section
+document.addEventListener('scroll', socialMediaIconParallax);
+
+function socialMediaIconParallax() {
+
+    let scrollheight = window.scrollY;
+
+    // Social media icons
+    const socialMediaIconContainer = document.querySelector('.socialMediaIconContainer');
+
+    let socialMediaParallaxValue = scrollheight * 0.2;
+    socialMediaIconContainer.style.transform = `translateY(${socialMediaParallaxValue}px)`;
+
+    let opacityValue = 100 * (1 - (scrollheight / 400));
+    socialMediaIconContainer.style.opacity = `${opacityValue}%`;
+
+    // emoji icons
+    const socialIconContainer = document.querySelector('.socialIconContainer');
+
+    let emojiParallaxvalue = scrollheight * 0.1;
+    socialIconContainer.style.transform = `translateY(${emojiParallaxvalue}px)`;
+}
