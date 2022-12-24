@@ -52,6 +52,7 @@ picture {
 
 /* Inherit fonts for inputs and buttons */
 input,
+label,
 button,
 textarea,
 select {
@@ -419,6 +420,7 @@ p, li, a  {
         }
     }
 }
+
 // hero section background
 .backgroundContainer {
     position: absolute;
@@ -426,9 +428,10 @@ p, li, a  {
     flex-shrink: 0;
     height: 100vh;
     min-width: 100%;
+    overflow-x: hidden;
     @media screen and (max-width: 1000px) {
         & {
-            height: 50vh;
+            height: 60vh;
         }
     }
     .socialMediaIconContainer {
@@ -519,97 +522,97 @@ p, li, a  {
     }
     @media screen and (max-width: 1000px) {
         .FBsocialMediaIcon {
-            top: 40%;
-            right: 5%;
+            top: 50%;
+            right: 0%;
         }
         .IGsocialMediaIcon {
-            top: 85%;
-            right: 5%;
+            top: 100%;
+            right: 10%;
         }
         .SnapsocialMediaIcon {
             transform: scaleX(-1);
-            top: 40%;
-            left: 5%;
+            top: 50%;
+            left: 0%;
         }
         .TikToksocialMediaIcon {
-            top: 85%;
-            left: 5%;
+            top: 100%;
+            left: 10%;
         }
         .TwittersocialMediaIcon {
             top: 2%;
-            right: 5%;
+            right: 15%;
         }
         .YouTubesocialMediaIcon {
-            left: 5%;
+            left: 15%;
             top: 2%
         } 
     }
-}
-// Floating animation for the social icons
-@keyframes FacebookIconFloat {
-    0% {
-        transform: translateY(0.5em) rotate(20deg);
+    // Floating animation for the social icons
+    @keyframes FacebookIconFloat {
+        0% {
+            transform: translateY(0.5em) rotate(20deg);
+        }
+        50% {
+            transform: translateY(-0.5em) rotate(20deg);
+        }
+        100% {
+            transform: translateY(0.5em) rotate(20deg);
+        }
     }
-    50% {
-        transform: translateY(-0.5em) rotate(20deg);
+    @keyframes InstagramIconFloat {
+        0% {
+            transform: translateY(0.5em) rotate(5deg);
+        }
+        50% {
+            transform: translateY(-0.5em) rotate(5deg);
+        }
+        100% {
+            transform: translateY(0.5em) rotate(5deg);
+        }
     }
-    100% {
-        transform: translateY(0.5em) rotate(20deg);
+    @keyframes SnapchatIconFloat {
+        0% {
+            transform: translateY(0.5em) scaleX(-1) rotate(24deg);   
+        }
+        50% {
+            transform: translateY(-0.5em) scaleX(-1) rotate(24deg);
+        }
+        100% {
+            transform: translateY(0.5em) scaleX(-1) rotate(24deg);
+        }
     }
-}
-@keyframes InstagramIconFloat {
-    0% {
-        transform: translateY(0.5em) rotate(5deg);
+    @keyframes TikTokIconFloat {
+        0% {
+            transform: translateY(0.5em) rotate(-8deg);
+        }
+        50% {
+            transform: translateY(-0.5em) rotate(-8deg);
+        }
+        100% {
+            transform: translateY(0.5em) rotate(-8deg);
+        }
     }
-    50% {
-        transform: translateY(-0.5em) rotate(5deg);
+    @keyframes TwitterIconFloat {
+        0% {
+            transform: translateY(0.5em) rotate(5deg);
+        }
+        50% {
+            transform: translateY(-0.5em) rotate(5deg);
+        }
+        100% {
+            transform: translateY(0.5em) rotate(5deg);
+        }
     }
-    100% {
-        transform: translateY(0.5em) rotate(5deg);
-    }
-}
-@keyframes SnapchatIconFloat {
-    0% {
-        transform: translateY(0.5em) scaleX(-1) rotate(24deg);   
-    }
-    50% {
-        transform: translateY(-0.5em) scaleX(-1) rotate(24deg);
-    }
-    100% {
-        transform: translateY(0.5em) scaleX(-1) rotate(24deg);
-    }
-}
-@keyframes TikTokIconFloat {
-    0% {
-        transform: translateY(0.5em) rotate(-8deg);
-    }
-    50% {
-        transform: translateY(-0.5em) rotate(-8deg);
-    }
-    100% {
-        transform: translateY(0.5em) rotate(-8deg);
-    }
-}
-@keyframes TwitterIconFloat {
-    0% {
-        transform: translateY(0.5em) rotate(5deg);
-    }
-    50% {
-        transform: translateY(-0.5em) rotate(5deg);
-    }
-    100% {
-        transform: translateY(0.5em) rotate(5deg);
-    }
-}
-@keyframes YouTubeIconFloat {
-    0% {
-        transform: translateY(0.5em) rotate(-6deg);
-    }
-    50% {
-        transform: translateY(-0.5em) rotate(-6deg);
-    }
-    100% {
-        transform: translateY(0.5em) rotate(-6deg);
+    @keyframes YouTubeIconFloat {
+        0% {
+            transform: translateY(0.5em) rotate(-6deg);
+        }
+        50% {
+            transform: translateY(-0.5em) rotate(-6deg);
+        }
+        100% {
+            transform: translateY(0.5em) rotate(-6deg);
+        }
     }
 }
 
@@ -721,6 +724,61 @@ p, li, a  {
                 }            
                 button {
                     margin-bottom: 5em;
+                }
+            }
+        }
+    }
+}
+
+// Contact Us Form --Section
+.contactUsContainer {
+    height: 100%;
+    width: 100%;
+    background-color: grey;
+    .contactUsform {
+        height: 100%;
+        width: 80%;
+        padding: 1em 3em;
+        max-width: 1000px;
+        margin: 0 auto;
+        background-color: var(--red);
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        .contactUsHeading {
+            grid-column-start: 1;
+            grid-column-end: 3;
+            text-align: center;
+            margin: 2em 0em;
+        }
+        .contactFormSubmit {
+            grid-column-start: 1;
+            grid-column-end: 3;
+            text-align: center;
+            margin: 2em 0em;
+            width: 1rem;
+        }
+        .basicInfo {
+            width: 100%;
+            input {
+                margin-bottom: 1em;
+                max-width: 800px;
+                width: 80%;
+            }
+            textarea {
+                max-width: 80%;
+                width: 80%
+            }
+        }
+        .moreContext {
+            width: 100%;
+            .platformOptions {
+                width: 90px;
+                .platformsUsed {
+                    
+                }
+                input {
+                    float: right;
+
                 }
             }
         }

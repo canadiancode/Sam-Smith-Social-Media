@@ -51,6 +51,7 @@ picture {
 
 /* Inherit fonts for inputs and buttons */
 input,
+label,
 button,
 textarea,
 select {
@@ -426,7 +427,7 @@ p, li, a {
 }
 @media screen and (max-width: 1000px) {
   .backgroundContainer {
-    height: 50vh;
+    height: 60vh;
   }
 }
 .backgroundContainer .socialMediaIconContainer {
@@ -517,32 +518,31 @@ p, li, a {
 }
 @media screen and (max-width: 1000px) {
   .backgroundContainer .FBsocialMediaIcon {
-    top: 40%;
-    right: 5%;
+    top: 50%;
+    right: 0%;
   }
   .backgroundContainer .IGsocialMediaIcon {
-    top: 85%;
-    right: 5%;
+    top: 100%;
+    right: 10%;
   }
   .backgroundContainer .SnapsocialMediaIcon {
     transform: scaleX(-1);
-    top: 40%;
-    left: 5%;
+    top: 50%;
+    left: 0%;
   }
   .backgroundContainer .TikToksocialMediaIcon {
-    top: 85%;
-    left: 5%;
+    top: 100%;
+    left: 10%;
   }
   .backgroundContainer .TwittersocialMediaIcon {
     top: 2%;
-    right: 5%;
+    right: 15%;
   }
   .backgroundContainer .YouTubesocialMediaIcon {
-    left: 5%;
+    left: 15%;
     top: 2%;
   }
 }
-
 @keyframes FacebookIconFloat {
   0% {
     transform: translateY(0.5em) rotate(20deg);
@@ -609,6 +609,7 @@ p, li, a {
     transform: translateY(0.5em) rotate(-6deg);
   }
 }
+
 .ourServicesSection {
   max-width: 70em;
   margin: 0 auto;
@@ -728,6 +729,50 @@ p, li, a {
   .ourServicesSection .ourServicesContentDiv button {
     margin-bottom: 5em;
   }
+}
+
+.contactUsContainer {
+  height: 100%;
+  width: 100%;
+  background-color: grey;
+}
+.contactUsContainer .contactUsform {
+  height: 100%;
+  width: 80%;
+  padding: 1em 3em;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: var(--red);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.contactUsContainer .contactUsform .contactUsHeading,
+.contactUsContainer .contactUsform .contactFormSubmit {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  text-align: center;
+  margin: 2em 0em;
+}
+.contactUsContainer .contactUsform .basicInfo {
+  width: 100%;
+}
+.contactUsContainer .contactUsform .basicInfo input {
+  margin-bottom: 1em;
+  max-width: 800px;
+  width: 80%;
+}
+.contactUsContainer .contactUsform .basicInfo textarea {
+  max-width: 80%;
+  width: 80%;
+}
+.contactUsContainer .contactUsform .moreContext {
+  width: 100%;
+}
+.contactUsContainer .contactUsform .moreContext .platformOptions {
+  width: 90px;
+}
+.contactUsContainer .contactUsform .moreContext .platformOptions input {
+  float: right;
 }
 
 /*# sourceMappingURL=/main.77bb5cfd.css.map */

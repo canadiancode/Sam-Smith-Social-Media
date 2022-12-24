@@ -94,4 +94,5 @@ function socialMediaIconParallax() {
 
     let emojiParallaxvalue = scrollheight * 0.1;
     socialIconContainer.style.transform = `translateY(${emojiParallaxvalue}px)`;
-}
+};
+
