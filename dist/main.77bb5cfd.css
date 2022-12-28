@@ -91,7 +91,7 @@ select {
   box-sizing: border-box;
 }
 
-h2, h3, h4, h5, button {
+h2, h3, h4, h5, button, label, input {
   font-family: "Nunito Sans", sans-serif;
 }
 
@@ -314,6 +314,11 @@ p, li, a {
   display: flex;
   gap: 1em;
 }
+@media screen and (max-width: 400px) {
+  .mobileSecton .mobileSocial .mobileSocialIconContainer {
+    gap: 0em;
+  }
+}
 .mobileSecton .mobileSocial .mobileSocialIconContainer a {
   margin-right: 5px;
 }
@@ -427,7 +432,7 @@ p, li, a {
 }
 @media screen and (max-width: 1000px) {
   .backgroundContainer {
-    height: 60vh;
+    height: 50vh;
   }
 }
 .backgroundContainer .socialMediaIconContainer {
@@ -519,27 +524,27 @@ p, li, a {
 @media screen and (max-width: 1000px) {
   .backgroundContainer .FBsocialMediaIcon {
     top: 50%;
-    right: 0%;
+    right: 5%;
   }
   .backgroundContainer .IGsocialMediaIcon {
     top: 100%;
-    right: 10%;
+    right: 15%;
   }
   .backgroundContainer .SnapsocialMediaIcon {
     transform: scaleX(-1);
     top: 50%;
-    left: 0%;
+    left: 5%;
   }
   .backgroundContainer .TikToksocialMediaIcon {
     top: 100%;
-    left: 10%;
+    left: 15%;
   }
   .backgroundContainer .TwittersocialMediaIcon {
     top: 2%;
-    right: 15%;
+    right: 20%;
   }
   .backgroundContainer .YouTubesocialMediaIcon {
-    left: 15%;
+    left: 20%;
     top: 2%;
   }
 }
@@ -734,7 +739,6 @@ p, li, a {
 .contactUsContainer {
   height: 100%;
   width: 100%;
-  background-color: grey;
 }
 .contactUsContainer .contactUsform {
   height: 100%;
@@ -742,19 +746,42 @@ p, li, a {
   padding: 1em 3em;
   max-width: 1000px;
   margin: 0 auto;
-  background-color: var(--red);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
-.contactUsContainer .contactUsform .contactUsHeading,
-.contactUsContainer .contactUsform .contactFormSubmit {
+.contactUsContainer .contactUsform .contactUsHeading {
   grid-column-start: 1;
   grid-column-end: 3;
   text-align: center;
   margin: 2em 0em;
+  font-size: 1.5rem;
+}
+.contactUsContainer .contactUsform .contactFormSubmit {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  text-align: center;
+  margin-top: 2.2em;
+  height: 3em;
+  width: 9em;
+  background-color: var(--red);
+  color: var(--darkWhite);
+  border: none;
+  border-radius: var(--buttonBorderRadius);
+  margin-bottom: 0.2em;
+  cursor: pointer;
+  transition-duration: var(--transitionDuration);
+  transform: scale(1) translate(0px, 0px);
+  margin: 0 auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.contactUsContainer .contactUsform .contactFormSubmit:hover {
+  transform: scale(1.02) translate(-1px, -1px);
+  box-shadow: 3px 5px 0px 0px var(--black);
 }
 .contactUsContainer .contactUsform .basicInfo {
   width: 100%;
+  max-width: 100%;
 }
 .contactUsContainer .contactUsform .basicInfo input {
   margin-bottom: 1em;
@@ -764,15 +791,46 @@ p, li, a {
 .contactUsContainer .contactUsform .basicInfo textarea {
   max-width: 80%;
   width: 80%;
+  min-height: 50px;
 }
 .contactUsContainer .contactUsform .moreContext {
   width: 100%;
+}
+.contactUsContainer .contactUsform .moreContext h4 {
+  position: relative;
+  margin-bottom: 1em;
+  width: fit-content;
+}
+.contactUsContainer .contactUsform .moreContext h4:after {
+  position: absolute;
+  content: "";
+  height: 1px;
+  width: 100%;
+  background-color: var(--red);
+  bottom: 0;
+  left: 0;
 }
 .contactUsContainer .contactUsform .moreContext .platformOptions {
   width: 90px;
 }
 .contactUsContainer .contactUsform .moreContext .platformOptions input {
   float: right;
+  transform: translateY(5px);
+}
+@media screen and (max-width: 800px) {
+  .contactUsContainer .contactUsform {
+    width: 95%;
+    padding: 1em 0em;
+  }
+  .contactUsContainer .contactUsform .basicInfo input {
+    margin-bottom: 1em;
+    max-width: 800px;
+    width: 90%;
+  }
+  .contactUsContainer .contactUsform .basicInfo textarea {
+    max-width: 90%;
+    width: 90%;
+  }
 }
 
 /*# sourceMappingURL=/main.77bb5cfd.css.map */

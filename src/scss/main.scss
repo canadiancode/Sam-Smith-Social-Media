@@ -120,7 +120,7 @@ select {
     box-sizing: border-box;
 }
 
-h2, h3, h4, h5, button {
+h2, h3, h4, h5, button, label, input {
     font-family: 'Nunito Sans', sans-serif;
 }
 
@@ -325,6 +325,11 @@ p, li, a  {
             padding-left: 1.5em;
             display: flex;
             gap: 1em;
+            @media screen and (max-width: 400px) {
+                & {
+                    gap: 0em;
+                }
+            }
             a {
                 margin-right: 5px;
                 .socialIcon {
@@ -428,10 +433,9 @@ p, li, a  {
     flex-shrink: 0;
     height: 100vh;
     min-width: 100%;
-    overflow-x: hidden;
     @media screen and (max-width: 1000px) {
         & {
-            height: 60vh;
+            height: 50vh;
         }
     }
     .socialMediaIconContainer {
@@ -523,27 +527,27 @@ p, li, a  {
     @media screen and (max-width: 1000px) {
         .FBsocialMediaIcon {
             top: 50%;
-            right: 0%;
+            right: 5%;
         }
         .IGsocialMediaIcon {
             top: 100%;
-            right: 10%;
+            right: 15%;
         }
         .SnapsocialMediaIcon {
             transform: scaleX(-1);
             top: 50%;
-            left: 0%;
+            left: 5%;
         }
         .TikToksocialMediaIcon {
             top: 100%;
-            left: 10%;
+            left: 15%;
         }
         .TwittersocialMediaIcon {
             top: 2%;
-            right: 15%;
+            right: 20%;
         }
         .YouTubesocialMediaIcon {
-            left: 15%;
+            left: 20%;
             top: 2%
         } 
     }
@@ -734,14 +738,12 @@ p, li, a  {
 .contactUsContainer {
     height: 100%;
     width: 100%;
-    background-color: grey;
     .contactUsform {
         height: 100%;
         width: 80%;
         padding: 1em 3em;
         max-width: 1000px;
         margin: 0 auto;
-        background-color: var(--red);
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         .contactUsHeading {
@@ -749,16 +751,20 @@ p, li, a  {
             grid-column-end: 3;
             text-align: center;
             margin: 2em 0em;
+            font-size: 1.5rem;
         }
         .contactFormSubmit {
             grid-column-start: 1;
             grid-column-end: 3;
             text-align: center;
-            margin: 2em 0em;
-            width: 1rem;
+            @include buttonStyle;
+            margin: 0 auto;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
         }
         .basicInfo {
             width: 100%;
+            max-width: 100%;
             input {
                 margin-bottom: 1em;
                 max-width: 800px;
@@ -766,21 +772,50 @@ p, li, a  {
             }
             textarea {
                 max-width: 80%;
-                width: 80%
+                width: 80%;
+                min-height: 50px;
             }
         }
         .moreContext {
             width: 100%;
+            h4 {
+                position: relative;
+                margin-bottom: 1em;
+                width: fit-content;
+                &:after {
+                    position: absolute;
+                    content: '';
+                    height: 1px;
+                    width: 100%;
+                    background-color: var(--red);
+                    bottom: 0;
+                    left: 0;
+                }
+            }
             .platformOptions {
                 width: 90px;
-                .platformsUsed {
-                    
-                }
                 input {
                     float: right;
-
+                    transform: translateY(5px);
                 }
             }
         }
+    }
+    @media screen and (max-width: 800px) {
+        .contactUsform {
+            width: 95%;
+            padding: 1em 0em;
+            .basicInfo {
+                input {
+                    margin-bottom: 1em;
+                    max-width: 800px;
+                    width: 90%;
+                }
+                textarea {
+                    max-width: 90%;
+                    width: 90%;
+                }
+            }
+        } 
     }
 }
