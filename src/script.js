@@ -20,6 +20,7 @@ function openMobileSection() {
     mobileSecton.style.clipPath = 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)';
     hamburgerButtonOpen.style.transform = 'scale(0%) rotate(900deg)';
     hamburgerButtonClose.style.transform = 'scale(1) rotate(0deg)';
+    window.scrollTo(0, 0);
     stopScrolling();
 };
 
@@ -30,6 +31,14 @@ document.addEventListener('keydown', function(e) {
         closeMobileSection();
     };
 });
+
+const mobileMenuLinks = document.querySelectorAll('.mobileItemLink');
+mobileMenuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        closeMobileSection();
+    });
+});
+
 function closeMobileSection() {
     mobileSecton.style.transform = 'translateX(-120%)';
     mobileSecton.style.clipPath = 'polygon(0 0, 9% 91%, 100% 100%, 0% 100%)';
@@ -92,7 +101,38 @@ function socialMediaIconParallax() {
     // emoji icons
     const socialIconContainer = document.querySelector('.socialIconContainer');
 
-    let emojiParallaxvalue = scrollheight * 0.1;
+    let emojiParallaxvalue = scrollheight * -0.3;
     socialIconContainer.style.transform = `translateY(${emojiParallaxvalue}px)`;
 };
 
+// contact us cartoon parallax
+const emailCartoon = document.querySelector('.emailUsIcon');
+
+const emailCartoonOptions = {
+    rootMargin: "0px",
+    threshold: 0.1
+}
+
+const cartoonParallaxObserver = new IntersectionObserver(function(entires, cartoonParallaxObserver) {
+    entires.forEach(entry => {
+        if (entry.isIntersecting) {
+            document.addEventListener('scroll', cartoonParallax);
+        } else {
+            document.removeEventListener('scroll', cartoonParallax);
+        }
+        function cartoonParallax() {
+
+            let cartoonRect = emailCartoon.getBoundingClientRect();
+            let windowHeight = window.innerHeight;
+            let cartoonToTop = cartoonRect.y;
+            let startOfParallax = (windowHeight - cartoonToTop) / 40;
+
+            console.log(startOfParallax); 
+
+            emailCartoon.style.transform = `translateY(${startOfParallax}rem)`;
+
+        }
+    });
+}, emailCartoonOptions);
+
+cartoonParallaxObserver.observe(emailCartoon);

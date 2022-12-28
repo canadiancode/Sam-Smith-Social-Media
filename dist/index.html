@@ -33,9 +33,10 @@
             </div>
             <ul class="headerList">
                 <a href="#"><li class="headerItem"></li>Home</a>
-                <a href="#"><li class="headerItem"></li>Services</a>
-                <a href="#"><li class="headerItem"></li>About Us</a>
-                <a href="#"><li class="headerItem"></li>Contact</a>
+                <a href="#aboutUs"><li class="headerItem"></li>About Us</a>
+                <a href="#ourServices"><li class="headerItem"></li>Services</a>
+                <a href="#ourWork"><li class="headerItem"></li>Our Work</a>
+                <a href="#contactUs"><li class="headerItem"></li>Contact</a>
             </ul>
         </div>
 
@@ -47,7 +48,7 @@
                 <a href="https://www.instagram.com/"><img src="/instagram.77044c70.png" alt="Instagram icon" class="socialIconDiv"></a>
             </div>
             <div class="CTAbutton">
-                <a href="#"><button class="headerCTA">Get Started</button></a>
+                <a href="#contactUs"><button class="headerCTA">Get Started</button></a>
             </div>
         </div>
 
@@ -58,10 +59,11 @@
             <button class="hamburgerButtonClose">✖</button>
         </div>
         <div class="mobileitems">
-            <a href="#"><li class="headerItem">Home</li></a>
-            <a href="#"><li class="headerItem">Services</li></a>
-            <a href="#"><li class="headerItem">About Us</li></a>
-            <a href="#"><li class="headerItem">Contact</li></a>
+            <a class="mobileItemLink" href="#"><li class="headerItem">Home</li></a>
+            <a class="mobileItemLink" href="#aboutUs"><li class="headerItem">About Us</li></a>
+            <a class="mobileItemLink" href="#ourServices"><li class="headerItem">Services</li></a>
+            <a class="mobileItemLink" href="#ourWork"><li class="headerItem">Our Work</li></a>
+            <a class="mobileItemLink" href="#contactUs"><li class="headerItem">Contact</li></a>
         </div>
         <div class="mobileSocial">
             <div class="mobileSocialIconContainer">
@@ -74,7 +76,7 @@
     </div>
 
     <!-- Hero --Section -->
-    <div class="backgroundContainer">
+    <div class="backgroundContainer removeMobileHeader">
         <div class="socialMediaIconContainer">
             <img src="/3D_Facebook_side.edd9af74.png" alt="3D Facebook Icon" class="socialMediaIcon FBsocialMediaIcon">
             <img src="/3D_Instagram_side.e5c9afb2.png" alt="3D Instagram Icon" class="socialMediaIcon IGsocialMediaIcon">
@@ -93,7 +95,7 @@
         </div>
     </div>
 
-    <section class="heroSection">
+    <section class="heroSection removeMobileHeader">
         <div class="heroSectionHueDiv">
             <div class="heroSectionHue"></div>
         </div>
@@ -102,19 +104,19 @@
                 <span class="SuperchargedText">Supercharged</span>
             </h1>
             <p>Proven social media marketing strategies to increase exposure, drive traffic, and take your business to the next level.</p>
-            <a href="#"><button class="heroCTAbutton">Let's Talk</button></a>
+            <a href="#contactUs"><button class="heroCTAbutton">Let's Talk</button></a>
         </div>
     </section>
 
-    <!-- Our Approach --Section -->
+    <!-- About Us and Services --Section -->
     <section class="ourServicesSection">
-        <div class="ourServicesContentDiv">
+        <div class="ourServicesContentDiv" id="aboutUs">
             <h3>Connect With Your Audience<br>Grow Your Business</h3>
             <p>We believe that effective social media marketing is about more than just posting content online. It's about building meaningful relationships with your audience and creating valuable experiences that engage and inspire them.</p>
-            <a href="#"><button class="heroCTAbutton">Connect with Us</button></a>
+            <a href="#contactUs"><button class="heroCTAbutton">Connect with Us</button></a>
         </div>
 
-        <div class="ourServicesAnimation">
+        <div class="ourServicesAnimation" id="ourServices">
             <div class="serviceSteps define">
                 <img class="serviceStepIcon rightToLeftImg" src="/Define.7d2e3a4c.png" alt="Define Audience">
                 <p class="servicesSectonText leftToRightText"><span class="servicesStepTitle">Define your target audience:</span> Identifying the demographics, interests, and behaviors of your ideal customers, and tailoring your content and messaging to appeal to them.</p>
@@ -134,9 +136,14 @@
         </div>
     </section>
 
-    <!-- Contact Us Form -->
+    <!-- Our Work --Section -->
+    <section class="ourWork" id="ourWork">
+
+    </section>
+
+    <!-- Contact Us --Section & contact Form -->
     <section class="contactUsContainer">
-        <form class="contactUsform">
+        <form class="contactUsform" id="contactUs">
             
             <h3 class="contactUsHeading">Contact Us Today!</h3>
 
@@ -154,26 +161,41 @@
                 <textarea nam="message" class="contactFormTextarea"></textarea>
             </div>
             <div class="moreContext">
+
+                <img class="emailUsIcon parallaxCartoon" src="/Email_us_icon.ca44aaa0.png" alt="cartoon 3D email character">
+
                 <h4>What platforms are you using?</h4>
 
                 <div class="platformOptions">
-                    <label for="Facebook" class="platformsUsed FacebookSelection">Facebook:</label>
-                    <input type="checkbox" name="Facebook" value="Facebook">
+                    <div>
+                        <label for="Facebook" class="platformsUsed FacebookSelection">Facebook:</label>
+                        <input class="check-box" type="checkbox" name="Facebook" value="Facebook">
+                    </div>
 
-                    <label for="Instagram" class="platformsUsed InstagramSelection">Instagram:</label>
-                    <input type="checkbox" name="Instagram" value="Instagram">
+                    <div>
+                        <label for="Instagram" class="platformsUsed InstagramSelection">Instagram:</label>
+                        <input class="check-box" type="checkbox" name="Instagram" value="Instagram">
+                    </div>
 
-                    <label for="Snapchat" class="platformsUsed SnapchatSelection">Snapchat:</label>
-                    <input type="checkbox" name="Snapchat" value="Snapchat">
+                    <div>
+                        <label for="Snapchat" class="platformsUsed SnapchatSelection">Snapchat:</label>
+                        <input class="check-box" type="checkbox" name="Snapchat" value="Snapchat">
+                    </div>
 
-                    <label for="YouTube" class="platformsUsed YouTubeSelection">YouTube:</label>
-                    <input type="checkbox" name="YouTube" value="YouTube">
+                    <div>
+                        <label for="YouTube" class="platformsUsed YouTubeSelection">YouTube:</label>
+                        <input class="check-box" type="checkbox" name="YouTube" value="YouTube">
+                    </div>
+                    
+                    <div>
+                        <label for="TikTok" class="platformsUsed TikTokSelection">TikTok:</label>
+                        <input class="check-box" type="checkbox" name="TikTok" value="TikTok">
+                    </div>
 
-                    <label for="TikTok" class="platformsUsed TikTokSelection">TikTok:</label>
-                    <input type="checkbox" name="TikTok" value="TikTok">
-
-                    <label for="other" class="platformsUsed otherSelection">other:</label>
-                    <input type="checkbox" name="other" value="other">
+                    <div>
+                        <label for="other" class="platformsUsed otherSelection">other:</label>
+                        <input class="check-box" type="checkbox" name="other" value="other">
+                    </div>
                 </div>
             </div>
 
@@ -181,6 +203,36 @@
 
         </form>
     </section>
+
+    <footer class="footer">
+
+        <div class="quickLnks">
+            <ul>
+                <a href="#aboutUs"><li class="quickLinkItems">About Us</li></a>
+                <a href="#ourServices"><li class="quickLinkItems">Services</li></a>
+                <a href="#ourWork"><li class="quickLinkItems">Our Work</li></a>
+                <a href="#contactUs"><li class="quickLinkItems">Contact Us</li></a>
+            </ul>
+        </div>
+
+        <div class="newsletter">
+            <div class="newsletterSubmission">
+                <div class="newsletterEmailInput">
+                    <label>Subscribe To Our Newsletter:</label>
+                    <input class="newsletterInput" type="email">
+                </div>
+                <button class="newsletterButton">Subscribe</button>
+            </div>
+        </div>
+
+        <div class="footerSocialLinks">
+            <a href="https://www.facebook.com/"><img src="/facebook.b07338d5.png" alt="Facebook icon" class="socialIconDiv"></a>
+            <a href="https://twitter.com/"><img src="/twitter.86d5ceec.png" alt="Twitter icon" class="socialIconDiv"></a>
+            <a href="https://www.tiktok.com/"><img src="/tiktok.0261eba8.png" alt="TikTok icon" class="socialIconDiv"></a>
+            <a href="https://www.instagram.com/"><img src="/instagram.77044c70.png" alt="Instagram icon" class="socialIconDiv"></a>
+        </div>
+
+    </footer>
 
 </body>
 </html>

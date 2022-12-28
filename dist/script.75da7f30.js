@@ -139,6 +139,7 @@ function openMobileSection() {
   mobileSecton.style.clipPath = 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)';
   hamburgerButtonOpen.style.transform = 'scale(0%) rotate(900deg)';
   hamburgerButtonClose.style.transform = 'scale(1) rotate(0deg)';
+  window.scrollTo(0, 0);
   stopScrolling();
 }
 ;
@@ -150,6 +151,12 @@ document.addEventListener('keydown', function (e) {
     closeMobileSection();
   }
   ;
+});
+var mobileMenuLinks = document.querySelectorAll('.mobileItemLink');
+mobileMenuLinks.forEach(function (link) {
+  link.addEventListener('click', function () {
+    closeMobileSection();
+  });
 });
 function closeMobileSection() {
   mobileSecton.style.transform = 'translateX(-120%)';
@@ -207,10 +214,35 @@ function socialMediaIconParallax() {
 
   // emoji icons
   var socialIconContainer = document.querySelector('.socialIconContainer');
-  var emojiParallaxvalue = scrollheight * 0.1;
+  var emojiParallaxvalue = scrollheight * -0.3;
   socialIconContainer.style.transform = "translateY(".concat(emojiParallaxvalue, "px)");
 }
 ;
+
+// contact us cartoon parallax
+var emailCartoon = document.querySelector('.emailUsIcon');
+var emailCartoonOptions = {
+  rootMargin: "0px",
+  threshold: 0.1
+};
+var cartoonParallaxObserver = new IntersectionObserver(function (entires, cartoonParallaxObserver) {
+  entires.forEach(function (entry) {
+    if (entry.isIntersecting) {
+      document.addEventListener('scroll', cartoonParallax);
+    } else {
+      document.removeEventListener('scroll', cartoonParallax);
+    }
+    function cartoonParallax() {
+      var cartoonRect = emailCartoon.getBoundingClientRect();
+      var windowHeight = window.innerHeight;
+      var cartoonToTop = cartoonRect.y;
+      var startOfParallax = (windowHeight - cartoonToTop) / 40;
+      console.log(startOfParallax);
+      emailCartoon.style.transform = "translateY(".concat(startOfParallax, "rem)");
+    }
+  });
+}, emailCartoonOptions);
+cartoonParallaxObserver.observe(emailCartoon);
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -236,7 +268,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52110" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60424" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

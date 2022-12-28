@@ -164,7 +164,7 @@ p, li, a {
   align-content: center;
   align-items: center;
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 849px) {
   .header .leftSide ul {
     display: none;
   }
@@ -181,7 +181,7 @@ p, li, a {
 .header .leftSide ul a:hover {
   color: var(--red);
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1200px) {
   .header .leftSide ul a {
     margin-left: 1em;
   }
@@ -196,7 +196,7 @@ p, li, a {
   display: flex;
   align-items: center;
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 849px) {
   .header .rightSide .socialMediaDiv {
     display: none;
   }
@@ -324,6 +324,7 @@ p, li, a {
 }
 .mobileSecton .mobileSocial .mobileSocialIconContainer a .socialIcon {
   height: 2.5em;
+  filter: invert(100%) sepia(0%) saturate(2%) hue-rotate(345deg) brightness(104%) contrast(101%);
 }
 
 @keyframes rotateLogo {
@@ -630,7 +631,7 @@ p, li, a {
 }
 .ourServicesSection .ourServicesContentDiv h3 {
   margin-bottom: 1em;
-  font-size: 2rem;
+  font-size: 1.7rem;
   font-weight: bolder;
 }
 .ourServicesSection .ourServicesContentDiv p {
@@ -754,7 +755,7 @@ p, li, a {
   grid-column-end: 3;
   text-align: center;
   margin: 2em 0em;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 .contactUsContainer .contactUsform .contactFormSubmit {
   grid-column-start: 1;
@@ -791,10 +792,23 @@ p, li, a {
 .contactUsContainer .contactUsform .basicInfo textarea {
   max-width: 80%;
   width: 80%;
-  min-height: 50px;
+  min-height: 120px;
+}
+@media screen and (max-width: 400px) {
+  .contactUsContainer .contactUsform .basicInfo {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
 }
 .contactUsContainer .contactUsform .moreContext {
   width: 100%;
+  position: relative;
+}
+.contactUsContainer .contactUsform .moreContext .emailUsIcon {
+  position: absolute;
+  right: 0;
+  top: 5%;
+  width: 50%;
 }
 .contactUsContainer .contactUsform .moreContext h4 {
   position: relative;
@@ -811,11 +825,75 @@ p, li, a {
   left: 0;
 }
 .contactUsContainer .contactUsform .moreContext .platformOptions {
-  width: 90px;
+  width: 100%;
+  position: relative;
 }
-.contactUsContainer .contactUsform .moreContext .platformOptions input {
+.contactUsContainer .contactUsform .moreContext .platformOptions div {
+  display: flex;
+  margin: 0 auto;
+}
+.contactUsContainer .contactUsform .moreContext .platformOptions div label {
+  align-self: center;
+  min-width: 70px;
+}
+.contactUsContainer .contactUsform .moreContext .platformOptions div input {
   float: right;
-  transform: translateY(5px);
+}
+.contactUsContainer .contactUsform .moreContext .platformOptions .check-box {
+  transform: scale(0.4);
+}
+.contactUsContainer .contactUsform .moreContext .platformOptions input[type=checkbox] {
+  position: relative;
+  appearance: none;
+  width: 100px;
+  height: 50px;
+  background: #ccc;
+  border-radius: 50px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: 0.4s;
+}
+.contactUsContainer .contactUsform .moreContext .platformOptions input:checked[type=checkbox] {
+  background: var(--red);
+}
+.contactUsContainer .contactUsform .moreContext .platformOptions input[type=checkbox]::after {
+  position: absolute;
+  content: "";
+  width: 50px;
+  height: 50px;
+  top: 0;
+  left: 0;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  transform: scale(1.1);
+  transition: 0.4s;
+}
+.contactUsContainer .contactUsform .moreContext .platformOptions input:checked[type=checkbox]::after {
+  left: 50%;
+}
+@media screen and (max-width: 400px) {
+  .contactUsContainer .contactUsform .moreContext {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .contactUsContainer .contactUsform .moreContext h4 {
+    margin: 0 auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  .contactUsContainer .contactUsform .moreContext .platformOptions {
+    margin: 0 auto;
+  }
+  .contactUsContainer .contactUsform .moreContext .platformOptions div {
+    justify-content: center;
+  }
+  .contactUsContainer .contactUsform .moreContext .emailUsIcon {
+    display: none;
+  }
 }
 @media screen and (max-width: 800px) {
   .contactUsContainer .contactUsform {
@@ -830,6 +908,131 @@ p, li, a {
   .contactUsContainer .contactUsform .basicInfo textarea {
     max-width: 90%;
     width: 90%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .contactUsContainer .contactUsform {
+    width: 100%;
+    padding: 1em 0em;
+  }
+  .contactUsContainer .contactUsform .basicInfo {
+    padding: 0em 1em;
+  }
+  .contactUsContainer .contactUsform .basicInfo input {
+    margin-bottom: 1em;
+    max-width: 800px;
+    width: 100%;
+  }
+  .contactUsContainer .contactUsform .basicInfo textarea {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+.footer {
+  background-color: #E63946;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='144' height='144' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='100' y1='33' x2='100' y2='-3'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='100' y1='135' x2='100' y2='97'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='%23cd1b34' fill-opacity='0.33'%3E%3Crect x='100' width='100' height='100'/%3E%3Crect y='100' width='100' height='100'/%3E%3C/g%3E%3Cg fill-opacity='0.33'%3E%3Cpolygon fill='url(%23a)' points='100 30 0 0 200 0'/%3E%3Cpolygon fill='url(%23b)' points='100 100 0 130 0 100 200 100 200 130'/%3E%3C/g%3E%3C/svg%3E");
+  padding: 1rem 3rem;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.footer .quickLnks {
+  width: 100%;
+  margin: 1rem 0rem;
+}
+.footer .quickLnks ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+@media screen and (max-width: 430px) {
+  .footer .quickLnks ul {
+    flex-direction: column;
+  }
+  .footer .quickLnks ul a {
+    margin: 0 auto;
+  }
+}
+.footer .quickLnks ul a {
+  text-decoration: none;
+}
+.footer .quickLnks ul a li {
+  color: white;
+  transition: var(--transitionDuration);
+}
+.footer .quickLnks ul a li:hover {
+  color: black;
+}
+.footer .newsletter {
+  width: 100%;
+  margin: 0 auto;
+  margin: 1rem 0rem;
+}
+.footer .newsletter .newsletterSubmission {
+  display: flex;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.footer .newsletter .newsletterSubmission .newsletterEmailInput {
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+}
+.footer .newsletter .newsletterSubmission .newsletterEmailInput input {
+  width: 100%;
+  max-width: 250px;
+}
+.footer .newsletter .newsletterSubmission .newsletterEmailInput label {
+  color: white;
+}
+.footer .newsletter .newsletterSubmission .newsletterButton {
+  margin-left: 1rem;
+  background: white;
+  color: black;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  transition: var(--transitionDuration);
+}
+.footer .newsletter .newsletterSubmission .newsletterButton:hover {
+  background: black;
+  color: white;
+  transform: scale(1.02);
+}
+.footer .footerSocialLinks {
+  display: flex;
+  justify-content: right;
+  width: 100%;
+  margin: 1rem 0rem;
+}
+.footer .footerSocialLinks a img {
+  height: 2.5rem;
+  transition: var(--transitionDuration);
+  filter: invert(100%) sepia(0%) saturate(2%) hue-rotate(345deg) brightness(104%) contrast(101%);
+}
+.footer .footerSocialLinks a img:hover {
+  filter: none;
+}
+@media screen and (max-width: 1100px) {
+  .footer {
+    flex-direction: column;
+  }
+  .footer .quickLnks {
+    justify-content: center;
+  }
+  .footer .quickLnks ul {
+    justify-content: center;
+  }
+  .footer .footerSocialLinks {
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+@media screen and (max-width: 400px) {
+  .footer {
+    padding: 1rem 0.5rem;
   }
 }
 
