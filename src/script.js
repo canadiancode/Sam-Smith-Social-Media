@@ -61,27 +61,6 @@ const heroSectionTextObserver = new IntersectionObserver((entries) => {
 const heroSectionTextEl = document.querySelectorAll('.SuperchargedText');
 heroSectionTextEl.forEach((el) => heroSectionTextObserver.observe(el));
 
-// Services --Section
-
-const servicesSections = document.querySelectorAll('.serviceSteps');
-
-const servicesOption = {
-    rootMargin: "0px",
-    threshold: 1
-};
-
-const servicesObserver = new IntersectionObserver(function(entries, servicesObserver) {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('showingServices');
-        }
-    });
-}, servicesOption);
-servicesSections.forEach(section => {
-    servicesObserver.observe(section);
-});
-
-
 // hero social media icon section
 document.addEventListener('scroll', socialMediaIconParallax);
 
@@ -105,6 +84,61 @@ function socialMediaIconParallax() {
     socialIconContainer.style.transform = `translateY(${emojiParallaxvalue}px)`;
 };
 
+// Services --Section
+
+const servicesSections = document.querySelectorAll('.serviceSteps');
+
+const servicesOption = {
+    rootMargin: "0px",
+    threshold: 1
+};
+
+const servicesObserver = new IntersectionObserver(function(entries, servicesObserver) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('showingServices');
+        }
+    });
+}, servicesOption);
+servicesSections.forEach(section => {
+    servicesObserver.observe(section);
+});
+
+// Our work heading animation
+const ourWorkOptions = {
+    rootMargin: "0px",
+    threshold: 0
+}
+
+const ourWorkAnimationHeading = document.querySelector('.ourWorkAnimationHeading');
+
+const ourWorkObserver = new IntersectionObserver(function(entries, ourWorkObserver) {
+    entries.forEach(entry => {
+
+        function ourWorkAnimation() {
+            const ourWorkHeadingRect = ourWorkAnimationHeading.getBoundingClientRect();
+            const ourWorkHeadingFromTop = ourWorkHeadingRect.top;
+
+            const windowHeight = window.innerHeight;
+            const ourWorkHeadingParallaxvalue = (0.9 * (-1 * (ourWorkHeadingFromTop - windowHeight))) / 10;
+
+            console.log(ourWorkHeadingParallaxvalue);
+            ourWorkAnimationHeading.style.left = `${ourWorkHeadingParallaxvalue}%`;
+
+        }
+
+        if (entry.isIntersecting) {
+            document.addEventListener('scroll', ourWorkAnimation)
+        } else {
+            document.removeEventListener('scroll', ourWorkAnimation);
+        }
+
+    });
+}, ourWorkOptions);
+
+ourWorkObserver.observe(ourWorkAnimationHeading);
+
+
 // contact us cartoon parallax
 const emailCartoon = document.querySelector('.emailUsIcon');
 
@@ -126,8 +160,6 @@ const cartoonParallaxObserver = new IntersectionObserver(function(entires, carto
             let windowHeight = window.innerHeight;
             let cartoonToTop = cartoonRect.y;
             let startOfParallax = (windowHeight - cartoonToTop) / 40;
-
-            console.log(startOfParallax); 
 
             emailCartoon.style.transform = `translateY(${startOfParallax}rem)`;
 

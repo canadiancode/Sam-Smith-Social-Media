@@ -182,24 +182,6 @@ heroSectionTextEl.forEach(function (el) {
   return heroSectionTextObserver.observe(el);
 });
 
-// Services --Section
-
-var servicesSections = document.querySelectorAll('.serviceSteps');
-var servicesOption = {
-  rootMargin: "0px",
-  threshold: 1
-};
-var servicesObserver = new IntersectionObserver(function (entries, servicesObserver) {
-  entries.forEach(function (entry) {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('showingServices');
-    }
-  });
-}, servicesOption);
-servicesSections.forEach(function (section) {
-  servicesObserver.observe(section);
-});
-
 // hero social media icon section
 document.addEventListener('scroll', socialMediaIconParallax);
 function socialMediaIconParallax() {
@@ -219,6 +201,49 @@ function socialMediaIconParallax() {
 }
 ;
 
+// Services --Section
+
+var servicesSections = document.querySelectorAll('.serviceSteps');
+var servicesOption = {
+  rootMargin: "0px",
+  threshold: 1
+};
+var servicesObserver = new IntersectionObserver(function (entries, servicesObserver) {
+  entries.forEach(function (entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('showingServices');
+    }
+  });
+}, servicesOption);
+servicesSections.forEach(function (section) {
+  servicesObserver.observe(section);
+});
+
+// Our work heading animation
+var ourWorkOptions = {
+  rootMargin: "0px",
+  threshold: 0
+};
+var ourWorkAnimationHeading = document.querySelector('.ourWorkAnimationHeading');
+var ourWorkObserver = new IntersectionObserver(function (entries, ourWorkObserver) {
+  entries.forEach(function (entry) {
+    function ourWorkAnimation() {
+      var ourWorkHeadingRect = ourWorkAnimationHeading.getBoundingClientRect();
+      var ourWorkHeadingFromTop = ourWorkHeadingRect.top;
+      var windowHeight = window.innerHeight;
+      var ourWorkHeadingParallaxvalue = 0.9 * (-1 * (ourWorkHeadingFromTop - windowHeight)) / 10;
+      console.log(ourWorkHeadingParallaxvalue);
+      ourWorkAnimationHeading.style.left = "".concat(ourWorkHeadingParallaxvalue, "%");
+    }
+    if (entry.isIntersecting) {
+      document.addEventListener('scroll', ourWorkAnimation);
+    } else {
+      document.removeEventListener('scroll', ourWorkAnimation);
+    }
+  });
+}, ourWorkOptions);
+ourWorkObserver.observe(ourWorkAnimationHeading);
+
 // contact us cartoon parallax
 var emailCartoon = document.querySelector('.emailUsIcon');
 var emailCartoonOptions = {
@@ -237,7 +262,6 @@ var cartoonParallaxObserver = new IntersectionObserver(function (entires, cartoo
       var windowHeight = window.innerHeight;
       var cartoonToTop = cartoonRect.y;
       var startOfParallax = (windowHeight - cartoonToTop) / 40;
-      console.log(startOfParallax);
       emailCartoon.style.transform = "translateY(".concat(startOfParallax, "rem)");
     }
   });
@@ -268,7 +292,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60424" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51608" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

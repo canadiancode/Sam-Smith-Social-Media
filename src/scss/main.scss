@@ -739,6 +739,40 @@ p, li, a  {
     }
 }
 
+// Our Work --Section
+.ourWork {
+    width: 100%;
+    height: 100%;
+
+    .ourWorkHeaderContainer {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        margin-bottom: 3em;
+        .ourWorkHeadingText {
+            width: 100%;
+            font-size: 2rem;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .ourWorkAnimationHeading {
+            position: absolute;
+            min-width: 100%;
+            top: -100%;
+            left: -20%;
+            font-size: 5rem;
+            font-weight: bolder;
+            font-family: 'Anton', sans-serif;
+            color: white;
+            text-shadow: -1px -1px 0 var(--red), 1px -1px 0 var(--red), -1px 1px 0 var(--red), 1px 1px 0 var(--red);
+            z-index: -1;
+        }
+    }
+}
+
 // Contact Us Form --Section
 .contactUsContainer {
     height: 100%;
@@ -757,6 +791,7 @@ p, li, a  {
             text-align: center;
             margin: 2em 0em;
             font-size: 2rem;
+            text-shadow: 1px 1px 1px var(--red);
         }
         .contactFormSubmit {
             grid-column-start: 1;
@@ -948,6 +983,7 @@ p, li, a  {
                 li {
                     color: white;
                     transition: var(--transitionDuration);
+                    text-shadow: 1px 1px 1px black;
                     &:hover {
                         color: black;
                     }
@@ -974,6 +1010,7 @@ p, li, a  {
                 }
                 label {
                     color: white;
+                    text-shadow: 1px 1px 1px black;
                 }
             }
             .newsletterButton {
