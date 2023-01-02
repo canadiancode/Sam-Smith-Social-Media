@@ -232,7 +232,6 @@ var ourWorkObserver = new IntersectionObserver(function (entries, ourWorkObserve
       var ourWorkHeadingFromTop = ourWorkHeadingRect.top;
       var windowHeight = window.innerHeight;
       var ourWorkHeadingParallaxvalue = 0.9 * (-1 * (ourWorkHeadingFromTop - windowHeight)) / 10;
-      console.log(ourWorkHeadingParallaxvalue);
       ourWorkAnimationHeading.style.left = "".concat(ourWorkHeadingParallaxvalue, "%");
     }
     if (entry.isIntersecting) {
@@ -243,6 +242,56 @@ var ourWorkObserver = new IntersectionObserver(function (entries, ourWorkObserve
   });
 }, ourWorkOptions);
 ourWorkObserver.observe(ourWorkAnimationHeading);
+
+// Case Study Parallax Area
+var parallaxCaseStudyImage = document.querySelectorAll('.parallaxCaseStudyImage');
+var caseStudyImageOptions = {
+  rootMargin: "0px",
+  threshold: 0
+};
+var caseStudyParallaxObserver = new IntersectionObserver(function (entries, caseStudyParallaxObserver) {
+  entries.forEach(function (entry) {
+    function moveOurWorkImage() {
+      parallaxCaseStudyImage.forEach(function (image) {
+        var imageRect = image.getBoundingClientRect();
+        var imagePosition = imageRect.y;
+        var windowHeight = window.innerHeight;
+        var imageHeight = -1 * (imagePosition - windowHeight);
+        var parallaxHeight = imageHeight / 10;
+        image.style.transform = "translateY(".concat(parallaxHeight, "px)");
+      });
+    }
+    ;
+    parallaxCaseStudyImage.forEach(function (image) {
+      if (entry.isIntersecting) {
+        document.addEventListener('scroll', moveOurWorkImage);
+      } else {
+        document.removeEventListener('scroll', moveOurWorkImage);
+      }
+    });
+  });
+}, caseStudyImageOptions);
+parallaxCaseStudyImage.forEach(function (image) {
+  caseStudyParallaxObserver.observe(image);
+});
+
+// our work image coming in from side
+
+var ourWorkbgimgOptions = {
+  rootMargin: "0px",
+  threshold: 1
+};
+var backgroundCaseStudyImage = document.querySelectorAll('.backgroundCaseStudyImage');
+var ourWorkbgObserver = new IntersectionObserver(function (entries, ourWorkbgObserver) {
+  entries.forEach(function (entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('ourWorkBackgroundAnimation');
+    }
+  });
+}, ourWorkbgimgOptions);
+backgroundCaseStudyImage.forEach(function (img) {
+  ourWorkbgObserver.observe(img);
+});
 
 // contact us cartoon parallax
 var emailCartoon = document.querySelector('.emailUsIcon');
@@ -292,7 +341,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52333" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61784" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

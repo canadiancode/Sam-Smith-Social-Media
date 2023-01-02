@@ -122,7 +122,6 @@ const ourWorkObserver = new IntersectionObserver(function(entries, ourWorkObserv
             const windowHeight = window.innerHeight;
             const ourWorkHeadingParallaxvalue = (0.9 * (-1 * (ourWorkHeadingFromTop - windowHeight))) / 10;
 
-            console.log(ourWorkHeadingParallaxvalue);
             ourWorkAnimationHeading.style.left = `${ourWorkHeadingParallaxvalue}%`;
 
         }
@@ -137,6 +136,72 @@ const ourWorkObserver = new IntersectionObserver(function(entries, ourWorkObserv
 }, ourWorkOptions);
 
 ourWorkObserver.observe(ourWorkAnimationHeading);
+
+// Case Study Parallax Area
+const parallaxCaseStudyImage = document.querySelectorAll('.parallaxCaseStudyImage');
+
+const caseStudyImageOptions = {
+    rootMargin: "0px",
+    threshold: 0
+}
+
+const caseStudyParallaxObserver = new IntersectionObserver(function(entries, caseStudyParallaxObserver) {
+    entries.forEach(entry => {
+
+        function moveOurWorkImage() {
+
+            parallaxCaseStudyImage.forEach(image => {
+                const imageRect = image.getBoundingClientRect();
+                const imagePosition = imageRect.y;
+
+                const windowHeight = window.innerHeight;
+                const imageHeight = -1 * (imagePosition - windowHeight);
+                const parallaxHeight = (imageHeight / 10);
+
+                image.style.transform = `translateY(${parallaxHeight}px)`;
+
+
+
+            });
+        };
+
+        parallaxCaseStudyImage.forEach(image => {
+
+            if (entry.isIntersecting) {
+                document.addEventListener('scroll', moveOurWorkImage);
+            } else {
+                document.removeEventListener('scroll', moveOurWorkImage);
+            }
+        })
+    });
+}, caseStudyImageOptions);
+
+parallaxCaseStudyImage.forEach(image => {
+    caseStudyParallaxObserver.observe(image);
+});
+
+// our work image coming in from side
+
+const ourWorkbgimgOptions = {
+    rootMargin: "0px",
+    threshold: 1
+};
+
+const backgroundCaseStudyImage = document.querySelectorAll('.backgroundCaseStudyImage');
+
+const ourWorkbgObserver = new IntersectionObserver(function(entries, ourWorkbgObserver) {
+    entries.forEach(entry => {
+          
+        if (entry.isIntersecting) {         
+            entry.target.classList.add('ourWorkBackgroundAnimation');
+        }
+
+    });
+}, ourWorkbgimgOptions);
+
+backgroundCaseStudyImage.forEach(img => {
+    ourWorkbgObserver.observe(img);
+});
 
 
 // contact us cartoon parallax
