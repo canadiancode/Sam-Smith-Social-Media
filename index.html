@@ -1,0 +1,1748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sam Smith Social Marketing</title>
+    <link rel="icon" type="image/x-icon" href="/assets/SamSmithSocialMediaLogo.png">
+
+    <!-- Font Links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Microbe&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Seymour+One&display=swap" rel="stylesheet">
+
+    <style>
+        /* Box sizing rules */
+        *,
+        *::before,
+        *::after {
+        box-sizing: border-box;
+        }
+
+        /* Remove default margin */
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        p,
+        figure,
+        blockquote,
+        dl,
+        dd {
+        margin: 0;
+        }
+
+        /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+        ul[role=list],
+        ol[role=list] {
+        list-style: none;
+        }
+
+        /* Set core root defaults */
+        html:focus-within {
+        scroll-behavior: smooth;
+        }
+
+        /* Set core body defaults */
+        body {
+        min-height: 100vh;
+        text-rendering: optimizeSpeed;
+        line-height: 1.5;
+        }
+
+        /* A elements that don't have a class get default styles */
+        a:not([class]) {
+        text-decoration-skip-ink: auto;
+        }
+
+        /* Make images easier to work with */
+        img,
+        picture {
+        max-width: 100%;
+        display: block;
+        }
+
+        /* Inherit fonts for inputs and buttons */
+        input,
+        label,
+        button,
+        textarea,
+        select {
+        font: inherit;
+        }
+
+        /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+        @media (prefers-reduced-motion: reduce) {
+        html:focus-within {
+            scroll-behavior: auto;
+        }
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+        }
+        }
+        :root {
+        --red: #e63946;
+        --darkWhite: #f1faee;
+        --lightblue: #a8dadc;
+        --mildBlue: #457b9d;
+        --darkBlue: #1d3557;
+        --white: white;
+        --black: black;
+        --buttonBorderRadius: 20px;
+        --transitionDuration: 0.5s;
+        }
+
+        * {
+        scroll-behavior: smooth;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+
+        h2, h3, h4, h5, button, label, input {
+        font-family: "Nunito Sans", sans-serif;
+        }
+
+        p, li, a {
+        font-family: "Kanit", sans-serif;
+        }
+
+        .header {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        flex-direction: row;
+        height: 9em;
+        padding: 2em;
+        max-width: 70em;
+        margin: 0 auto;
+        }
+        .header .hamburgerMenu {
+        height: 100%;
+        display: flex;
+        align-content: center;
+        align-items: center;
+        }
+        .header .hamburgerMenu .hamburgerButtonOpen {
+        display: flex;
+        align-items: center;
+        height: 1em;
+        font-size: 4rem;
+        border: none;
+        background: none;
+        text-shadow: 1px 1px var(--red);
+        z-index: 2;
+        cursor: pointer;
+        transition-duration: var(--transitionDuration);
+        }
+        .header .hamburgerMenu .hamburgerButtonOpen:hover {
+        transform: scale(1.05);
+        color: var(--red);
+        text-shadow: 1px 1px var(--black);
+        }
+        @media screen and (min-width: 850px) {
+        .header .hamburgerMenu {
+            display: none;
+        }
+        }
+        .header .hamburgerMenu button {
+        height: 1em;
+        font-size: 2rem;
+        border: none;
+        background: none;
+        text-shadow: 1px 1px var(--red);
+        cursor: pointer;
+        transition-duration: var(--transitionDuration);
+        }
+        .header .leftSide {
+        display: flex;
+        flex-direction: row;
+        }
+        .header .leftSide .logoContainer {
+        height: 100%;
+        }
+        .header .leftSide .logoContainer img {
+        height: 100%;
+        animation: rotateLogo 20s infinite linear;
+        }
+        .header .leftSide ul {
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        align-content: center;
+        align-items: center;
+        }
+        @media screen and (max-width: 849px) {
+        .header .leftSide ul {
+            display: none;
+        }
+        }
+        .header .leftSide ul a {
+        text-decoration: none;
+        list-style: none;
+        align-content: center;
+        height: fit-content;
+        margin-left: 2em;
+        color: var(--darkBlue);
+        transition-duration: var(--transitionDuration);
+        }
+        .header .leftSide ul a:hover {
+        color: var(--red);
+        }
+        @media screen and (max-width: 1200px) {
+        .header .leftSide ul a {
+            margin-left: 1em;
+        }
+        }
+        .header .rightSide {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        }
+        .header .rightSide .socialMediaDiv {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        }
+        @media screen and (max-width: 849px) {
+        .header .rightSide .socialMediaDiv {
+            display: none;
+        }
+        }
+        .header .rightSide .socialMediaDiv a {
+        margin-right: 1em;
+        padding: 0;
+        }
+        .header .rightSide .socialMediaDiv a img {
+        height: 2em;
+        transition-duration: var(--transitionDuration);
+        }
+        .header .rightSide .socialMediaDiv a img:hover {
+        filter: invert(31%) sepia(84%) saturate(4515%) hue-rotate(340deg) brightness(98%) contrast(83%);
+        }
+        .header .rightSide .CTAbutton button {
+        margin-top: 2.2em;
+        height: 3em;
+        width: 9em;
+        background-color: var(--red);
+        color: var(--darkWhite);
+        border: none;
+        border-radius: var(--buttonBorderRadius);
+        margin-bottom: 0.2em;
+        cursor: pointer;
+        transition-duration: var(--transitionDuration);
+        transform: scale(1) translate(0px, 0px);
+        margin: 0;
+        }
+        .header .rightSide .CTAbutton button:hover {
+        transform: scale(1.02) translate(-1px, -1px);
+        box-shadow: 3px 5px 0px 0px var(--black);
+        }
+
+        .mobileSecton {
+        display: none;
+        position: absolute;
+        background-color: var(--red);
+        z-index: 4;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 70%;
+        height: 100%;
+        max-width: 300px;
+        box-shadow: inset -6px 0px 24px 10px var(--black);
+        }
+        @media screen and (max-width: 850px) {
+        .mobileSecton {
+            display: block;
+            transform: translateX(-120%);
+            transition: var(--transitionDuration) ease-in-out;
+            clip-path: polygon(0 0, 9% 91%, 100% 100%, 0% 100%);
+        }
+        }
+        .mobileSecton .hamburgerMenu {
+        height: auto;
+        display: flex;
+        align-content: center;
+        align-items: center;
+        }
+        .mobileSecton .hamburgerMenu .hamburgerButtonOpen {
+        height: 1em;
+        font-size: 2rem;
+        border: none;
+        background: none;
+        text-shadow: 1px 1px var(--red);
+        cursor: pointer;
+        transition-duration: var(--transitionDuration);
+        }
+        .mobileSecton .hamburgerMenu .hamburgerButtonOpen:hover {
+        transform: scale(1.05);
+        color: var(--red);
+        text-shadow: 1px 1px var(--black);
+        }
+        @media screen and (min-width: 850px) {
+        .mobileSecton .hamburgerMenu {
+            display: none;
+        }
+        }
+        .mobileSecton .hamburgerMenu .hamburgerButtonClose {
+        height: 3em;
+        margin-left: 1em;
+        transform: scale(0%) rotate(900deg);
+        }
+        .mobileSecton .hamburgerMenu button {
+        height: 1em;
+        font-size: 2em;
+        border: none;
+        background: none;
+        text-shadow: 1px 1px var(--white);
+        cursor: pointer;
+        transition-duration: var(--transitionDuration);
+        }
+        .mobileSecton .mobileitems a {
+        text-decoration: none;
+        }
+        .mobileSecton .mobileitems a li {
+        list-style: none;
+        margin-left: 2em;
+        margin-bottom: 1.5em;
+        color: var(--white);
+        text-shadow: 1px 1px 1px var(--black);
+        font-size: larger;
+        }
+        .mobileSecton .mobileSocial {
+        position: absolute;
+        bottom: 5%;
+        }
+        .mobileSecton .mobileSocial .mobileSocialIconContainer {
+        height: 100%;
+        position: relative;
+        padding-right: 1em;
+        padding-left: 1.5em;
+        display: flex;
+        gap: 1em;
+        }
+        @media screen and (max-width: 400px) {
+        .mobileSecton .mobileSocial .mobileSocialIconContainer {
+            gap: 0em;
+        }
+        }
+        .mobileSecton .mobileSocial .mobileSocialIconContainer a {
+        margin-right: 5px;
+        }
+        .mobileSecton .mobileSocial .mobileSocialIconContainer a .socialIcon {
+        height: 2.5em;
+        filter: invert(100%) sepia(0%) saturate(2%) hue-rotate(345deg) brightness(104%) contrast(101%);
+        }
+
+        @keyframes rotateLogo {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(-360deg);
+        }
+        }
+        .heroSection {
+        min-height: 35em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 4em;
+        }
+        .heroSection .heroSectionContent {
+        text-align: center;
+        padding: 2em;
+        z-index: 2;
+        position: relative;
+        justify-content: center;
+        width: 100%;
+        }
+        .heroSection .heroSectionContent h1 {
+        font-size: 10vmin;
+        margin-bottom: 1em;
+        line-height: 1.3em;
+        font-family: "Rubik Microbe", cursive;
+        }
+        .heroSection .heroSectionContent h1 .SuperchargedText {
+        transition: 7s;
+        color: var(--black);
+        }
+        .heroSection .heroSectionContent h1 .textShowing {
+        color: var(--red);
+        text-shadow: 1px 1px 5px var(--black);
+        }
+        .heroSection .heroSectionContent p {
+        font-weight: bold;
+        font-size: 1.3rem;
+        max-width: 600px;
+        line-height: 1.5em;
+        margin: 0 auto;
+        text-shadow: 1px 1px 1px white;
+        }
+        .heroSection .heroSectionContent .heroCTAbutton {
+        margin-top: 2.2em;
+        height: 3em;
+        width: 9em;
+        background-color: var(--red);
+        color: var(--darkWhite);
+        border: none;
+        border-radius: var(--buttonBorderRadius);
+        margin-bottom: 0.2em;
+        cursor: pointer;
+        transition-duration: var(--transitionDuration);
+        transform: scale(1) translate(0px, 0px);
+        }
+        .heroSection .heroSectionContent .heroCTAbutton:hover {
+        transform: scale(1.02) translate(-1px, -1px);
+        box-shadow: 3px 5px 0px 0px var(--black);
+        }
+        .heroSection .heroSectionHueDiv {
+        position: absolute;
+        margin: 0 auto;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: -1;
+        }
+        .heroSection .heroSectionHueDiv .heroSectionHue {
+        background: radial-gradient(circle, rgba(255, 10, 0, 0.6) 0%, rgba(255, 255, 255, 0.4360337885) 35%);
+        content: "";
+        animation: heroHueBackground 7s ease forwards;
+        height: 100%;
+        width: 100%;
+        transform: translateY(-1em);
+        }
+        @keyframes heroHueBackground {
+        0% {
+            width: 10%;
+            height: 10%;
+        }
+        100% {
+            width: 100%;
+            height: 100%;
+        }
+        }
+
+        .backgroundContainer {
+        position: absolute;
+        display: flex;
+        flex-shrink: 0;
+        height: 100vh;
+        min-width: 100%;
+        }
+        @media screen and (max-width: 1000px) {
+        .backgroundContainer {
+            height: 50vh;
+        }
+        }
+        .backgroundContainer .socialMediaIconContainer {
+        min-height: 100%;
+        min-width: 100%;
+        position: absolute;
+        z-index: 2;
+        }
+        .backgroundContainer .socialMediaIconContainer .socialMediaIcon {
+        position: absolute;
+        transition: var(--transitionDuration);
+        height: 6em;
+        z-index: 2;
+        }
+        .backgroundContainer .socialIconContainer {
+        min-height: 100%;
+        min-width: 100%;
+        position: absolute;
+        }
+        .backgroundContainer .socialIconContainer .emojiIcon {
+        position: absolute;
+        transition: var(--transitionDuration);
+        height: 6em;
+        }
+        .backgroundContainer .socialIconContainer .fire {
+        top: 20%;
+        right: 20%;
+        transform: rotate(9deg);
+        }
+        .backgroundContainer .socialIconContainer .party {
+        top: 57%;
+        left: 6%;
+        transform: rotate(27deg);
+        }
+        .backgroundContainer .socialIconContainer .grinning {
+        top: 28%;
+        left: 15%;
+        }
+        .backgroundContainer .socialIconContainer .lovingHearts {
+        top: 5%;
+        left: 10%;
+        transform: rotate(-5deg);
+        }
+        .backgroundContainer .socialIconContainer .explodingFace {
+        top: 60%;
+        right: 9%;
+        transform: rotate(12deg);
+        }
+        .backgroundContainer .socialIconContainer .lovingEyes {
+        top: 3%;
+        right: 5%;
+        }
+        @media screen and (max-width: 1000px) {
+        .backgroundContainer .socialIconContainer .emojiIcon {
+            display: none;
+        }
+        }
+        .backgroundContainer .FBsocialMediaIcon {
+        top: 28%;
+        right: 20%;
+        animation: FacebookIconFloat 3s infinite ease-in-out;
+        }
+        .backgroundContainer .IGsocialMediaIcon {
+        top: 60%;
+        right: 25%;
+        animation: InstagramIconFloat 2.5s infinite ease-in-out;
+        }
+        .backgroundContainer .SnapsocialMediaIcon {
+        transform: scaleX(-1);
+        top: 45%;
+        left: 12%;
+        animation: SnapchatIconFloat 2.8s infinite ease-in-out;
+        }
+        .backgroundContainer .TikToksocialMediaIcon {
+        top: 65%;
+        left: 27%;
+        animation: TikTokIconFloat infinite ease-in-out 2.3s;
+        }
+        .backgroundContainer .TwittersocialMediaIcon {
+        top: 1%;
+        right: 37%;
+        animation: TwitterIconFloat infinite ease-in-out 3.2s;
+        }
+        .backgroundContainer .YouTubesocialMediaIcon {
+        top: 18%;
+        left: 20%;
+        animation: YouTubeIconFloat infinite ease-in-out 2.7s;
+        }
+        @media screen and (max-width: 1000px) {
+        .backgroundContainer .FBsocialMediaIcon {
+            top: 50%;
+            right: 5%;
+        }
+        .backgroundContainer .IGsocialMediaIcon {
+            top: 100%;
+            right: 15%;
+        }
+        .backgroundContainer .SnapsocialMediaIcon {
+            transform: scaleX(-1);
+            top: 50%;
+            left: 5%;
+        }
+        .backgroundContainer .TikToksocialMediaIcon {
+            top: 100%;
+            left: 15%;
+        }
+        .backgroundContainer .TwittersocialMediaIcon {
+            top: 2%;
+            right: 20%;
+        }
+        .backgroundContainer .YouTubesocialMediaIcon {
+            left: 20%;
+            top: 2%;
+        }
+        }
+        @keyframes FacebookIconFloat {
+        0% {
+            transform: translateY(0.5em) rotate(20deg);
+        }
+        50% {
+            transform: translateY(-0.5em) rotate(20deg);
+        }
+        100% {
+            transform: translateY(0.5em) rotate(20deg);
+        }
+        }
+        @keyframes InstagramIconFloat {
+        0% {
+            transform: translateY(0.5em) rotate(5deg);
+        }
+        50% {
+            transform: translateY(-0.5em) rotate(5deg);
+        }
+        100% {
+            transform: translateY(0.5em) rotate(5deg);
+        }
+        }
+        @keyframes SnapchatIconFloat {
+        0% {
+            transform: translateY(0.5em) scaleX(-1) rotate(24deg);
+        }
+        50% {
+            transform: translateY(-0.5em) scaleX(-1) rotate(24deg);
+        }
+        100% {
+            transform: translateY(0.5em) scaleX(-1) rotate(24deg);
+        }
+        }
+        @keyframes TikTokIconFloat {
+        0% {
+            transform: translateY(0.5em) rotate(-8deg);
+        }
+        50% {
+            transform: translateY(-0.5em) rotate(-8deg);
+        }
+        100% {
+            transform: translateY(0.5em) rotate(-8deg);
+        }
+        }
+        @keyframes TwitterIconFloat {
+        0% {
+            transform: translateY(0.5em) rotate(5deg);
+        }
+        50% {
+            transform: translateY(-0.5em) rotate(5deg);
+        }
+        100% {
+            transform: translateY(0.5em) rotate(5deg);
+        }
+        }
+        @keyframes YouTubeIconFloat {
+        0% {
+            transform: translateY(0.5em) rotate(-6deg);
+        }
+        50% {
+            transform: translateY(-0.5em) rotate(-6deg);
+        }
+        100% {
+            transform: translateY(0.5em) rotate(-6deg);
+        }
+        }
+
+        .ourServicesSection {
+        max-width: 70em;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        margin-bottom: 4em;
+        }
+        .ourServicesSection .ourServicesContentDiv {
+        padding: 0em 3em;
+        width: 60%;
+        max-width: 37em;
+        height: 100%;
+        }
+        .ourServicesSection .ourServicesContentDiv h3 {
+        margin-bottom: 1em;
+        font-size: 1.7rem;
+        font-weight: bolder;
+        font-family: "Seymour One", sans-serif;
+        }
+        .ourServicesSection .ourServicesContentDiv h3 span {
+        color: var(--red);
+        }
+        .ourServicesSection .ourServicesContentDiv p {
+        font-weight: bold;
+        font-size: 1.3rem;
+        line-height: 1.5em;
+        }
+        .ourServicesSection .ourServicesContentDiv button {
+        margin-top: 2.2em;
+        height: 3em;
+        width: 9em;
+        background-color: var(--red);
+        color: var(--darkWhite);
+        border: none;
+        border-radius: var(--buttonBorderRadius);
+        margin-bottom: 0.2em;
+        cursor: pointer;
+        transition-duration: var(--transitionDuration);
+        transform: scale(1) translate(0px, 0px);
+        }
+        .ourServicesSection .ourServicesContentDiv button:hover {
+        transform: scale(1.02) translate(-1px, -1px);
+        box-shadow: 3px 5px 0px 0px var(--black);
+        }
+        .ourServicesSection .ourServicesAnimation {
+        overflow-x: hidden;
+        width: 100%;
+        }
+        .ourServicesSection .ourServicesAnimation .serviceSteps {
+        display: flex;
+        padding: 1em 3em;
+        margin: 0 auto;
+        max-width: 700px;
+        }
+        .ourServicesSection .ourServicesAnimation .serviceSteps img {
+        margin: 0 auto;
+        transition: var(--transitionDuration);
+        opacity: 0;
+        width: 40%;
+        max-width: 150px;
+        }
+        .ourServicesSection .ourServicesAnimation .serviceSteps .rightToLeftImg {
+        transform: translateX(100%);
+        }
+        .ourServicesSection .ourServicesAnimation .serviceSteps .leftToRightImg {
+        transform: translateX(-100%);
+        }
+        .ourServicesSection .ourServicesAnimation .serviceSteps:nth-child(odd) {
+        flex-direction: row-reverse;
+        }
+        .ourServicesSection .ourServicesAnimation .serviceSteps:nth-child(even) {
+        flex-direction: row;
+        }
+        .ourServicesSection .ourServicesAnimation .serviceSteps .servicesSectonText {
+        align-self: center;
+        padding: 1em;
+        opacity: 0;
+        transition: var(--transitionDuration) ease-out;
+        }
+        .ourServicesSection .ourServicesAnimation .serviceSteps .servicesStepTitle {
+        color: var(--red);
+        text-shadow: 1px 1px 1px black;
+        transition: var(--transitionDuration) ease-out;
+        }
+        .ourServicesSection .ourServicesAnimation .serviceSteps .serviceStepIcon {
+        object-fit: contain;
+        }
+        @media screen and (max-width: 500px) {
+        .ourServicesSection .ourServicesAnimation .serviceSteps {
+            padding: 1em 0.5em;
+        }
+        }
+        .ourServicesSection .ourServicesAnimation .showingServices:nth-child(odd) {
+        flex-direction: row;
+        }
+        .ourServicesSection .ourServicesAnimation .showingServices:nth-child(even) {
+        flex-direction: row-reverse;
+        }
+        .ourServicesSection .ourServicesAnimation .showingServices .servicesSectonText,
+        .ourServicesSection .ourServicesAnimation .showingServices .servicesStepTitle {
+        opacity: 1;
+        }
+        .ourServicesSection .ourServicesAnimation .showingServices .serviceStepIcon {
+        transform: translateX(0%);
+        opacity: 1;
+        }
+        @media screen and (max-width: 900px) {
+        .ourServicesSection {
+            flex-direction: column;
+        }
+        .ourServicesSection .ourServicesContentDiv {
+            padding: 0em 2em;
+            width: 100%;
+        }
+        .ourServicesSection .ourServicesContentDiv h3 {
+            font-size: 1.5rem;
+        }
+        .ourServicesSection .ourServicesContentDiv p {
+            font-size: 1.1rem;
+        }
+        .ourServicesSection .ourServicesContentDiv button {
+            margin-bottom: 5em;
+        }
+        }
+
+        .ourWork {
+        width: 100%;
+        overflow-x: hidden;
+        padding-top: 3em;
+        }
+        .ourWork .ourWorkHeaderContainer {
+        width: 100%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        }
+        @media screen and (max-width: 400px) {
+        .ourWork .ourWorkHeaderContainer {
+            flex-direction: column;
+        }
+        }
+        .ourWork .ourWorkHeaderContainer .ourWorkHeadingText {
+        width: 100%;
+        font-size: 2rem;
+        margin: 0 auto;
+        text-align: center;
+        font-family: "Seymour One", sans-serif;
+        }
+        .ourWork .ourWorkHeaderContainer .ourWorkAnimationHeading {
+        position: absolute;
+        min-width: 100%;
+        top: -100%;
+        left: -20%;
+        font-size: 5rem;
+        font-weight: bolder;
+        font-family: "Anton", sans-serif;
+        color: white;
+        text-shadow: -1px -1px 0 var(--red), 1px -1px 0 var(--red), -1px 1px 0 var(--red), 1px 1px 0 var(--red);
+        z-index: -1;
+        }
+        .ourWork .caseStudyContainer {
+        display: flex;
+        flex-direction: row;
+        margin: 0 auto;
+        margin-top: 5em;
+        min-height: 400px;
+        max-width: 1200px;
+        position: relative;
+        padding: 3em 0em;
+        overflow: hidden;
+        }
+        .ourWork .caseStudyContainer .caseStudyTextContainer {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        padding: 4em;
+        }
+        .ourWork .caseStudyContainer .caseStudyTextContainer div {
+        max-width: 400px;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        }
+        .ourWork .caseStudyContainer .caseStudyTextContainer div h4 {
+        background: var(--red);
+        color: white;
+        width: fit-content;
+        padding: 5px;
+        font-weight: bolder;
+        }
+        .ourWork .caseStudyContainer .caseStudyTextContainer div h3 {
+        font-size: 2rem;
+        font-family: "Seymour One", sans-serif;
+        }
+        .ourWork .caseStudyContainer .caseStudyTextContainer div button {
+        text-align: left;
+        max-width: 130px;
+        cursor: pointer;
+        border: none;
+        background: none;
+        }
+        .ourWork .caseStudyContainer .caseStudyTextContainer div button span {
+        transition-duration: var(--transitionDuration);
+        opacity: 0.5;
+        padding-left: 0px;
+        color: var(--black);
+        }
+        .ourWork .caseStudyContainer .caseStudyTextContainer div button:hover span {
+        opacity: 1;
+        padding-left: 10px;
+        color: var(--red);
+        }
+        .ourWork .caseStudyContainer .caseStudyImageContainer {
+        width: 100%;
+        max-height: 25rem;
+        position: relative;
+        display: flex;
+        }
+        .ourWork .caseStudyContainer .caseStudyImageContainer .backgroundCaseStudyImage {
+        flex-shrink: 0;
+        object-fit: cover;
+        min-height: 100%;
+        min-width: 100%;
+        transform: scale(0.1);
+        transition: var(--transitionDuration);
+        opacity: 0;
+        }
+        .ourWork .caseStudyContainer .caseStudyImageContainer .ourWorkBackgroundAnimation {
+        transform: scale(1);
+        opacity: 1;
+        }
+        .ourWork .caseStudyContainer .caseStudyImageContainer .parallaxCaseStudyImage {
+        max-height: 90%;
+        border-radius: 20px;
+        position: absolute;
+        transform: translateX(-30px);
+        top: -10%;
+        left: -5%;
+        box-shadow: 5px 5px 15px 0px var(--black);
+        }
+        .ourWork .caseStudyContainer .caseStudyArrow {
+        position: absolute;
+        z-index: -1;
+        height: 100%;
+        right: 0;
+        transform: scale(1);
+        width: 100%;
+        }
+        @media screen and (max-width: 600px) {
+        .ourWork .caseStudyContainer {
+            flex-direction: column;
+        }
+        .ourWork .caseStudyContainer .caseStudyImageContainer .parallaxCaseStudyImage {
+            left: 10%;
+        }
+        .ourWork .caseStudyContainer .caseStudyImageContainer .backgroundCaseStudyImage {
+            margin-left: 5rem;
+        }
+        }
+        .ourWork .secondCaseStudyContainer {
+        flex-direction: row-reverse;
+        }
+        .ourWork .secondCaseStudyContainer .caseStudyImageContainer .parallaxLeftSideCaseStudyImage {
+        top: -10%;
+        left: auto;
+        right: -5%;
+        transform: translateX(30px);
+        }
+        .ourWork .secondCaseStudyContainer .caseStudyImageContainer .backgroundCaseStudyImage {
+        transform: scale(0.1);
+        opacity: 0;
+        }
+        .ourWork .secondCaseStudyContainer .caseStudyImageContainer .ourWorkBackgroundAnimation {
+        transform: scale(1);
+        opacity: 1;
+        }
+        .ourWork .secondCaseStudyContainer .caseStudyLeftArrow {
+        transform: scale(-1);
+        width: 100%;
+        }
+        @media screen and (max-width: 600px) {
+        .ourWork .secondCaseStudyContainer {
+            flex-direction: column;
+        }
+        .ourWork .secondCaseStudyContainer .caseStudyImageContainer .parallaxLeftSideCaseStudyImage {
+            transform: translateX(30px);
+            left: 10%;
+            right: auto;
+        }
+        }
+
+        .contactUsContainer {
+        height: 100%;
+        width: 100%;
+        }
+        .contactUsContainer .contactUsform {
+        height: 100%;
+        width: 80%;
+        padding: 1em 3em;
+        max-width: 1000px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        }
+        .contactUsContainer .contactUsform .contactUsHeading {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        text-align: center;
+        margin: 2em 0em;
+        font-size: 2rem;
+        font-family: "Seymour One", sans-serif;
+        }
+        .contactUsContainer .contactUsform .contactFormSubmit {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        text-align: center;
+        margin-top: 2.2em;
+        height: 3em;
+        width: 9em;
+        background-color: var(--red);
+        color: var(--darkWhite);
+        border: none;
+        border-radius: var(--buttonBorderRadius);
+        margin-bottom: 0.2em;
+        cursor: pointer;
+        transition-duration: var(--transitionDuration);
+        transform: scale(1) translate(0px, 0px);
+        margin: 0 auto;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        }
+        .contactUsContainer .contactUsform .contactFormSubmit:hover {
+        transform: scale(1.02) translate(-1px, -1px);
+        box-shadow: 3px 5px 0px 0px var(--black);
+        }
+        .contactUsContainer .contactUsform .basicInfo {
+        width: 100%;
+        max-width: 100%;
+        }
+        .contactUsContainer .contactUsform .basicInfo input {
+        margin-bottom: 1em;
+        max-width: 800px;
+        width: 80%;
+        }
+        .contactUsContainer .contactUsform .basicInfo textarea {
+        max-width: 80%;
+        width: 80%;
+        min-height: 120px;
+        }
+        @media screen and (max-width: 400px) {
+        .contactUsContainer .contactUsform .basicInfo {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+        }
+        .contactUsContainer .contactUsform .moreContext {
+        width: 100%;
+        position: relative;
+        }
+        .contactUsContainer .contactUsform .moreContext .emailUsIcon {
+        position: absolute;
+        right: 0;
+        top: 5%;
+        width: 50%;
+        }
+        .contactUsContainer .contactUsform .moreContext h4 {
+        position: relative;
+        margin-bottom: 1em;
+        width: fit-content;
+        }
+        .contactUsContainer .contactUsform .moreContext h4:after {
+        position: absolute;
+        content: "";
+        height: 1px;
+        width: 100%;
+        background-color: var(--red);
+        bottom: 0;
+        left: 0;
+        }
+        .contactUsContainer .contactUsform .moreContext .platformOptions {
+        width: 100%;
+        position: relative;
+        }
+        .contactUsContainer .contactUsform .moreContext .platformOptions div {
+        display: flex;
+        margin: 0 auto;
+        }
+        .contactUsContainer .contactUsform .moreContext .platformOptions div label {
+        align-self: center;
+        min-width: 70px;
+        }
+        .contactUsContainer .contactUsform .moreContext .platformOptions div input {
+        float: right;
+        }
+        .contactUsContainer .contactUsform .moreContext .platformOptions .check-box {
+        transform: scale(0.4);
+        }
+        .contactUsContainer .contactUsform .moreContext .platformOptions input[type=checkbox] {
+        position: relative;
+        appearance: none;
+        width: 100px;
+        height: 50px;
+        background: #ccc;
+        border-radius: 50px;
+        box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: 0.4s;
+        }
+        .contactUsContainer .contactUsform .moreContext .platformOptions input:checked[type=checkbox] {
+        background: var(--red);
+        }
+        .contactUsContainer .contactUsform .moreContext .platformOptions input[type=checkbox]::after {
+        position: absolute;
+        content: "";
+        width: 50px;
+        height: 50px;
+        top: 0;
+        left: 0;
+        background: #fff;
+        border-radius: 50%;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        transform: scale(1.1);
+        transition: 0.4s;
+        }
+        .contactUsContainer .contactUsform .moreContext .platformOptions input:checked[type=checkbox]::after {
+        left: 50%;
+        }
+        @media screen and (max-width: 400px) {
+        .contactUsContainer .contactUsform .moreContext {
+            grid-column-start: 1;
+            grid-column-end: 3;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .contactUsContainer .contactUsform .moreContext h4 {
+            margin: 0 auto;
+            margin-top: 1em;
+            margin-bottom: 1em;
+        }
+        .contactUsContainer .contactUsform .moreContext .platformOptions {
+            margin: 0 auto;
+        }
+        .contactUsContainer .contactUsform .moreContext .platformOptions div {
+            justify-content: center;
+        }
+        .contactUsContainer .contactUsform .moreContext .emailUsIcon {
+            display: none;
+        }
+        }
+        @media screen and (max-width: 800px) {
+        .contactUsContainer .contactUsform {
+            width: 95%;
+            padding: 1em 0em;
+        }
+        .contactUsContainer .contactUsform .basicInfo input {
+            margin-bottom: 1em;
+            max-width: 800px;
+            width: 90%;
+        }
+        .contactUsContainer .contactUsform .basicInfo textarea {
+            max-width: 90%;
+            width: 90%;
+        }
+        }
+        @media screen and (max-width: 400px) {
+        .contactUsContainer .contactUsform {
+            width: 100%;
+            padding: 1em 0em;
+        }
+        .contactUsContainer .contactUsform .basicInfo {
+            padding: 0em 1em;
+        }
+        .contactUsContainer .contactUsform .basicInfo input {
+            margin-bottom: 1em;
+            max-width: 800px;
+            width: 100%;
+        }
+        .contactUsContainer .contactUsform .basicInfo textarea {
+            max-width: 100%;
+            width: 100%;
+        }
+        }
+
+        .footer {
+        background-color: #E63946;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='144' height='144' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='100' y1='33' x2='100' y2='-3'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='100' y1='135' x2='100' y2='97'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='%23cd1b34' fill-opacity='0.33'%3E%3Crect x='100' width='100' height='100'/%3E%3Crect y='100' width='100' height='100'/%3E%3C/g%3E%3Cg fill-opacity='0.33'%3E%3Cpolygon fill='url(%23a)' points='100 30 0 0 200 0'/%3E%3Cpolygon fill='url(%23b)' points='100 100 0 130 0 100 200 100 200 130'/%3E%3C/g%3E%3C/svg%3E");
+        padding: 1rem 3rem;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        }
+        .footer .quickLnks {
+        width: 100%;
+        margin: 1rem 0rem;
+        }
+        .footer .quickLnks ul {
+        list-style: none;
+        display: flex;
+        gap: 1rem;
+        }
+        @media screen and (max-width: 430px) {
+        .footer .quickLnks ul {
+            flex-direction: column;
+        }
+        .footer .quickLnks ul a {
+            margin: 0 auto;
+        }
+        }
+        .footer .quickLnks ul a {
+        text-decoration: none;
+        }
+        .footer .quickLnks ul a li {
+        color: white;
+        transition: var(--transitionDuration);
+        text-shadow: 1px 1px 1px black;
+        }
+        .footer .quickLnks ul a li:hover {
+        color: black;
+        }
+        .footer .newsletter {
+        width: 100%;
+        margin: 0 auto;
+        margin: 1rem 0rem;
+        }
+        .footer .newsletter .newsletterSubmission {
+        display: flex;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        }
+        .footer .newsletter .newsletterSubmission .newsletterEmailInput {
+        display: flex;
+        flex-direction: column;
+        justify-content: right;
+        }
+        .footer .newsletter .newsletterSubmission .newsletterEmailInput input {
+        width: 100%;
+        max-width: 250px;
+        }
+        .footer .newsletter .newsletterSubmission .newsletterEmailInput label {
+        color: white;
+        text-shadow: 1px 1px 1px black;
+        }
+        .footer .newsletter .newsletterSubmission .newsletterButton {
+        margin-left: 1rem;
+        background: white;
+        color: black;
+        border: none;
+        padding: 5px;
+        cursor: pointer;
+        transition: var(--transitionDuration);
+        }
+        .footer .newsletter .newsletterSubmission .newsletterButton:hover {
+        background: black;
+        color: white;
+        transform: scale(1.02);
+        }
+        .footer .footerSocialLinks {
+        display: flex;
+        justify-content: right;
+        width: 100%;
+        margin: 1rem 0rem;
+        }
+        .footer .footerSocialLinks a img {
+        height: 2.5rem;
+        transition: var(--transitionDuration);
+        filter: invert(100%) sepia(0%) saturate(2%) hue-rotate(345deg) brightness(104%) contrast(101%);
+        }
+        .footer .footerSocialLinks a img:hover {
+        filter: none;
+        }
+        @media screen and (max-width: 1100px) {
+        .footer {
+            flex-direction: column;
+        }
+        .footer .quickLnks {
+            justify-content: center;
+        }
+        .footer .quickLnks ul {
+            justify-content: center;
+        }
+        .footer .footerSocialLinks {
+            justify-content: center;
+            gap: 1rem;
+        }
+        }
+        @media screen and (max-width: 400px) {
+        .footer {
+            padding: 1rem 0.5rem;
+        }
+        }
+
+        /*# sourceMappingURL=/main.77bb5cfd.css.map */
+    </style>
+
+
+</head>
+<body>
+    
+    <!-- Header --Section -->
+    <header class="header">
+
+        <div class="hamburgerMenu">
+            <button class="hamburgerButtonOpen">≡</button>
+        </div>
+
+        <div class="leftSide">
+            <div class="logoContainer">
+                <a href="#"><img src="assets/SamSmithSocialMediaLogo.png" alt="Sam Smith Social Media Marketing Logo" class="logoimgEl"></a>
+            </div>
+            <ul class="headerList">
+                <a href="#"><li class="headerItem"></li>Home</li></a>
+                <a href="#aboutUs"><li class="headerItem"></li>About Us</li></a>
+                <a href="#ourServices"><li class="headerItem"></li>Services</li></a>
+                <a href="#ourWork"><li class="headerItem"></li>Our Work</li></a>
+                <a href="#contactUs"><li class="headerItem"></li>Contact</li></a>
+            </ul>
+        </div>
+
+        <div class="rightSide">
+            <div class="socialMediaDiv">
+                <a href="https://www.facebook.com/"><img src="assets/facebook.png" alt="Facebook icon" class="socialIconDiv"></a>
+                <a href="https://twitter.com/"><img src="assets/twitter.png" alt="Twitter icon" class="socialIconDiv"></a>
+                <a href="https://www.tiktok.com/"><img src="assets/tiktok.png" alt="TikTok icon" class="socialIconDiv"></a>
+                <a href="https://www.instagram.com/"><img src="assets/instagram.png" alt="Instagram icon" class="socialIconDiv"></a>
+            </div>
+            <div class="CTAbutton">
+                <a href="#contactUs"><button class="headerCTA">Get Started</button></a>
+            </div>
+        </div>
+
+    </header>
+
+    <div class="mobileSecton">
+        <div class="hamburgerMenu">
+            <button class="hamburgerButtonClose">✖</button>
+        </div>
+        <div class="mobileitems">
+            <a class="mobileItemLink" href="#"><li class="headerItem">Home</li></a>
+            <a class="mobileItemLink" href="#aboutUs"><li class="headerItem">About Us</li></a>
+            <a class="mobileItemLink" href="#ourServices"><li class="headerItem">Services</li></a>
+            <a class="mobileItemLink" href="#ourWork"><li class="headerItem">Our Work</li></a>
+            <a class="mobileItemLink" href="#contactUs"><li class="headerItem">Contact</li></a>
+        </div>
+        <div class="mobileSocial">
+            <div class="mobileSocialIconContainer">
+                <a href="https://www.facebook.com/"><img src="assets/facebook.png" alt="Facebook icon" class="socialIcon"></a>
+                <a href="https://www.instagram.com/"><img src="assets/instagram.png" alt="Instagram icon" class="socialIcon"></a>
+                <a href="https://twitter.com/"><img src="assets/twitter.png" alt="Twitter icon" class="socialIcon"></a>
+                <a href="https://www.tiktok.com/"><img src="assets/tiktok.png" alt="TikTok icon" class="socialIcon"></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero --Section -->
+    <div class="backgroundContainer removeMobileHeader">
+        <div class="socialMediaIconContainer">
+            <img src="/assets/3D_Facebook_side.png" alt="3D Facebook Icon" class="socialMediaIcon FBsocialMediaIcon">
+            <img src="/assets/3D_Instagram_side.png" alt="3D Instagram Icon" class="socialMediaIcon IGsocialMediaIcon">
+            <img src="/assets/3D_Snapchat_side.png" alt="3D Snapchat Icon" class="socialMediaIcon SnapsocialMediaIcon">
+            <img src="/assets/3D_TikTok_front.png" alt="3D TikTok Icon" class="socialMediaIcon TikToksocialMediaIcon">
+            <img src="/assets/3D_Twitter_front.png" alt="3D Twitter Icon" class="socialMediaIcon TwittersocialMediaIcon">
+            <img src="/assets/3D_YouTube_side.png" alt="3D YouTube Icon" class="socialMediaIcon YouTubesocialMediaIcon">
+        </div>
+        <div class="socialIconContainer">
+            <img src="/assets/Fire.png" alt="Fire emoji" class="emojiIcon fire">
+            <img src="/assets/Loving_Eyes.png" alt="Loving eyes emoji" class="emojiIcon lovingEyes">
+            <img src="/assets/Grinning.png" alt="Grinning emoji" class="emojiIcon grinning">
+            <img src="/assets/Party.png" alt="Party emoji" class="emojiIcon party">
+            <img src="/assets/Exploding_Face.png" alt="Exploding Face emoji" class="emojiIcon explodingFace">
+            <img src="/assets/Loving_Hearts.png" alt="Loving Hearts emoji" class="emojiIcon lovingHearts">
+        </div>
+    </div>
+
+    <section class="heroSection removeMobileHeader">
+        <div class="heroSectionHueDiv">
+            <div class="heroSectionHue"></div>
+        </div>
+        <div class="heroSectionContent">
+            <h1>Your Social Media<br>
+                <span class="SuperchargedText">Supercharged</span>
+            </h1>
+            <p>Proven social media marketing strategies to increase exposure, drive traffic, and take your business to the next level.</p>
+            <a href="#contactUs"><button class="heroCTAbutton">Let's Talk</button></a>
+        </div>
+    </section>
+
+    <!-- About Us and Services --Section -->
+    <section class="ourServicesSection">
+        <div class="ourServicesContentDiv" id="aboutUs">
+            <h3>Connect With Your Audience<br><span>Grow Your Business</span></h3>
+            <p>We believe that effective social media marketing is about more than just posting content online. It's about building meaningful relationships with your audience and creating valuable experiences that engage and inspire them.</p>
+            <a href="#contactUs"><button class="heroCTAbutton">Connect with Us</button></a>
+        </div>
+
+        <div class="ourServicesAnimation" id="ourServices">
+            <div class="serviceSteps define">
+                <img class="serviceStepIcon rightToLeftImg" src="/assets/Define.png" alt="Define Audience">
+                <p class="servicesSectonText leftToRightText"><span class="servicesStepTitle">Define your target audience:</span> Identifying the demographics, interests, and behaviors of your ideal customers, and tailoring your content and messaging to appeal to them.</p>
+            </div>
+            <div class="serviceSteps create">
+                <img class="serviceStepIcon leftToRightImg" src="/assets/Create.png" alt="Create Content">
+                <p class="servicesSectonText rightToLeftText"><span class="servicesStepTitle">Develop a content strategy:</span> Identifying the types of content that will be most effective at engaging your target audience, and creating a calendar or schedule for posting that content regularly.</p>
+            </div>
+            <div class="serviceSteps engage">
+                <img class="serviceStepIcon rightToLeftImg" src="/assets/Engage.png" alt="Publish and Engage">
+                <p class="servicesSectonText leftToRightText"><span class="servicesStepTitle">Engage with your audience:</span> Build trust and loyalty among your followers, and drive more traffic and engagement to your own content.</p>
+            </div>
+            <div class="serviceSteps monitor">
+                <img class="serviceStepIcon leftToRightImg" src="/assets/Monitor.png" alt="Monitor">
+                <p class="servicesSectonText rightToLeftText"><span class="servicesStepTitle">Monitor and analyze your performance:</span> Analyze the performance of your content and engagement efforts so that you can make adjustments and optimize your strategy to achieve optimal results.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Work --Section -->
+    <section class="ourWork" id="ourWork">
+
+        <div class="ourWorkHeaderContainer">
+            <h3 class="ourWorkHeadingText">Our Work</h3>
+            <h3 class="ourWorkAnimationHeading">Our Work</h3>
+        </div>
+
+        <div class="caseStudyContainer firstCaseStudyContainer">
+            <div class="caseStudyTextContainer">
+                <div>
+                    <h4>CASE STUDY #1</h4>
+                    <h3>Robertson Robotics</h3>
+                    <p>Robertson Robotics aims to pioneer prosthetic technology by developing the first mind-controlled prosthetic human arm in the world.</p>
+                    <a href="#"><button>Find Out More <span>➔</span></button></a>
+                </div>
+            </div>
+            <div class="caseStudyImageContainer">
+                <img class="backgroundCaseStudyImage" src="/assets/prosthetic_marketing.jpg" alt="3 people looking at a computer monitor with one individual in a wheel chair">
+                <img class="parallaxCaseStudyImage" src="/assets/robertson_Robotics.jpg" alt="Point of view of sharing hands with a prostetic arm">
+            </div>
+            <img class="caseStudyArrow" src="/assets/arrow.png">
+        </div>
+
+        <div class="caseStudyContainer secondCaseStudyContainer">
+            <div class="caseStudyTextContainer">
+                <div>
+                    <h4>CASE STUDY #2</h4>
+                    <h3>Muscles In Motion</h3>
+                    <p>A modern clinic making physiotherapy and massage accessible and comfortable for every client we serve.</p>
+                    <a href="#"><button>Find Out More <span>➔</span></button></a>
+                </div>
+            </div>
+            <div class="caseStudyImageContainer">
+                <img class="backgroundCaseStudyImage fromLeftSide" src="/assets/muscle_in_motiobn_background.jpg" alt="Person with a muslce bandeges on their back, with the person leading over with their elbow on their knees in a physiotherapy office.">
+                <img class="parallaxCaseStudyImage parallaxLeftSideCaseStudyImage" src="/assets/muscle_in_motion_parallax.jpg" alt="women holding up a a leg of a person that is laying down on a physiotherapy office.">
+            </div>
+            <img class="caseStudyArrow caseStudyLeftArrow" src="/assets/arrow.png">
+        </div>
+
+        <div class="caseStudyContainer thirdCaseStudyContainer">
+            <div class="caseStudyTextContainer">
+                <div>
+                    <h4>CASE STUDY #3</h4>
+                    <h3>Britney's Bakery</h3>
+                    <p>Creating delicious, fresh pastries, breads, and desserts every day since 1989. From flaky croissants to moist cakes, we have something to satisfy every sweet tooth.</p>
+                    <a href="#"><button>Find Out More <span>➔</span></button></a>
+                </div>
+            </div>
+            <div class="caseStudyImageContainer">
+                <img class="backgroundCaseStudyImage" src="/assets/britney_bakery_background.jpg" alt="Person making dough in a Bakery">
+                <img class="parallaxCaseStudyImage" src="/assets/britney_bakery_parallax.jpg" alt="person holding flour in their hand">
+            </div>
+            <img class="caseStudyArrow" src="/assets/arrow.png">
+        </div>
+
+
+    </section>
+
+    <!-- Contact Us --Section & contact Form -->
+    <section class="contactUsContainer">
+        <form class="contactUsform" id="contactUs">
+            
+            <h3 class="contactUsHeading">Contact Us Today!</h3>
+
+            <div class="basicInfo">
+                <label for="fname" class="contactFormFirstName">First name:</label><br>
+                <input type="text" name="fname"><br>
+
+                <label for="lname" class="contactFormLastName">Last name:</label><br>
+                <input type="text" name="lname"><br>
+
+                <label for="email" class="contactFormName">Email:</label><br>
+                <input type="email" name="email"><br>
+
+                <label for="message" class="contactFormMessageLabel">Message:</label><br>
+                <textarea nam="message" class="contactFormTextarea"></textarea>
+            </div>
+            <div class="moreContext">
+
+                <img class="emailUsIcon parallaxCartoon" src="/assets/Email_us_icon.png" alt="cartoon 3D email character">
+
+                <h4>What platforms are you using?</h4>
+
+                <div class="platformOptions">
+                    <div>
+                        <label for="Facebook" class="platformsUsed FacebookSelection">Facebook:</label>
+                        <input class="check-box" type="checkbox" name="Facebook" value="Facebook">
+                    </div>
+
+                    <div>
+                        <label for="Instagram" class="platformsUsed InstagramSelection">Instagram:</label>
+                        <input class="check-box" type="checkbox" name="Instagram" value="Instagram">
+                    </div>
+
+                    <div>
+                        <label for="Snapchat" class="platformsUsed SnapchatSelection">Snapchat:</label>
+                        <input class="check-box" type="checkbox" name="Snapchat" value="Snapchat">
+                    </div>
+
+                    <div>
+                        <label for="YouTube" class="platformsUsed YouTubeSelection">YouTube:</label>
+                        <input class="check-box" type="checkbox" name="YouTube" value="YouTube">
+                    </div>
+                    
+                    <div>
+                        <label for="TikTok" class="platformsUsed TikTokSelection">TikTok:</label>
+                        <input class="check-box" type="checkbox" name="TikTok" value="TikTok">
+                    </div>
+
+                    <div>
+                        <label for="other" class="platformsUsed otherSelection">other:</label>
+                        <input class="check-box" type="checkbox" name="other" value="other">
+                    </div>
+                </div>
+            </div>
+
+            <input class="contactFormSubmit" type="submit">
+
+        </form>
+    </section>
+
+    <footer class="footer">
+
+        <div class="quickLnks">
+            <ul>
+                <a href="#aboutUs"><li class="quickLinkItems">About Us</li></a>
+                <a href="#ourServices"><li class="quickLinkItems">Services</li></a>
+                <a href="#ourWork"><li class="quickLinkItems">Our Work</li></a>
+                <a href="#contactUs"><li class="quickLinkItems">Contact Us</li></a>
+            </ul>
+        </div>
+
+        <div class="newsletter">
+            <div class="newsletterSubmission">
+                <div class="newsletterEmailInput">
+                    <label>Subscribe To Our Newsletter:</label>
+                    <input class="newsletterInput" type="email">
+                </div>
+                <button class="newsletterButton">Subscribe</button>
+            </div>
+        </div>
+
+        <div class="footerSocialLinks">
+            <a href="https://www.facebook.com/"><img src="assets/facebook.png" alt="Facebook icon" class="socialIconDiv"></a>
+            <a href="https://twitter.com/"><img src="assets/twitter.png" alt="Twitter icon" class="socialIconDiv"></a>
+            <a href="https://www.tiktok.com/"><img src="assets/tiktok.png" alt="TikTok icon" class="socialIconDiv"></a>
+            <a href="https://www.instagram.com/"><img src="assets/instagram.png" alt="Instagram icon" class="socialIconDiv"></a>
+        </div>
+
+    </footer>
+
+    <script>
+        // The Header --Section
+        // get variables for mobile header pop-up
+        const hamburgerButtonOpen = document.querySelector('.hamburgerButtonOpen');
+        const hamburgerButtonClose = document.querySelector('.hamburgerButtonClose');
+        const mobileSecton = document.querySelector('.mobileSecton');
+
+        function stopScrolling() {
+            const siteBody = document.querySelector('body');
+            if (siteBody.style.overflow === "hidden") {
+                siteBody.style.overflow = "auto";
+            } else {
+                siteBody.style.overflow = "hidden";
+            }
+        }
+
+        // oepn the mobile header
+        hamburgerButtonOpen.addEventListener('click', openMobileSection);
+        function openMobileSection() {
+            mobileSecton.style.transform = 'translateX(0%)';
+            mobileSecton.style.clipPath = 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)';
+            hamburgerButtonOpen.style.transform = 'scale(0%) rotate(900deg)';
+            hamburgerButtonClose.style.transform = 'scale(1) rotate(0deg)';
+            window.scrollTo(0, 0);
+            stopScrolling();
+        };
+
+        //close the mobile header
+        hamburgerButtonClose.addEventListener('click', closeMobileSection);
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeMobileSection();
+            };
+        });
+
+        const mobileMenuLinks = document.querySelectorAll('.mobileItemLink');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                closeMobileSection();
+            });
+        });
+
+        function closeMobileSection() {
+            mobileSecton.style.transform = 'translateX(-120%)';
+            mobileSecton.style.clipPath = 'polygon(0 0, 9% 91%, 100% 100%, 0% 100%)';
+            hamburgerButtonOpen.style.transform = 'scale(1) rotate(0deg)';
+            hamburgerButtonClose.style.transform = 'scale(0%) rotate(900deg)';
+            stopScrolling();
+        };
+
+
+        // The Hero --Section for the text color change 
+        const heroSectionTextObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('textShowing');
+                } else {
+                    entry.target.classList.remove('textShowing');
+                }
+            });
+        });
+        const heroSectionTextEl = document.querySelectorAll('.SuperchargedText');
+        heroSectionTextEl.forEach((el) => heroSectionTextObserver.observe(el));
+
+        // hero social media icon section
+        document.addEventListener('scroll', socialMediaIconParallax);
+
+        function socialMediaIconParallax() {
+
+            let scrollheight = window.scrollY;
+
+            // Social media icons
+            const socialMediaIconContainer = document.querySelector('.socialMediaIconContainer');
+
+            let socialMediaParallaxValue = scrollheight * 0.2;
+            socialMediaIconContainer.style.transform = `translateY(${socialMediaParallaxValue}px)`;
+
+            let opacityValue = 100 * (1 - (scrollheight / 400));
+            socialMediaIconContainer.style.opacity = `${opacityValue}%`;
+
+            // emoji icons
+            const socialIconContainer = document.querySelector('.socialIconContainer');
+
+            let emojiParallaxvalue = scrollheight * -0.3;
+            socialIconContainer.style.transform = `translateY(${emojiParallaxvalue}px)`;
+        };
+
+        // Services --Section
+
+        const servicesSections = document.querySelectorAll('.serviceSteps');
+
+        const servicesOption = {
+            rootMargin: "0px",
+            threshold: 1
+        };
+
+        const servicesObserver = new IntersectionObserver(function(entries, servicesObserver) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('showingServices');
+                }
+            });
+        }, servicesOption);
+        servicesSections.forEach(section => {
+            servicesObserver.observe(section);
+        });
+
+        // Our work heading animation
+        const ourWorkOptions = {
+            rootMargin: "0px",
+            threshold: 0
+        }
+
+        const ourWorkAnimationHeading = document.querySelector('.ourWorkAnimationHeading');
+
+        const ourWorkObserver = new IntersectionObserver(function(entries, ourWorkObserver) {
+            entries.forEach(entry => {
+
+                function ourWorkAnimation() {
+                    const ourWorkHeadingRect = ourWorkAnimationHeading.getBoundingClientRect();
+                    const ourWorkHeadingFromTop = ourWorkHeadingRect.top;
+
+                    const windowHeight = window.innerHeight;
+                    const ourWorkHeadingParallaxvalue = (0.9 * (-1 * (ourWorkHeadingFromTop - windowHeight))) / 10;
+
+                    ourWorkAnimationHeading.style.left = `${ourWorkHeadingParallaxvalue}%`;
+
+                }
+
+                if (entry.isIntersecting) {
+                    document.addEventListener('scroll', ourWorkAnimation)
+                } else {
+                    document.removeEventListener('scroll', ourWorkAnimation);
+                }
+
+            });
+        }, ourWorkOptions);
+
+        ourWorkObserver.observe(ourWorkAnimationHeading);
+
+        // Case Study Parallax Area
+        const parallaxCaseStudyImage = document.querySelectorAll('.parallaxCaseStudyImage');
+
+        const caseStudyImageOptions = {
+            rootMargin: "0px",
+            threshold: 0
+        }
+
+        const caseStudyParallaxObserver = new IntersectionObserver(function(entries, caseStudyParallaxObserver) {
+            entries.forEach(entry => {
+
+                function moveOurWorkImage() {
+
+                    parallaxCaseStudyImage.forEach(image => {
+                        const imageRect = image.getBoundingClientRect();
+                        const imagePosition = imageRect.y;
+
+                        const windowHeight = window.innerHeight;
+                        const imageHeight = -1 * (imagePosition - windowHeight);
+                        const parallaxHeight = (imageHeight / 10);
+
+                        image.style.transform = `translateY(${parallaxHeight}px)`;
+
+
+
+                    });
+                };
+
+                parallaxCaseStudyImage.forEach(image => {
+
+                    if (entry.isIntersecting) {
+                        document.addEventListener('scroll', moveOurWorkImage);
+                    } else {
+                        document.removeEventListener('scroll', moveOurWorkImage);
+                    }
+                })
+            });
+        }, caseStudyImageOptions);
+
+        parallaxCaseStudyImage.forEach(image => {
+            caseStudyParallaxObserver.observe(image);
+        });
+
+        // our work image coming in from side
+
+        const ourWorkbgimgOptions = {
+            rootMargin: "0px",
+            threshold: 1
+        };
+
+        const backgroundCaseStudyImage = document.querySelectorAll('.backgroundCaseStudyImage');
+
+        const ourWorkbgObserver = new IntersectionObserver(function(entries, ourWorkbgObserver) {
+            entries.forEach(entry => {
+                
+                if (entry.isIntersecting) {         
+                    entry.target.classList.add('ourWorkBackgroundAnimation');
+                }
+
+            });
+        }, ourWorkbgimgOptions);
+
+        backgroundCaseStudyImage.forEach(img => {
+            ourWorkbgObserver.observe(img);
+        });
+
+
+        // contact us cartoon parallax
+        const emailCartoon = document.querySelector('.emailUsIcon');
+
+        const emailCartoonOptions = {
+            rootMargin: "0px",
+            threshold: 0.1
+        }
+
+        const cartoonParallaxObserver = new IntersectionObserver(function(entires, cartoonParallaxObserver) {
+            entires.forEach(entry => {
+                if (entry.isIntersecting) {
+                    document.addEventListener('scroll', cartoonParallax);
+                } else {
+                    document.removeEventListener('scroll', cartoonParallax);
+                }
+                function cartoonParallax() {
+
+                    let cartoonRect = emailCartoon.getBoundingClientRect();
+                    let windowHeight = window.innerHeight;
+                    let cartoonToTop = cartoonRect.y;
+                    let startOfParallax = (windowHeight - cartoonToTop) / 40;
+
+                    emailCartoon.style.transform = `translateY(${startOfParallax}rem)`;
+
+                }
+            });
+        }, emailCartoonOptions);
+
+        cartoonParallaxObserver.observe(emailCartoon);
+    </script>
+
+</body>
+</html>
